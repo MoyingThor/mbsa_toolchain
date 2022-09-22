@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hazard" nsURI="http://dlut.mbsa/hazard" nsPrefix="hazard_">
+  <eClassifiers xsi:type="ecore:EClass" name="HazardPackage" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="#//HazardousSituation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//HazardPackageInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardPackageBinding" eSuperTypes="#//HazardPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantPackage" lowerBound="2"
+        upperBound="-1" eType="#//HazardPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardPackageInterface" eSuperTypes="#//HazardPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
+        eType="#//HazardPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardousSituation" eSuperTypes="#//HazardElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="#//Probability"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causes" upperBound="-1"
+        eType="#//Cause" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cause" eSuperTypes="#//HazardElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlMeasure" upperBound="-1"
+        eType="#//ControlMeasure" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlMeasure" eSuperTypes="#//HazardElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="safetyDecisionRationale"
+        eType="#//SafetyDecisionRationale" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verificationofEffectiveness"
+        upperBound="-1" eType="#//VerificationofEffectiveness" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validation" upperBound="-1"
+        eType="#//Validation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerificationofEffectiveness" eSuperTypes="#//HazardElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Validation" eSuperTypes="#//HazardElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyDecisionRationale" eSuperTypes="#//HazardElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="catastrophic" value="1"/>
+    <eLiterals name="critical" value="2"/>
+    <eLiterals name="serious" value="3"/>
+    <eLiterals name="minor" value="4"/>
+    <eLiterals name="negligible" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Probability">
+    <eLiterals name="frequent" value="1"/>
+    <eLiterals name="probable" value="2"/>
+    <eLiterals name="occasional" value="3"/>
+    <eLiterals name="remote" value="4"/>
+    <eLiterals name="improbable" value="5"/>
+  </eClassifiers>
+</ecore:EPackage>

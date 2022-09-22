@@ -1,0 +1,34 @@
+@namespace(uri="http://automated.fmea/arch", prefix="arch")
+
+package arch;
+
+import "http://dlut.mbsa/base";
+
+abstract class ArchitectureElement extends base.ArtifactElement {
+	
+}
+
+class ComponentPackage extends ArchitectureElement {
+	val ArchitectureElement[*] elements;
+}
+
+class ComponentPackageInterface extends ComponentPackage {
+	ref ComponentPackage interfaceFor;
+}
+
+class ComponentPackageBinding extends ComponentPackage {
+	ref ComponentPackage[2] participantPackage;
+}
+
+abstract class ArchitectureAsset extends ArchitectureElement {
+
+}
+
+abstract class Component extends ArchitectureAsset {
+	
+}
+
+abstract class ComponentRelationship extends ArchitectureAsset {
+	ref Component source;
+	ref Component destination;
+}

@@ -1,0 +1,75 @@
+@namespace(uri="http://dlut.mbsa/hazard", prefix="hazard_")
+package hazard;
+import "http://dlut.mbsa/base";
+
+class HazardPackage extends base.ArtifactElement {
+	val HazardousSituation[*] hazards;
+	ref HazardPackageInterface[*] ~interface;
+}
+
+class HazardPackageBinding extends HazardPackage {
+	ref HazardPackage[2..*] participantPackage;
+}
+
+class HazardPackageInterface extends HazardPackage {
+	ref HazardPackage[1] implements;
+}
+  
+abstract class HazardElement extends base.ArtifactElement{
+  	
+}
+
+class HazardousSituation extends HazardElement{
+	attr Severity[?] severity;
+	attr Probability[?] probability;
+	val Cause[*] causes;
+}
+
+
+//there should be a reference to a design
+class Cause extends HazardElement{
+	val ControlMeasure[*] controlMeasure;
+}
+
+
+class ControlMeasure extends HazardElement {
+	val SafetyDecisionRationale[?] safetyDecisionRationale;
+	val VerificationofEffectiveness[*] verificationofEffectiveness;
+	val Validation[*] validation;
+}
+
+
+class VerificationofEffectiveness extends HazardElement{
+	attr String text;
+}
+
+
+//reference to validation measure
+class Validation extends HazardElement{
+	attr String text;
+}
+
+
+//reference to design
+class SafetyDecisionRationale extends HazardElement{
+	attr String text;
+}
+
+
+
+enum Severity {
+  catastrophic = 1;
+  critical = 2;
+  serious = 3;
+  minor = 4;
+  negligible = 5;
+}
+
+
+enum Probability {
+  frequent = 1;
+  probable = 2;
+  occasional = 3;
+  remote = 4;
+  improbable = 5;
+}
