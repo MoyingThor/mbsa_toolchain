@@ -1,0 +1,19 @@
+@namespace(uri="http://dlut.mbsa/fmeca", prefix="fmeca_")
+package fmeca;
+
+enum ESR {
+  minor = 1;
+  moderate = 2;
+  fatal = 3;
+  catastrophic = 4;
+}
+
+enum OPR {
+  extremely_low = 1;
+  low = 2;
+  moderate = 3;
+  high = 4;
+  very_high = 5;
+}
+
+

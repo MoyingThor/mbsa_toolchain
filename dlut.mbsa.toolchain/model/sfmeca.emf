@@ -1,0 +1,127 @@
+@namespace(uri="http://dlut.mbsa/sfmeca", prefix="sfmeca_")
+package sfmeca;
+
+enum SESR {
+  extremely_minor = 1;
+  very_minor = 2;
+  very_low = 3;
+  low = 4;
+  moderate = 5;
+  high = 6;
+  very_high = 7;
+  extremely_high_with_warning = 8;
+  extremely_high_without_warning = 9;
+}
+
+enum SDDR {
+	absolutely_certain = 1;
+	very_high = 2;
+	high = 3;
+	moderate_high = 4;
+	moderate = 5;
+	low = 6;
+	very_low = 7;
+	minor = 8;
+	very_minor = 9;
+	absolutely_uncertain =10;
+}
+
+enum SOPR {
+  very_low_1 = 1;
+  very_low_2 = 2;
+  low_3 = 3;
+  low_4 = 4;
+  moderate_5 = 5;
+  moderate_6 = 6;
+  high_7 = 7;
+  high_8 = 8;
+  very_high_9 = 9;
+  very_high_10 = 10;
+}
+
+enum Severity {
+	catastrophic = 1;
+	fatal = 2;
+	median = 3;
+	moderate = 4;
+}
+
+
+abstract class SFMEAElement extends base.ArtifactElement {
+}
+
+class SFMEAPackage extends SFMEAElement {
+  val SFMEAElement[*] SFMEAElement;
+  ref SFMEAPackageInterface[*] ~interface;
+}
+
+class SFMEAPackageInterface extends SFMEAPackage {
+  ref SFMEAPackage[1] implements;
+}
+
+class SFMEAPackageBinding extends SFMEAPackage {
+  ref SFMEAPackage[2..*] participantPackage;
+}
+
+class Effect extends SFMEAElement {
+	attr String effect;
+}
+
+class RegionEffect extends Effect {
+	
+}
+
+class HigherLevelEffect extends Effect {
+	
+}
+
+class EndEffect extends Effect {
+	
+}
+
+class CorrectiveAction extends SFMEAElement {
+	attr String corrective_action;
+}
+
+class IndentureLevel extends SFMEAElement {
+	attr Boolean initial=false;
+	attr Integer level;
+	attr Boolean lowest=false;
+}
+
+class Stakeholder extends SFMEAElement {
+	attr String identity;
+}
+
+class FailureMode extends SFMEAElement {
+	attr String failure_mode;
+	attr float distribution;
+	attr Severity severity;
+	attr SESR sesr;
+	attr SOPR sopr;
+	attr SDDR sddr;
+	attr int srpn;
+	attr String[*] remarks;
+	val EndEffect[*] endEffect;
+	val HigherLevelEffect[*] high_level_effect;
+	val RegionEffect[*] region_effect;
+	val CorrectiveAction[*] corrective_action;
+}
+
+class SFMECAEntry extends SFMEAElement {
+	attr int number;
+	attr String unit;
+	val FailureMode[*] failure_modes;
+}
+
+class SFMECAForm extends SFMEAElement {
+	attr String mission;
+	attr Boolean approved;
+	attr EDate date;
+	ref Stakeholder[*] analysts;
+	ref Stakeholder[*] validator;
+	ref SFMECAEntry[*] entries;
+}
+
+
+
