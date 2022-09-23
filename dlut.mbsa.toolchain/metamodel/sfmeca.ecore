@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sfmeca" nsURI="http://dlut.mbsa/sfmeca" nsPrefix="sfmeca_">
+  <eClassifiers xsi:type="ecore:EEnum" name="SESR">
+    <eLiterals name="extremely_minor" value="1"/>
+    <eLiterals name="very_minor" value="2"/>
+    <eLiterals name="very_low" value="3"/>
+    <eLiterals name="low" value="4"/>
+    <eLiterals name="moderate" value="5"/>
+    <eLiterals name="high" value="6"/>
+    <eLiterals name="very_high" value="7"/>
+    <eLiterals name="extremely_high_with_warning" value="8"/>
+    <eLiterals name="extremely_high_without_warning" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SDDR">
+    <eLiterals name="absolutely_certain" value="1"/>
+    <eLiterals name="very_high" value="2"/>
+    <eLiterals name="high" value="3"/>
+    <eLiterals name="moderate_high" value="4"/>
+    <eLiterals name="moderate" value="5"/>
+    <eLiterals name="low" value="6"/>
+    <eLiterals name="very_low" value="7"/>
+    <eLiterals name="minor" value="8"/>
+    <eLiterals name="very_minor" value="9"/>
+    <eLiterals name="absolutely_uncertain" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SOPR">
+    <eLiterals name="very_low_1" value="1"/>
+    <eLiterals name="very_low_2" value="2"/>
+    <eLiterals name="low_3" value="3"/>
+    <eLiterals name="low_4" value="4"/>
+    <eLiterals name="moderate_5" value="5"/>
+    <eLiterals name="moderate_6" value="6"/>
+    <eLiterals name="high_7" value="7"/>
+    <eLiterals name="high_8" value="8"/>
+    <eLiterals name="very_high_9" value="9"/>
+    <eLiterals name="very_high_10" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="catastrophic" value="1"/>
+    <eLiterals name="fatal" value="2"/>
+    <eLiterals name="median" value="3"/>
+    <eLiterals name="moderate" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFMEAElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SFMEAPackage" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SFMEAElement" upperBound="-1"
+        eType="#//SFMEAElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//SFMEAPackageInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFMEAPackageInterface" eSuperTypes="#//SFMEAPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
+        eType="#//SFMEAPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFMEAPackageBinding" eSuperTypes="#//SFMEAPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantPackage" lowerBound="2"
+        upperBound="-1" eType="#//SFMEAPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Effect" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegionEffect" eSuperTypes="#//Effect"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HigherLevelEffect" eSuperTypes="#//Effect"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndEffect" eSuperTypes="#//Effect"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CorrectiveAction" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="corrective_action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IndentureLevel" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowest" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stakeholder" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FailureMode" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="failure_mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distribution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sesr" eType="#//SESR"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sopr" eType="#//SOPR"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sddr" eType="#//SDDR"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srpn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remarks" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endEffect" upperBound="-1"
+        eType="#//EndEffect" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="high_level_effect" upperBound="-1"
+        eType="#//HigherLevelEffect" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="region_effect" upperBound="-1"
+        eType="#//RegionEffect" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="corrective_action" upperBound="-1"
+        eType="#//CorrectiveAction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFMECAEntry" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="failure_modes" upperBound="-1"
+        eType="#//FailureMode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SFMECAForm" eSuperTypes="#//SFMEAElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mission" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="approved" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysts" upperBound="-1"
+        eType="#//Stakeholder"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validator" upperBound="-1"
+        eType="#//Stakeholder"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+        eType="#//SFMECAEntry"/>
+  </eClassifiers>
+</ecore:EPackage>

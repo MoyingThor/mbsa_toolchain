@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fmeca" nsURI="http://dlut.mbsa/fmeca" nsPrefix="fmeca_">
+  <eClassifiers xsi:type="ecore:EEnum" name="ESR">
+    <eLiterals name="minor" value="1"/>
+    <eLiterals name="moderate" value="2"/>
+    <eLiterals name="fatal" value="3"/>
+    <eLiterals name="catastrophic" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OPR">
+    <eLiterals name="extremely_low" value="1"/>
+    <eLiterals name="low" value="2"/>
+    <eLiterals name="moderate" value="3"/>
+    <eLiterals name="high" value="4"/>
+    <eLiterals name="very_high" value="5"/>
+  </eClassifiers>
+</ecore:EPackage>

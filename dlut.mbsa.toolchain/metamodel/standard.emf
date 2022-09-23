@@ -1,0 +1,53 @@
+@namespace(uri="http://dlut.mbsa/hazard", prefix="hazard_")
+package hazard;
+import "http://dlut.mbsa/base";
+
+abstract class StandardElement extends base.ArtifactElement{
+  	
+}
+
+
+enum FaultToleranceLevel {
+	zero = 0;
+	one = 1;
+	two = 2;
+}
+
+class FaultTolerance extends StandardElement {
+	attr FaultToleranceLevel fault_tolerance;
+}
+
+class SafeFailureFraction extends StandardElement {
+	attr float safey_failure_prob;
+	attr float detected_dangerous_failure_prob;
+	attr float safety_failure_avg;
+	attr float dangerous_failure_avg;
+}
+
+enum Component_Class {
+	ClassA = 0;
+	ClassB = 0;
+}
+
+enum OperationMode {
+	low_demand = 0;
+	high_demand = 1;
+	continuous = 2;
+}
+
+enum Severity {
+  catastrophic = 1;
+  critical = 2;
+  serious = 3;
+  minor = 4;
+  negligible = 5;
+}
+
+
+enum Probability {
+  frequent = 1;
+  probable = 2;
+  occasional = 3;
+  remote = 4;
+  improbable = 5;
+}

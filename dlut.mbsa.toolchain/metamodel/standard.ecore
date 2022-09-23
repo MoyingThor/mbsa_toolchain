@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hazard" nsURI="http://dlut.mbsa/hazard" nsPrefix="hazard_">
+  <eClassifiers xsi:type="ecore:EClass" name="StandardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="FaultToleranceLevel">
+    <eLiterals name="zero"/>
+    <eLiterals name="one" value="1"/>
+    <eLiterals name="two" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FaultTolerance" eSuperTypes="#//StandardElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fault_tolerance" eType="#//FaultToleranceLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SafeFailureFraction" eSuperTypes="#//StandardElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="safey_failure_prob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="detected_dangerous_failure_prob"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="safety_failure_avg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dangerous_failure_avg"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Component_Class">
+    <eLiterals name="ClassA"/>
+    <eLiterals name="ClassB"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationMode">
+    <eLiterals name="low_demand"/>
+    <eLiterals name="high_demand" value="1"/>
+    <eLiterals name="continuous" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="catastrophic" value="1"/>
+    <eLiterals name="critical" value="2"/>
+    <eLiterals name="serious" value="3"/>
+    <eLiterals name="minor" value="4"/>
+    <eLiterals name="negligible" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Probability">
+    <eLiterals name="frequent" value="1"/>
+    <eLiterals name="probable" value="2"/>
+    <eLiterals name="occasional" value="3"/>
+    <eLiterals name="remote" value="4"/>
+    <eLiterals name="improbable" value="5"/>
+  </eClassifiers>
+</ecore:EPackage>

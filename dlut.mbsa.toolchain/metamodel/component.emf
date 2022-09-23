@@ -1,0 +1,78 @@
+@namespace(uri="http://dlut.mbsa/component", prefix="component_")
+package component;
+
+import "http://dlut.mbsa/base";
+
+abstract class ComponentElement extends base.ArtifactElement{
+
+}
+
+class ComponentPackage extends ComponentElement {
+	val ComponentElement[*] components;
+	ref ComponentPackageInterface[*] ~interface;
+}
+
+class ComponentPackageInterface extends ComponentElement {
+	ref ComponentPackage[1] implements;
+}
+
+class ComponentPackageBinding extends ComponentElement {
+	ref ComponentPackage[2..*] participantPackage;
+	
+}
+
+class Component extends ComponentElement {
+	attr int identity;
+	attr String component_name;
+	attr Boolean reuse;
+	attr Boolean cots;
+	ref Function function;
+	val Input[*] inputs;
+	val Output[*] outputs;
+}
+
+class ComponentRelationship extends ComponentElement {
+	attr String label;
+	ref Component source;
+	ref Component target;
+}
+
+class Function extends ComponentElement {
+	attr String func;
+}
+
+class Input extends ComponentElement {
+	attr String input;
+}
+
+class Output extends ComponentElement {
+	attr String output;
+}
+
+abstract class FailureElement extends base.ArtifactElement {
+	attr int identity;
+}
+
+class FailureMode extends FailureElement {
+	attr String mode;
+	attr String cause;
+	ref RegionalEffect regional;
+	ref HigherLevelEffect higher_level;
+	ref FinalEffect final;
+}
+
+abstract class FailureEffect extends FailureElement {
+	attr String description;
+}
+
+class RegionalEffect extends FailureEffect {
+	
+}
+
+class HigherLevelEffect extends FailureEffect {
+	
+}
+
+class FinalEffect extends FailureEffect {
+	
+}

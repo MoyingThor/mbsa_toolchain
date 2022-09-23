@@ -1,6 +1,8 @@
 @namespace(uri="http://dlut.mbsa/sfmeca", prefix="sfmeca_")
 package sfmeca;
 
+import "http://dlut.mbsa/base";
+
 enum SESR {
   extremely_minor = 1;
   very_minor = 2;

@@ -1,0 +1,78 @@
+@namespace(uri="http://dlut.mbsa/risk", prefix="risk_")
+package risk;
+
+import "http://dlut.mbsa/base";
+
+abstract class FTAElement extends base.ArtifactElement{
+
+}
+
+class FTAPackage extends FTAElement {
+	val FTAElement[*] elements;
+	ref FTAPackageInterface[*] ~interface;
+}
+
+class FTAPackageInterface extends FTAPackage {
+	ref FTAPackage[1] implements;
+}
+
+class ComponentPackageBinding extends FTAPackage {
+	ref FTAPackage[2..*] participantPackage;
+	
+}
+
+class Gate extends FTAElement {
+	
+}
+
+class ANDGate extends Gate {
+	
+}
+
+class ORGate extends Gate {
+	
+}
+
+class InibitGate extends Gate {
+	
+}
+
+class Subtree extends FTAElement {
+	
+}
+
+class InTriangle extends Subtree{
+	
+}
+
+class OutTriangle extends Subtree {
+	
+}
+
+class Event extends FTAElement {
+	
+}
+
+class TopEvent extends Event {
+	
+}
+
+class ConditioningEvent extends Event {
+	
+}
+
+class ExternalEvent extends Event {
+	
+}
+
+class BasicEvent extends Event {
+	
+}
+
+class UndevelopedEvent extends Event {
+	
+}
+
+class IntermediateEvent extends Event {
+	
+}

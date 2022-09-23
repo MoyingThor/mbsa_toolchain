@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="risk" nsURI="http://dlut.mbsa/risk" nsPrefix="risk_">
+  <eClassifiers xsi:type="ecore:EClass" name="FTAElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FTAPackage" eSuperTypes="#//FTAElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//FTAElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//FTAPackageInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FTAPackageInterface" eSuperTypes="#//FTAPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
+        eType="#//FTAPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentPackageBinding" eSuperTypes="#//FTAPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participantPackage" lowerBound="2"
+        upperBound="-1" eType="#//FTAPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gate" eSuperTypes="#//FTAElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ANDGate" eSuperTypes="#//Gate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ORGate" eSuperTypes="#//Gate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InibitGate" eSuperTypes="#//Gate"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Subtree" eSuperTypes="#//FTAElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InTriangle" eSuperTypes="#//Subtree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutTriangle" eSuperTypes="#//Subtree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//FTAElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TopEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditioningEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UndevelopedEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermediateEvent" eSuperTypes="#//Event"/>
+</ecore:EPackage>

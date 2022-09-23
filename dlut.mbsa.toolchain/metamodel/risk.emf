@@ -1,0 +1,6 @@
+@namespace(uri="http://dlut.mbsa/risk", prefix="risk_")
+package risk;
+
+import "http://dlut.mbsa/base";
+
+
