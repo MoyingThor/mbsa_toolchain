@@ -1,0 +1,14 @@
+@namespace(uri="http://dlut.mbsa/mbsa", prefix="mbsa_")
+package mbsa;
+import "http://dlut.mbsa/base";
+import "http://dlut.mbsa/component";
+import "http://dlut.mbsa/requirement";
+import "http://dlut.mbsa/hazard";
+
+  
+  class MBSAPackage extends base.ArtifactElement {
+    val MBSAPackage[*] mbsaPackages;
+    val component.ComponentPackage[*] artifactPackage;
+    val requirement.RequirementPackage[*] argumentPackage;
+    val hazard.HazardPackage[*] terminologyPackage;
+  }

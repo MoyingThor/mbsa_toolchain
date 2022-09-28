@@ -3,8 +3,8 @@ package component;
 
 import "http://dlut.mbsa/base";
 
-abstract class ComponentElement extends base.ArtifactElement{
-
+abstract class ComponentElement extends base.ArtifactElement {
+	
 }
 
 class ComponentPackage extends ComponentElement {
@@ -18,7 +18,6 @@ class ComponentPackageInterface extends ComponentElement {
 
 class ComponentPackageBinding extends ComponentElement {
 	ref ComponentPackage[2..*] participantPackage;
-	
 }
 
 class Component extends ComponentElement {
@@ -26,9 +25,13 @@ class Component extends ComponentElement {
 	attr String component_name;
 	attr Boolean reuse;
 	attr Boolean cots;
+	attr float fit; //failure in time (hour e-1)
+	attr boolean safety_related;
 	ref Function function;
 	val Input[*] inputs;
 	val Output[*] outputs;
+	ref Component[*] sub_components;
+	val FailureMode[*] failure_modes;
 }
 
 class ComponentRelationship extends ComponentElement {
@@ -37,32 +40,54 @@ class ComponentRelationship extends ComponentElement {
 	ref Component target;
 }
 
-class Function extends ComponentElement {
+abstract class ComponentAsset extends ComponentElement {
+	
+}
+
+class Function extends ComponentAsset {
 	attr String func;
 }
 
-class Input extends ComponentElement {
+class Input extends ComponentAsset {
 	attr String input;
+	ref Component source;
 }
 
-class Output extends ComponentElement {
+class Output extends ComponentAsset {
 	attr String output;
+	ref Component target;
 }
 
-abstract class FailureElement extends base.ArtifactElement {
+abstract class ComponentSafetyElement extends ComponentAsset {
 	attr int identity;
 }
 
-class FailureMode extends FailureElement {
-	attr String mode;
-	attr String cause;
-	ref RegionalEffect regional;
-	ref HigherLevelEffect higher_level;
-	ref FinalEffect final;
+enum FailureSeverity {
+	catastrophic = 1;
+	fatal = 2;
+	moderate = 3;
+	minor = 4;
 }
 
-abstract class FailureEffect extends FailureElement {
-	attr String description;
+class FailureMode extends ComponentSafetyElement {
+	attr String mode;
+	attr String cause;
+	attr float probability;
+	val RegionalEffect regional;
+	val HigherLevelEffect higher_level;
+	val FinalEffect final;
+}
+
+class Safety_Mechanism extends ComponentSafetyElement {
+	ref FailureMode handle;
+	attr String mechanism;
+	attr float coverage;
+}
+
+
+abstract class FailureEffect extends ComponentSafetyElement {
+	attr String desc;
+	ref Component[*] affected;
 }
 
 class RegionalEffect extends FailureEffect {
@@ -76,3 +101,4 @@ class HigherLevelEffect extends FailureEffect {
 class FinalEffect extends FailureEffect {
 	
 }
+

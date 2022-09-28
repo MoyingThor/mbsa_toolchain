@@ -13,7 +13,7 @@ package base;
   }
   
   abstract class ModelElement extends BaseElement {
-    val LangString[1] name;
+    val LangString name;
     val Description[0..1] description;
     val ImplementationConstraint[*] implementationConstraint;
     val Note[*] note;

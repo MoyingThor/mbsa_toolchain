@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<component_:ComponentPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmi:id="_9wKoADrtEe28pPbFrflRig">
+  <name xmi:id="_Rp3WUDruEe28pPbFrflRig" lang="CN" content="&#x63a5;&#x6536;&#x673a;"/>
+  <components xsi:type="component_:Component" xmi:id="_mVfQ0DruEe28pPbFrflRig" identity="10" component_name="&#x5929;&#x7ebf;" function="_rqqlwDruEe28pPbFrflRig"/>
+  <components xsi:type="component_:Function" xmi:id="_rqqlwDruEe28pPbFrflRig" gid="F01" func="&#x63a5;&#x53d7;&#x5854;&#x53f0;&#x4fe1;&#x53f7;&#x5e76;&#x4f20;&#x9012;&#x81f3;RF&#x653e;&#x5927;&#x5668;"/>
+  <components xsi:type="component_:Component" xmi:id="_0q-IoDruEe28pPbFrflRig" identity="20" component_name="RF&#x653e;&#x5927;&#x5668;"/>
+  <components xsi:type="component_:Component" xmi:id="_3ODwcDruEe28pPbFrflRig" identity="30" component_name="&#x672c;&#x632f;"/>
+  <components xsi:type="component_:Component" xmi:id="_5nFdUDruEe28pPbFrflRig" identity="40" component_name="&#x6df7;&#x9891;&#x5668;"/>
+  <components xsi:type="component_:Component" xmi:id="_72WxQDruEe28pPbFrflRig" identity="50" component_name="IF&#x653e;&#x5927;&#x5668;"/>
+  <components xsi:type="component_:Component" xmi:id="_-EigEDruEe28pPbFrflRig" identity="60" component_name="&#x68c0;&#x6ce2;&#x5668;"/>
+  <components xsi:type="component_:Component" xmi:id="__pS3YDruEe28pPbFrflRig" identity="70" component_name="&#x97f3;&#x9891;&#x653e;&#x5927;&#x5668;"/>
+  <components xsi:type="component_:Component" xmi:id="_BbueUDrvEe28pPbFrflRig" identity="80" component_name="&#x5587;&#x53ed;"/>
+</component_:ComponentPackage>

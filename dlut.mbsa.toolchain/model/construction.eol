@@ -1,0 +1,78 @@
+
+var cp = new S!ComponentPackage;
+
+var c1 = createComponent("antenna",10);
+
+//createInput(c1, "tower signal");
+//createOutput(c1, "signal");
+
+var c2 = createComponent("RF Amplifier",20);
+//createInput(c2, "tower signal");
+//createOutput(c2, "amplified signal");
+
+var c3 = createComponent("local oscillator",30);
+//createOutput(c3, "stable frequency signal");
+//createOutput(c3, "stable frequency signal");
+
+var c4 = createComponent("mixer",40);
+//createInput(c4, "amplified signal");
+//createOutput(c4, "medium frequency signal");
+
+
+var c5 = createComponent("IF Amplifier",50);
+//createInput(c5, "medium frequency signal");
+//createOutput(c5, "amplified medium frequency signal");
+
+
+var c6 = createComponent("Geophone",60);
+//createInput(c6, "amplified medium frequency signal");
+//createOutput(c6, "effective signal");
+
+var c7 = createComponent("Audio Amplifier",70);
+//createInput(c7, "effective signal");
+//createOutput(c7, "driving signal");
+
+var c8 = createComponent("Speaker",80);
+//createInput(c8, "driving signal");
+//createOutput(c8, "sound signal");
+
+createRelationship(c1, c2, "transmit signal");
+createRelationship(c2, c4, "amplify signal");
+createRelationship(c4, c5, "mid frequency signal");
+createRelationship(c5, c6, "amplify mid frequency signal");
+createRelationship(c6, c7, "effective signal");
+createRelationship(c7, c8, "driving signal");
+
+createRelationship(c3, c2, "");
+createRelationship(c3, c4, "stablise frequency signal");
+createRelationship(c6, c2, "feedback signal");
+createRelationship(c6, c4, "");
+createRelationship(c6, c5, "");
+
+operation createRelationship(source, target, desc) {
+	var relation = new S!ComponentRelationship;
+	relation.source = source;
+	relation.target = target;
+	relation.label = desc;
+	cp.components.add(relation);
+}
+
+operation createComponent(name, id) {
+	var comp = new S!Component;
+	comp.component_name = name;
+	comp.identity = id;
+	cp.components.add(comp);
+	return comp;
+}
+
+operation createInput(component, input) {
+	var inp = new S!Input;
+	inp.input = input;
+	component.inputs.add(inp);
+}
+
+operation createOutput(component, output) {
+	var out = new S!Output;
+	out.output = output;
+	component.outputs.add(out);
+}

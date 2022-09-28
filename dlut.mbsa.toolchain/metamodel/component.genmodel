@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/dlut.mbsa.toolchain/src" modelPluginID="dlut.mbsa.toolchain"
+    modelName="Component" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>component.ecore</foreignModel>
+  <genPackages prefix="Component_" disposableProviderFactory="true" fileExtensions="component"
+      ecorePackage="component.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="component.ecore#//FailureSeverity">
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//FailureSeverity/catastrophic"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//FailureSeverity/fatal"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//FailureSeverity/moderate"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//FailureSeverity/minor"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="component.ecore#//ComponentElement"/>
+    <genClasses ecoreClass="component.ecore#//ComponentPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ComponentPackage/components"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentPackage/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ComponentPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentPackageInterface/implements"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ComponentPackageBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentPackageBinding/participantPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/identity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/component_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/reuse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/cots"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/fit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/safety_related"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Component/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/outputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Component/sub_components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/failure_modes"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//ComponentRelationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ComponentRelationship/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//ComponentRelationship/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="component.ecore#//ComponentAsset"/>
+    <genClasses ecoreClass="component.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Function/func"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Input/input"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Input/source"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Output/output"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Output/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="component.ecore#//ComponentSafetyElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ComponentSafetyElement/identity"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//FailureMode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/cause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/probability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/regional"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/higher_level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/final"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//Safety_Mechanism">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Safety_Mechanism/handle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Safety_Mechanism/mechanism"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Safety_Mechanism/coverage"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="component.ecore#//FailureEffect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureEffect/desc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//FailureEffect/affected"/>
+    </genClasses>
+    <genClasses ecoreClass="component.ecore#//RegionalEffect"/>
+    <genClasses ecoreClass="component.ecore#//HigherLevelEffect"/>
+    <genClasses ecoreClass="component.ecore#//FinalEffect"/>
+  </genPackages>
+  <genPackages prefix="Base_" fileExtensions="base" ecorePackage="http://dlut.mbsa/base#/">
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//Element"/>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//BaseElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//BaseElement/gid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//BaseElement/isCitation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//BaseElement/isAbstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//BaseElement/citedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//BaseElement/abstractForm"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//ModelElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/implementationConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/taggedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//LangString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//LangString/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//LangString/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//MultiLangString">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//MultiLangString/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//UtilityElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//UtilityElement/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//Description"/>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//ImplementationConstraint"/>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//Note"/>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//TaggedValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//TaggedValue/key"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//ArtifactElement"/>
+  </genPackages>
+</genmodel:GenModel>

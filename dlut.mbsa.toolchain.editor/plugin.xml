@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated component -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="component.presentation.Component_ModelWizardID"
+            name="%_UI_Component_ModelWizard_label"
+            class="component.presentation.Component_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Component_ModelFile.gif">
+         <description>%_UI_Component_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated component -->
+      <editor
+            id="component.presentation.Component_EditorID"
+            name="%_UI_Component_Editor_label"
+            icon="icons/full/obj16/Component_ModelFile.gif"
+            extensions="component"
+            class="component.presentation.Component_Editor"
+            contributorClass="component.presentation.Component_ActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated component -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="base.presentation.Base_ModelWizardID"
+            name="%_UI_Base_ModelWizard_label"
+            class="base.presentation.Base_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Base_ModelFile.gif">
+         <description>%_UI_Base_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated component -->
+      <editor
+            id="base.presentation.Base_EditorID"
+            name="%_UI_Base_Editor_label"
+            icon="icons/full/obj16/Base_ModelFile.gif"
+            extensions="base"
+            class="base.presentation.Base_Editor"
+            contributorClass="base.presentation.Base_ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

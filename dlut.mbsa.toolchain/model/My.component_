@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_:ComponentPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component">
+  <components xsi:type="component_:Component" identity="10" component_name="天线"/>
+  <components xsi:type="component_:Component" identity="20" component_name="RF放大器"/>
+  <components xsi:type="component_:Component" identity="30" component_name="本振"/>
+  <components xsi:type="component_:Component" identity="40" component_name="混频器"/>
+  <components xsi:type="component_:Component" identity="50" component_name="IF放大器"/>
+  <components xsi:type="component_:Component" identity="60" component_name="检波器"/>
+  <components xsi:type="component_:Component" identity="70" component_name="音频放大器"/>
+  <components xsi:type="component_:Component" identity="80" component_name="喇叭"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.0" target="//@components.1"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.1" target="//@components.3"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.3" target="//@components.4"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.2" target="//@components.1"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.2" target="//@components.3"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.4" target="//@components.5"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.5" target="//@components.6"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.6" target="//@components.7"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.5" target="//@components.1"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.5" target="//@components.3"/>
+  <components xsi:type="component_:ComponentRelationship" source="//@components.5" target="//@components.4"/>
+</component_:ComponentPackage>

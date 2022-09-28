@@ -1,9 +1,13 @@
-@namespace(uri="http:////dlut.mbsa/requirement", prefix="req_")
+@namespace(uri="http://dlut.mbsa/requirement", prefix="requirement_")
 package requirement;
 import "http://dlut.mbsa/base";
 
-  class RequirementPackage extends base.ArtifactElement {
-    val base.ArtifactElement[*] requirementElement;
+  abstract class RequirementElement extends base.ArtifactElement {
+  	
+  }
+  
+  class RequirementPackage extends RequirementElement {
+    val RequirementElement[*] requirementElement;
     ref RequirementPackageInterface[*] ~interface;
   }
 
@@ -14,3 +18,15 @@ import "http://dlut.mbsa/base";
   class RequirementPackageInterface extends RequirementPackage {
     ref RequirementPackage[1] implements;
   }
+  
+  class Requirement extends RequirementElement {
+  	attr String desc;
+  	attr String script;
+  }
+  
+  class RequirementRelationship extends RequirementElement {
+  	attr String label;
+  	ref Requirement source;
+  	ref Requirement target;
+  }
+  

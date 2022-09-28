@@ -1,0 +1,87 @@
+var nodes = S!Component.all;
+var edges = S!ComponentRelationship.all;
+
+var start = new Sequence();
+var stop = nodes.selectOne(c|c.identity = 80);
+
+var stack = new Sequence();
+var paths = new Sequence();
+
+"dfs starting...".println();
+getReliabilityChain();
+
+operation findStarts() {
+	for(n in nodes) {
+		if(isStartNode(n)) {
+			start.add(n);
+		}
+	}
+}
+
+operation getReliabilityChain(){
+	findStarts();
+	for(n in start) {
+		dfs(n, stop);
+	}
+	for(p in paths) {
+		for(x in p) {
+			("[" + x.identity + "] ").print();
+		}
+		"".println();
+	}
+		
+}
+
+operation getEdges(node) {
+	var ret = new Set();
+	for(e in edges) {
+		if(e.source = node) {
+			ret.add(e);
+		}
+	}
+	return ret;
+}
+
+operation dfs(start, end) {
+	start.~visited = true;
+	stack.add(start);
+	for(e in getEdges(start)) {
+		var v = e.target;
+		if(v = end) {
+			stack.add(v);
+			paths.add(stack.clone());
+			stack.remove(stack.last());
+			start.~visited = false;
+			break;
+		}
+		if(v.~visited.isUndefined() or not v.~visited) {
+			dfs(v, end);
+		}
+		
+	}
+	//stack.println();
+	stack.remove(stack.last());
+	start.~visited = false;
+}
+
+operation isEndNode(node) {
+	var cache = new Sequence();
+	for(e in edges) {
+		var ret = edges.select(e|e.target == node or e.source == node);
+		if(ret.forAll(r|r.target = node)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+operation isStartNode(node) {
+	var cache = new Sequence();
+	for(e in edges) {
+		var ret = edges.select(e|e.target == node or e.source == node);
+		if(ret.forAll(r|r.source = node)) {
+			return true;
+		}
+	}
+	return false;
+}

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hazard" nsURI="http://dlut.mbsa/hazard" nsPrefix="hazard_">
-  <eClassifiers xsi:type="ecore:EClass" name="HazardPackage" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement">
+  <eClassifiers xsi:type="ecore:EClass" name="HazardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardPackage" eSuperTypes="#//HazardElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
         eType="#//HazardousSituation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
@@ -15,7 +16,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
         eType="#//HazardPackage"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HazardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="HazardousSituation" eSuperTypes="#//HazardElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="#//Probability"/>

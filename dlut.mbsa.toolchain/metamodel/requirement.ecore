@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="requirement" nsURI="http:////dlut.mbsa/requirement" nsPrefix="req_">
-  <eClassifiers xsi:type="ecore:EClass" name="RequirementPackage" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="requirement" nsURI="http://dlut.mbsa/requirement" nsPrefix="requirement_">
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementElement" abstract="true"
+      eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementPackage" eSuperTypes="#//RequirementElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirementElement" upperBound="-1"
-        eType="ecore:EClass http://dlut.mbsa/base#//ArtifactElement" containment="true"/>
+        eType="#//RequirementElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
         eType="#//RequirementPackageInterface"/>
   </eClassifiers>
@@ -14,5 +16,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="RequirementPackageInterface" eSuperTypes="#//RequirementPackage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
         eType="#//RequirementPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement" eSuperTypes="#//RequirementElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="script" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementRelationship" eSuperTypes="#//RequirementElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Requirement"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -2,7 +2,11 @@
 package hazard;
 import "http://dlut.mbsa/base";
 
-class HazardPackage extends base.ArtifactElement {
+abstract class HazardElement extends base.ArtifactElement {
+	
+}
+
+class HazardPackage extends HazardElement {
 	val HazardousSituation[*] hazards;
 	ref HazardPackageInterface[*] ~interface;
 }
@@ -14,17 +18,12 @@ class HazardPackageBinding extends HazardPackage {
 class HazardPackageInterface extends HazardPackage {
 	ref HazardPackage[1] implements;
 }
-  
-abstract class HazardElement extends base.ArtifactElement{
-  	
-}
 
 class HazardousSituation extends HazardElement{
 	attr Severity[?] severity;
 	attr Probability[?] probability;
 	val Cause[*] causes;
 }
-
 
 //there should be a reference to a design
 class Cause extends HazardElement{
@@ -49,13 +48,10 @@ class Validation extends HazardElement{
 	attr String text;
 }
 
-
 //reference to design
 class SafetyDecisionRationale extends HazardElement{
 	attr String text;
 }
-
-
 
 enum Severity {
   catastrophic = 1;
