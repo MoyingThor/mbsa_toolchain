@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="mbsa.toolchain.design.Activator"
+               id="mbsa.toolchain.design"
+	       name="toolchain">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="mbsa.toolchain.design.SimulateAction"
+           id="mbsa.toolchain.design.simulateAction">
+     </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.BrowseAction"
+           id="mbsa.toolchain.design.browseAction">
+     </javaActions>
+  </extension>
+</plugin>
