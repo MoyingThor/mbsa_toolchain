@@ -3,7 +3,7 @@ package requirement;
 import "http://dlut.mbsa/base";
 
   abstract class RequirementElement extends base.ArtifactElement {
-  	
+  
   }
   
   class RequirementPackage extends RequirementElement {
@@ -20,8 +20,10 @@ import "http://dlut.mbsa/base";
   }
   
   class Requirement extends RequirementElement {
+  	attr int identity;
   	attr String desc;
   	attr String script;
+  	attr boolean satisfied;
   }
   
   class RequirementRelationship extends RequirementElement {

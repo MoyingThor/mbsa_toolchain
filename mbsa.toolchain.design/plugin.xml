@@ -17,5 +17,9 @@
            actionClass="mbsa.toolchain.design.BrowseAction"
            id="mbsa.toolchain.design.browseAction">
      </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.EGoToRequirementAction"
+           id="mbsa.toolchain.design.goto.requirement">
+     </javaActions>
   </extension>
 </plugin>

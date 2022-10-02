@@ -234,7 +234,7 @@ public class Requirement_PackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRequirement_Desc() {
+	public EAttribute getRequirement_Identity() {
 		return (EAttribute)requirementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -244,8 +244,28 @@ public class Requirement_PackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRequirement_Script() {
+	public EAttribute getRequirement_Desc() {
 		return (EAttribute)requirementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRequirement_Script() {
+		return (EAttribute)requirementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRequirement_Satisfied() {
+		return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -330,8 +350,10 @@ public class Requirement_PackageImpl extends EPackageImpl implements Requirement
 		createEReference(requirementPackageInterfaceEClass, REQUIREMENT_PACKAGE_INTERFACE__IMPLEMENTS);
 
 		requirementEClass = createEClass(REQUIREMENT);
+		createEAttribute(requirementEClass, REQUIREMENT__IDENTITY);
 		createEAttribute(requirementEClass, REQUIREMENT__DESC);
 		createEAttribute(requirementEClass, REQUIREMENT__SCRIPT);
+		createEAttribute(requirementEClass, REQUIREMENT__SATISFIED);
 
 		requirementRelationshipEClass = createEClass(REQUIREMENT_RELATIONSHIP);
 		createEAttribute(requirementRelationshipEClass, REQUIREMENT_RELATIONSHIP__LABEL);
@@ -391,8 +413,10 @@ public class Requirement_PackageImpl extends EPackageImpl implements Requirement
 		initEReference(getRequirementPackageInterface_Implements(), this.getRequirementPackage(), null, "implements", null, 1, 1, RequirementPackageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRequirement_Identity(), ecorePackage.getEInt(), "identity", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Script(), ecorePackage.getEString(), "script", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequirement_Satisfied(), ecorePackage.getEBoolean(), "satisfied", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementRelationshipEClass, RequirementRelationship.class, "RequirementRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequirementRelationship_Label(), ecorePackage.getEString(), "label", null, 0, 1, RequirementRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

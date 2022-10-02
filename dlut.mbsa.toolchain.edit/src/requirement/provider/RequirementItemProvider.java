@@ -45,10 +45,34 @@ public class RequirementItemProvider extends RequirementElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdentityPropertyDescriptor(object);
 			addDescPropertyDescriptor(object);
 			addScriptPropertyDescriptor(object);
+			addSatisfiedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Identity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdentityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Requirement_identity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Requirement_identity_feature", "_UI_Requirement_type"),
+				 Requirement_Package.Literals.REQUIREMENT__IDENTITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -96,6 +120,28 @@ public class RequirementItemProvider extends RequirementElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Satisfied feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSatisfiedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Requirement_satisfied_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Requirement_satisfied_feature", "_UI_Requirement_type"),
+				 Requirement_Package.Literals.REQUIREMENT__SATISFIED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Requirement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,8 +179,10 @@ public class RequirementItemProvider extends RequirementElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Requirement.class)) {
+			case Requirement_Package.REQUIREMENT__IDENTITY:
 			case Requirement_Package.REQUIREMENT__DESC:
 			case Requirement_Package.REQUIREMENT__SCRIPT:
+			case Requirement_Package.REQUIREMENT__SATISFIED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

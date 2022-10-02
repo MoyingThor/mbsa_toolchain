@@ -5,7 +5,7 @@ Bundle-SymbolicName: dlut.mbsa.toolchain.edit;singleton:=true
 Automatic-Module-Name: dlut.mbsa.toolchain.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: base.provider.BaseEditPlugin$Implementation
+Bundle-Activator: component.provider.ComponentEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

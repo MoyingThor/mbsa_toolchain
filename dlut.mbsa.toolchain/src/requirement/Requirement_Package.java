@@ -666,13 +666,22 @@ public interface Requirement_Package extends EPackage {
 	int REQUIREMENT__TAGGED_VALUE = REQUIREMENT_ELEMENT__TAGGED_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__IDENTITY = REQUIREMENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Desc</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__DESC = REQUIREMENT_ELEMENT_FEATURE_COUNT + 0;
+	int REQUIREMENT__DESC = REQUIREMENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Script</b></em>' attribute.
@@ -681,7 +690,16 @@ public interface Requirement_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__SCRIPT = REQUIREMENT_ELEMENT_FEATURE_COUNT + 1;
+	int REQUIREMENT__SCRIPT = REQUIREMENT_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Satisfied</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__SATISFIED = REQUIREMENT_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Requirement</em>' class.
@@ -690,7 +708,7 @@ public interface Requirement_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT_FEATURE_COUNT = REQUIREMENT_ELEMENT_FEATURE_COUNT + 2;
+	int REQUIREMENT_FEATURE_COUNT = REQUIREMENT_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link requirement.impl.RequirementRelationshipImpl <em>Requirement Relationship</em>}' class.
@@ -924,6 +942,17 @@ public interface Requirement_Package extends EPackage {
 	EClass getRequirement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link requirement.Requirement#getIdentity <em>Identity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Identity</em>'.
+	 * @see requirement.Requirement#getIdentity()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EAttribute getRequirement_Identity();
+
+	/**
 	 * Returns the meta object for the attribute '{@link requirement.Requirement#getDesc <em>Desc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -944,6 +973,17 @@ public interface Requirement_Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRequirement_Script();
+
+	/**
+	 * Returns the meta object for the attribute '{@link requirement.Requirement#isSatisfied <em>Satisfied</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Satisfied</em>'.
+	 * @see requirement.Requirement#isSatisfied()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EAttribute getRequirement_Satisfied();
 
 	/**
 	 * Returns the meta object for class '{@link requirement.RequirementRelationship <em>Requirement Relationship</em>}'.
@@ -1093,6 +1133,14 @@ public interface Requirement_Package extends EPackage {
 		EClass REQUIREMENT = eINSTANCE.getRequirement();
 
 		/**
+		 * The meta object literal for the '<em><b>Identity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIREMENT__IDENTITY = eINSTANCE.getRequirement_Identity();
+
+		/**
 		 * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1107,6 +1155,14 @@ public interface Requirement_Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute REQUIREMENT__SCRIPT = eINSTANCE.getRequirement_Script();
+
+		/**
+		 * The meta object literal for the '<em><b>Satisfied</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIREMENT__SATISFIED = eINSTANCE.getRequirement_Satisfied();
 
 		/**
 		 * The meta object literal for the '{@link requirement.impl.RequirementRelationshipImpl <em>Requirement Relationship</em>}' class.

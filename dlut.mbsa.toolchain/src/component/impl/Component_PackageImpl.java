@@ -462,6 +462,16 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
+	public EReference getComponent_Requirements() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getComponentRelationship() {
 		return componentRelationshipEClass;
 	}
@@ -841,6 +851,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEReference(componentEClass, COMPONENT__SUB_COMPONENTS);
 		createEReference(componentEClass, COMPONENT__FAILURE_MODES);
 		createEReference(componentEClass, COMPONENT__SAFETY_MECHANISMS);
+		createEReference(componentEClass, COMPONENT__REQUIREMENTS);
 
 		componentRelationshipEClass = createEClass(COMPONENT_RELATIONSHIP);
 		createEAttribute(componentRelationshipEClass, COMPONENT_RELATIONSHIP__LABEL);
@@ -966,6 +977,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEReference(getComponent_Sub_components(), this.getComponentElement(), null, "sub_components", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Failure_modes(), this.getFailureMode(), null, "failure_modes", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Safety_mechanisms(), this.getSafetyMechanism(), null, "safety_mechanisms", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Requirements(), theBase_Package.getArtifactElement(), null, "requirements", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentRelationshipEClass, ComponentRelationship.class, "ComponentRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentRelationship_Label(), ecorePackage.getEString(), "label", null, 0, 1, ComponentRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -2,6 +2,7 @@
  */
 package component;
 
+import base.ArtifactElement;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -26,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link component.Component#getSub_components <em>Sub components</em>}</li>
  *   <li>{@link component.Component#getFailure_modes <em>Failure modes</em>}</li>
  *   <li>{@link component.Component#getSafety_mechanisms <em>Safety mechanisms</em>}</li>
+ *   <li>{@link component.Component#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @see component.Component_Package#getComponent()
@@ -268,5 +270,17 @@ public interface Component extends ComponentElement {
 	 * @generated
 	 */
 	EList<SafetyMechanism> getSafety_mechanisms();
+
+	/**
+	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.
+	 * The list contents are of type {@link base.ArtifactElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirements</em>' reference list.
+	 * @see component.Component_Package#getComponent_Requirements()
+	 * @model
+	 * @generated
+	 */
+	EList<ArtifactElement> getRequirements();
 
 } // Component

@@ -2,6 +2,7 @@
  */
 package component.impl;
 
+import base.ArtifactElement;
 import component.Component;
 import component.ComponentElement;
 import component.Component_Package;
@@ -48,6 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link component.impl.ComponentImpl#getSub_components <em>Sub components</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFailure_modes <em>Failure modes</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSafety_mechanisms <em>Safety mechanisms</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @generated
@@ -252,6 +254,16 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<SafetyMechanism> safety_mechanisms;
+
+	/**
+	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ArtifactElement> requirements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -544,6 +556,19 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<ArtifactElement> getRequirements() {
+		if (requirements == null) {
+			requirements = new EObjectResolvingEList<ArtifactElement>(ArtifactElement.class, this, Component_Package.COMPONENT__REQUIREMENTS);
+		}
+		return requirements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Component_Package.COMPONENT__INPUTS:
@@ -595,6 +620,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return getFailure_modes();
 			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
 				return getSafety_mechanisms();
+			case Component_Package.COMPONENT__REQUIREMENTS:
+				return getRequirements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -652,6 +679,10 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				getSafety_mechanisms().clear();
 				getSafety_mechanisms().addAll((Collection<? extends SafetyMechanism>)newValue);
 				return;
+			case Component_Package.COMPONENT__REQUIREMENTS:
+				getRequirements().clear();
+				getRequirements().addAll((Collection<? extends ArtifactElement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -703,6 +734,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
 				getSafety_mechanisms().clear();
 				return;
+			case Component_Package.COMPONENT__REQUIREMENTS:
+				getRequirements().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -741,6 +775,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return failure_modes != null && !failure_modes.isEmpty();
 			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
 				return safety_mechanisms != null && !safety_mechanisms.isEmpty();
+			case Component_Package.COMPONENT__REQUIREMENTS:
+				return requirements != null && !requirements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

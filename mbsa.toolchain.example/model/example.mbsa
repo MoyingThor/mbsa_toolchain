@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mbsa_:MBSAPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmlns:mbsa_="http://dlut.mbsa/mbsa">
+<mbsa_:MBSAPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmlns:mbsa_="http://dlut.mbsa/mbsa" xmlns:requirement_="http://dlut.mbsa/requirement">
   <componentPackage>
-    <name content="新组件包"/>
+    <name content="通讯系统组件"/>
     <components xsi:type="component_:Component" identity="10" component_name="天线"/>
     <components xsi:type="component_:Component" identity="20" component_name="RF放大器"/>
     <components xsi:type="component_:ComponentRelationship" label="传递信号" source="//@componentPackage.0/@components.0" target="//@componentPackage.0/@components.1"/>
@@ -28,9 +28,16 @@
     <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.5"/>
   </componentPackage>
   <requirementPackage>
-    <name content="新需求包"/>
+    <name content="通讯系统需求包"/>
+    <requirementElement xsi:type="requirement_:Requirement" desc="通讯系统中天线的安全完整性等级至少为2" script="self.sil >= 2;">
+      <name content="新安全需求"/>
+    </requirementElement>
+    <requirementElement xsi:type="requirement_:Requirement" desc="通讯系统中RF放大器的安全完整性等级至少为2" script="self.sil >= 2;">
+      <name content="新安全需求"/>
+    </requirementElement>
+    <requirementElement xsi:type="requirement_:RequirementRelationship" label="支持" source="//@requirementPackage.0/@requirementElement.0" target="//@requirementPackage.0/@requirementElement.1"/>
   </requirementPackage>
   <hazardPackage>
-    <name content="新危险分析包"/>
+    <name content="通讯系统危险分析包"/>
   </hazardPackage>
 </mbsa_:MBSAPackage>

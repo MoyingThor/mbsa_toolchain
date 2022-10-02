@@ -18,8 +18,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference requirement.ecore#//RequirementPackageInterface/implements"/>
     </genClasses>
     <genClasses ecoreClass="requirement.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirement.ecore#//Requirement/identity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirement.ecore#//Requirement/desc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirement.ecore#//Requirement/script"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirement.ecore#//Requirement/satisfied"/>
     </genClasses>
     <genClasses ecoreClass="requirement.ecore#//RequirementRelationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirement.ecore#//RequirementRelationship/label"/>

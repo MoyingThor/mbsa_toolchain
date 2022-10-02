@@ -748,13 +748,22 @@ public interface Component_Package extends EPackage {
 	int COMPONENT__SAFETY_MECHANISMS = COMPONENT_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__REQUIREMENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.
@@ -2601,6 +2610,17 @@ public interface Component_Package extends EPackage {
 	EReference getComponent_Safety_mechanisms();
 
 	/**
+	 * Returns the meta object for the reference list '{@link component.Component#getRequirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Requirements</em>'.
+	 * @see component.Component#getRequirements()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Requirements();
+
+	/**
 	 * Returns the meta object for class '{@link component.ComponentRelationship <em>Component Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3157,6 +3177,14 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__SAFETY_MECHANISMS = eINSTANCE.getComponent_Safety_mechanisms();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirements</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__REQUIREMENTS = eINSTANCE.getComponent_Requirements();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.

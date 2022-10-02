@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:hazard_="http://dlut.mbsa/hazard" xmlns:mbsa_="http://dlut.mbsa/mbsa" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:requirement_="http://dlut.mbsa/requirement" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_DwK3ID8WEe2CW9XZpLS4Qg" selectedViews="_dh6JwEEtEe2FRIbZDBMjIQ" version="14.6.0.202110251100">
+  <viewpoint:DAnalysis uid="_DwK3ID8WEe2CW9XZpLS4Qg" selectedViews="_dh6JwEEtEe2FRIbZDBMjIQ" version="15.0.0.202209061200">
     <semanticResources>model/example_component2.component</semanticResources>
     <semanticResources>model/example.mbsa</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_G0FUED8WEe2CW9XZpLS4Qg">
@@ -20,7 +20,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_dh6JwEEtEe2FRIbZDBMjIQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_gmR5sEEtEe2FRIbZDBMjIQ" name="new mbsa diagram" repPath="#_gmMaIEEtEe2FRIbZDBMjIQ" changeId="cca68eac-1661-4d5d-877b-76547cf82131">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_gmR5sEEtEe2FRIbZDBMjIQ" name="new mbsa diagram" repPath="#_gmMaIEEtEe2FRIbZDBMjIQ" changeId="d7f874cf-2896-40f9-a25e-56ba8d3b79f8">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa%20diagram']"/>
         <target xmi:type="mbsa_:MBSAPackage" href="model/example.mbsa#/"/>
       </ownedRepresentationDescriptors>
@@ -43,6 +43,10 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_d_DKYEF9Ee2VzcRhmHja4Q" name="component_diagram" repPath="#_d_BVMEF9Ee2VzcRhmHja4Q" changeId="a29d3d54-e295-4bad-8d32-a5c370f7d09a">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_diagram']"/>
         <target xmi:type="component_:Component" href="model/example.mbsa#//@componentPackage.0/@components.5"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_N1ApoEIKEe25tssZhM_1IA" name="requirement diagram" repPath="#_N1ACkEIKEe25tssZhM_1IA" changeId="2f75c61d-8627-4f55-94ee-9d444327bd3a">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']"/>
+        <target xmi:type="requirement_:RequirementPackage" href="model/example.mbsa#//@requirementPackage.0"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -1068,7 +1072,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmjmgkEtEe2FRIbZDBMjIQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gmgjMUEtEe2FRIbZDBMjIQ" fontName="Microsoft YaHei UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmgjMkEtEe2FRIbZDBMjIQ" width="150" height="150"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmgjMkEtEe2FRIbZDBMjIQ" x="140" y="265" width="150" height="150"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_gmi_cEEtEe2FRIbZDBMjIQ" type="2001" element="_gmeuAEEtEe2FRIbZDBMjIQ">
           <children xmi:type="notation:Node" xmi:id="_gmi_c0EtEe2FRIbZDBMjIQ" type="5002">
@@ -1079,7 +1083,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmjmhUEtEe2FRIbZDBMjIQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gmi_cUEtEe2FRIbZDBMjIQ" fontName="Microsoft YaHei UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmi_ckEtEe2FRIbZDBMjIQ" x="210" width="150" height="150"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmi_ckEtEe2FRIbZDBMjIQ" x="320" y="265" width="150" height="150"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_gmi_dUEtEe2FRIbZDBMjIQ" type="2001" element="_gmeuA0EtEe2FRIbZDBMjIQ">
           <children xmi:type="notation:Node" xmi:id="_gmi_eEEtEe2FRIbZDBMjIQ" type="5002">
@@ -1090,7 +1094,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmjmiEEtEe2FRIbZDBMjIQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gmi_dkEtEe2FRIbZDBMjIQ" fontName="Microsoft YaHei UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmi_d0EtEe2FRIbZDBMjIQ" x="420" width="150" height="150"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gmi_d0EtEe2FRIbZDBMjIQ" x="920" y="310" width="150" height="150"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_gmXZQkEtEe2FRIbZDBMjIQ"/>
       </data>
@@ -1098,25 +1102,34 @@
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_gmfVEEEtEe2FRIbZDBMjIQ" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_gmfVEUEtEe2FRIbZDBMjIQ"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gmbDoEEtEe2FRIbZDBMjIQ" name="新组件包" width="15" height="15" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gmbDoEEtEe2FRIbZDBMjIQ" name="通讯系统组件" width="15" height="15" resizeKind="NSEW">
       <target xmi:type="component_:ComponentPackage" href="model/example.mbsa#//@componentPackage.0"/>
       <semanticElements xmi:type="component_:ComponentPackage" href="model/example.mbsa#//@componentPackage.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:BundledImage" uid="_gmc40EEtEe2FRIbZDBMjIQ" labelSize="12" showIcon="false" borderColor="233,185,110" labelPosition="node" color="255,255,255">
         <description xmi:type="style:BundledImageDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa%20diagram']/@defaultLayer/@nodeMappings[name='ComponentPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa%20diagram']/@defaultLayer/@nodeMappings[name='ComponentPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gmeuAEEtEe2FRIbZDBMjIQ" name="新需求包" width="15" height="15" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gmeuAEEtEe2FRIbZDBMjIQ" name="通讯系统需求包" width="15" height="15" resizeKind="NSEW">
       <target xmi:type="requirement_:RequirementPackage" href="model/example.mbsa#//@requirementPackage.0"/>
       <semanticElements xmi:type="requirement_:RequirementPackage" href="model/example.mbsa#//@requirementPackage.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:BundledImage" uid="_gmeuAUEtEe2FRIbZDBMjIQ" labelSize="12" showIcon="false" borderColor="77,137,20" labelPosition="node" color="255,255,255">
         <description xmi:type="style:BundledImageDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa%20diagram']/@defaultLayer/@nodeMappings[name='RequirementPackage']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa%20diagram']/@defaultLayer/@nodeMappings[name='RequirementPackage']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gmeuA0EtEe2FRIbZDBMjIQ" name="新危险分析包" width="15" height="15" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gmeuA0EtEe2FRIbZDBMjIQ" name="通讯系统危险分析包" width="15" height="15" resizeKind="NSEW">
       <target xmi:type="hazard_:HazardPackage" href="model/example.mbsa#//@hazardPackage.0"/>
       <semanticElements xmi:type="hazard_:HazardPackage" href="model/example.mbsa#//@hazardPackage.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:BundledImage" uid="_gmeuBEEtEe2FRIbZDBMjIQ" labelSize="12" showIcon="false" borderColor="156,12,12" labelPosition="node" color="255,255,255">
         <description xmi:type="style:BundledImageDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='mbsa%20diagram']/@defaultLayer/@nodeMappings[name='HazardPackage']/@style"/>
       </ownedStyle>
@@ -1856,5 +1869,88 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_d_B8QEF9Ee2VzcRhmHja4Q"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='component_diagram']/@defaultLayer"/>
     <target xmi:type="component_:Component" href="model/example.mbsa#//@componentPackage.0/@components.5"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_N1ACkEIKEe25tssZhM_1IA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_N1H-YEIKEe25tssZhM_1IA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_N1H-YUIKEe25tssZhM_1IA" type="Sirius" element="_N1ACkEIKEe25tssZhM_1IA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_bCr58EIMEe28TLJiLBn2NQ" type="2001" element="_bCqEwEIMEe28TLJiLBn2NQ">
+          <children xmi:type="notation:Node" xmi:id="_bCr580IMEe28TLJiLBn2NQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_bCr59EIMEe28TLJiLBn2NQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bCr59UIMEe28TLJiLBn2NQ" type="3003" element="_bCqr0EIMEe28TLJiLBn2NQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_bCr59kIMEe28TLJiLBn2NQ" fontName="Microsoft YaHei UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bCr590IMEe28TLJiLBn2NQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_bCr58UIMEe28TLJiLBn2NQ" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bCr58kIMEe28TLJiLBn2NQ" x="320" y="315" width="200" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_gD_QokIMEe28TLJiLBn2NQ" type="2001" element="_gD-CgEIMEe28TLJiLBn2NQ">
+          <children xmi:type="notation:Node" xmi:id="_gD_QpUIMEe28TLJiLBn2NQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_gD_QpkIMEe28TLJiLBn2NQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_gD_Qp0IMEe28TLJiLBn2NQ" type="3003" element="_gD-CgUIMEe28TLJiLBn2NQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gD_QqEIMEe28TLJiLBn2NQ" fontName="Microsoft YaHei UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gD_QqUIMEe28TLJiLBn2NQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gD_Qo0IMEe28TLJiLBn2NQ" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gD_QpEIMEe28TLJiLBn2NQ" x="825" y="364" width="200" height="50"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_N1H-YkIKEe25tssZhM_1IA"/>
+        <edges xmi:type="notation:Edge" xmi:id="_63z4dkIMEe28TLJiLBn2NQ" type="4001" element="_63xcMEIMEe28TLJiLBn2NQ" source="_bCr58EIMEe28TLJiLBn2NQ" target="_gD_QokIMEe28TLJiLBn2NQ">
+          <children xmi:type="notation:Node" xmi:id="_630fgEIMEe28TLJiLBn2NQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_630fgUIMEe28TLJiLBn2NQ" x="-7" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_630fgkIMEe28TLJiLBn2NQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_630fg0IMEe28TLJiLBn2NQ" x="3" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_630fhEIMEe28TLJiLBn2NQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_630fhUIMEe28TLJiLBn2NQ" x="4" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_63z4d0IMEe28TLJiLBn2NQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_63z4eEIMEe28TLJiLBn2NQ" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_63z4eUIMEe28TLJiLBn2NQ" points="[0, 0, -305, -54]$[305, 54, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_630fhkIMEe28TLJiLBn2NQ" id="(1.0,0.3)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_630fh0IMEe28TLJiLBn2NQ" id="(0.0,0.4)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_N1IlcEIKEe25tssZhM_1IA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_N1IlcUIKEe25tssZhM_1IA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_bCqEwEIMEe28TLJiLBn2NQ" name="0: 新安全需求" outgoingEdges="_63xcMEIMEe28TLJiLBn2NQ" width="20" height="5" resizeKind="NSEW">
+      <target xmi:type="requirement_:Requirement" href="model/example.mbsa#//@requirementPackage.0/@requirementElement.0"/>
+      <semanticElements xmi:type="requirement_:Requirement" href="model/example.mbsa#//@requirementPackage.0/@requirementElement.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_bCqr0EIMEe28TLJiLBn2NQ" labelSize="12" showIcon="false" labelPosition="node" width="20" height="5" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer/@nodeMappings[name='RequirementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer/@nodeMappings[name='RequirementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gD-CgEIMEe28TLJiLBn2NQ" name="0: 新安全需求" incomingEdges="_63xcMEIMEe28TLJiLBn2NQ" width="20" height="5" resizeKind="NSEW">
+      <target xmi:type="requirement_:Requirement" href="model/example.mbsa#//@requirementPackage.0/@requirementElement.1"/>
+      <semanticElements xmi:type="requirement_:Requirement" href="model/example.mbsa#//@requirementPackage.0/@requirementElement.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_gD-CgUIMEe28TLJiLBn2NQ" labelSize="12" showIcon="false" labelPosition="node" width="20" height="5" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer/@nodeMappings[name='RequirementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer/@nodeMappings[name='RequirementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_63xcMEIMEe28TLJiLBn2NQ" name="支持" sourceNode="_bCqEwEIMEe28TLJiLBn2NQ" targetNode="_gD-CgEIMEe28TLJiLBn2NQ">
+      <target xmi:type="requirement_:RequirementRelationship" href="model/example.mbsa#//@requirementPackage.0/@requirementElement.2"/>
+      <semanticElements xmi:type="requirement_:RequirementRelationship" href="model/example.mbsa#//@requirementPackage.0/@requirementElement.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_63xcMUIMEe28TLJiLBn2NQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer/@edgeMappings[name='RequirementRelationship']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_63xcMkIMEe28TLJiLBn2NQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer/@edgeMappings[name='RequirementRelationship']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_N1ACkUIKEe25tssZhM_1IA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/mbsa.toolchain.design/description/toolchain.odesign#//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='requirement%20diagram']/@defaultLayer"/>
+    <target xmi:type="requirement_:RequirementPackage" href="model/example.mbsa#//@requirementPackage.0"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

@@ -56,6 +56,7 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			addSafety_relatedPropertyDescriptor(object);
 			addSilPropertyDescriptor(object);
 			addFunctionPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -228,6 +229,28 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 				 getString("_UI_Component_function_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Component_function_feature", "_UI_Component_type"),
 				 Component_Package.Literals.COMPONENT__FUNCTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_requirements_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_requirements_feature", "_UI_Component_type"),
+				 Component_Package.Literals.COMPONENT__REQUIREMENTS,
 				 true,
 				 false,
 				 true,

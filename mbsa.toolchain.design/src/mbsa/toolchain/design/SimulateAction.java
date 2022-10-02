@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.NodeStyle;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
+import org.eclipse.sirius.diagram.model.business.internal.spec.DNodeSpec;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;

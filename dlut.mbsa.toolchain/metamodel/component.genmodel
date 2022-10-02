@@ -37,6 +37,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/sub_components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/failure_modes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/safety_mechanisms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Component/requirements"/>
     </genClasses>
     <genClasses ecoreClass="component.ecore#//ComponentRelationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ComponentRelationship/label"/>
