@@ -685,13 +685,22 @@ public interface Component_Package extends EPackage {
 	int COMPONENT__SAFETY_RELATED = COMPONENT_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Sil</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__SIL = COMPONENT_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FUNCTION = COMPONENT_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT__FUNCTION = COMPONENT_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -700,7 +709,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__INPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT__INPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -709,16 +718,16 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__OUTPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT__OUTPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Sub components</b></em>' reference list.
+	 * The feature id for the '<em><b>Sub components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SUB_COMPONENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 9;
+	int COMPONENT__SUB_COMPONENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Failure modes</b></em>' containment reference list.
@@ -727,7 +736,16 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FAILURE_MODES = COMPONENT_ELEMENT_FEATURE_COUNT + 10;
+	int COMPONENT__FAILURE_MODES = COMPONENT_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Safety mechanisms</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__SAFETY_MECHANISMS = COMPONENT_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -736,7 +754,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 11;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.
@@ -1646,11 +1664,11 @@ public interface Component_Package extends EPackage {
 	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link component.impl.Safety_MechanismImpl <em>Safety Mechanism</em>}' class.
+	 * The meta object id for the '{@link component.impl.SafetyMechanismImpl <em>Safety Mechanism</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see component.impl.Safety_MechanismImpl
-	 * @see component.impl.Component_PackageImpl#getSafety_Mechanism()
+	 * @see component.impl.SafetyMechanismImpl
+	 * @see component.impl.Component_PackageImpl#getSafetyMechanism()
 	 * @generated
 	 */
 	int SAFETY_MECHANISM = 12;
@@ -2506,6 +2524,17 @@ public interface Component_Package extends EPackage {
 	EAttribute getComponent_Safety_related();
 
 	/**
+	 * Returns the meta object for the attribute '{@link component.Component#getSil <em>Sil</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sil</em>'.
+	 * @see component.Component#getSil()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_Sil();
+
+	/**
 	 * Returns the meta object for the reference '{@link component.Component#getFunction <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2539,10 +2568,10 @@ public interface Component_Package extends EPackage {
 	EReference getComponent_Outputs();
 
 	/**
-	 * Returns the meta object for the reference list '{@link component.Component#getSub_components <em>Sub components</em>}'.
+	 * Returns the meta object for the containment reference list '{@link component.Component#getSub_components <em>Sub components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub components</em>'.
+	 * @return the meta object for the containment reference list '<em>Sub components</em>'.
 	 * @see component.Component#getSub_components()
 	 * @see #getComponent()
 	 * @generated
@@ -2559,6 +2588,17 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_Failure_modes();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link component.Component#getSafety_mechanisms <em>Safety mechanisms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Safety mechanisms</em>'.
+	 * @see component.Component#getSafety_mechanisms()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Safety_mechanisms();
 
 	/**
 	 * Returns the meta object for class '{@link component.ComponentRelationship <em>Component Relationship</em>}'.
@@ -2796,47 +2836,47 @@ public interface Component_Package extends EPackage {
 	EReference getFailureMode_Final();
 
 	/**
-	 * Returns the meta object for class '{@link component.Safety_Mechanism <em>Safety Mechanism</em>}'.
+	 * Returns the meta object for class '{@link component.SafetyMechanism <em>Safety Mechanism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Safety Mechanism</em>'.
-	 * @see component.Safety_Mechanism
+	 * @see component.SafetyMechanism
 	 * @generated
 	 */
-	EClass getSafety_Mechanism();
+	EClass getSafetyMechanism();
 
 	/**
-	 * Returns the meta object for the reference '{@link component.Safety_Mechanism#getHandle <em>Handle</em>}'.
+	 * Returns the meta object for the reference '{@link component.SafetyMechanism#getHandle <em>Handle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Handle</em>'.
-	 * @see component.Safety_Mechanism#getHandle()
-	 * @see #getSafety_Mechanism()
+	 * @see component.SafetyMechanism#getHandle()
+	 * @see #getSafetyMechanism()
 	 * @generated
 	 */
-	EReference getSafety_Mechanism_Handle();
+	EReference getSafetyMechanism_Handle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link component.Safety_Mechanism#getMechanism <em>Mechanism</em>}'.
+	 * Returns the meta object for the attribute '{@link component.SafetyMechanism#getMechanism <em>Mechanism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mechanism</em>'.
-	 * @see component.Safety_Mechanism#getMechanism()
-	 * @see #getSafety_Mechanism()
+	 * @see component.SafetyMechanism#getMechanism()
+	 * @see #getSafetyMechanism()
 	 * @generated
 	 */
-	EAttribute getSafety_Mechanism_Mechanism();
+	EAttribute getSafetyMechanism_Mechanism();
 
 	/**
-	 * Returns the meta object for the attribute '{@link component.Safety_Mechanism#getCoverage <em>Coverage</em>}'.
+	 * Returns the meta object for the attribute '{@link component.SafetyMechanism#getCoverage <em>Coverage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Coverage</em>'.
-	 * @see component.Safety_Mechanism#getCoverage()
-	 * @see #getSafety_Mechanism()
+	 * @see component.SafetyMechanism#getCoverage()
+	 * @see #getSafetyMechanism()
 	 * @generated
 	 */
-	EAttribute getSafety_Mechanism_Coverage();
+	EAttribute getSafetyMechanism_Coverage();
 
 	/**
 	 * Returns the meta object for class '{@link component.FailureEffect <em>Failure Effect</em>}'.
@@ -3063,6 +3103,14 @@ public interface Component_Package extends EPackage {
 		EAttribute COMPONENT__SAFETY_RELATED = eINSTANCE.getComponent_Safety_related();
 
 		/**
+		 * The meta object literal for the '<em><b>Sil</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__SIL = eINSTANCE.getComponent_Sil();
+
+		/**
 		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3087,7 +3135,7 @@ public interface Component_Package extends EPackage {
 		EReference COMPONENT__OUTPUTS = eINSTANCE.getComponent_Outputs();
 
 		/**
-		 * The meta object literal for the '<em><b>Sub components</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Sub components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3101,6 +3149,14 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__FAILURE_MODES = eINSTANCE.getComponent_Failure_modes();
+
+		/**
+		 * The meta object literal for the '<em><b>Safety mechanisms</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__SAFETY_MECHANISMS = eINSTANCE.getComponent_Safety_mechanisms();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.
@@ -3293,14 +3349,14 @@ public interface Component_Package extends EPackage {
 		EReference FAILURE_MODE__FINAL = eINSTANCE.getFailureMode_Final();
 
 		/**
-		 * The meta object literal for the '{@link component.impl.Safety_MechanismImpl <em>Safety Mechanism</em>}' class.
+		 * The meta object literal for the '{@link component.impl.SafetyMechanismImpl <em>Safety Mechanism</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see component.impl.Safety_MechanismImpl
-		 * @see component.impl.Component_PackageImpl#getSafety_Mechanism()
+		 * @see component.impl.SafetyMechanismImpl
+		 * @see component.impl.Component_PackageImpl#getSafetyMechanism()
 		 * @generated
 		 */
-		EClass SAFETY_MECHANISM = eINSTANCE.getSafety_Mechanism();
+		EClass SAFETY_MECHANISM = eINSTANCE.getSafetyMechanism();
 
 		/**
 		 * The meta object literal for the '<em><b>Handle</b></em>' reference feature.
@@ -3308,7 +3364,7 @@ public interface Component_Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SAFETY_MECHANISM__HANDLE = eINSTANCE.getSafety_Mechanism_Handle();
+		EReference SAFETY_MECHANISM__HANDLE = eINSTANCE.getSafetyMechanism_Handle();
 
 		/**
 		 * The meta object literal for the '<em><b>Mechanism</b></em>' attribute feature.
@@ -3316,7 +3372,7 @@ public interface Component_Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SAFETY_MECHANISM__MECHANISM = eINSTANCE.getSafety_Mechanism_Mechanism();
+		EAttribute SAFETY_MECHANISM__MECHANISM = eINSTANCE.getSafetyMechanism_Mechanism();
 
 		/**
 		 * The meta object literal for the '<em><b>Coverage</b></em>' attribute feature.
@@ -3324,7 +3380,7 @@ public interface Component_Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SAFETY_MECHANISM__COVERAGE = eINSTANCE.getSafety_Mechanism_Coverage();
+		EAttribute SAFETY_MECHANISM__COVERAGE = eINSTANCE.getSafetyMechanism_Coverage();
 
 		/**
 		 * The meta object literal for the '{@link component.impl.FailureEffectImpl <em>Failure Effect</em>}' class.

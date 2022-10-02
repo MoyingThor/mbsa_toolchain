@@ -208,7 +208,7 @@ public class ComponentPackageItemProvider extends ComponentElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(Component_Package.Literals.COMPONENT_PACKAGE__COMPONENTS,
-				 Component_Factory.eINSTANCE.createSafety_Mechanism()));
+				 Component_Factory.eINSTANCE.createSafetyMechanism()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -23,15 +23,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cots" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="safety_related" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sil" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//Function"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Input" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
         eType="#//Output" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sub_components" upperBound="-1"
-        eType="#//Component"/>
+        eType="#//ComponentElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="failure_modes" upperBound="-1"
         eType="#//FailureMode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="safety_mechanisms" upperBound="-1"
+        eType="#//SafetyMechanism" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentRelationship" eSuperTypes="#//ComponentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -71,7 +74,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="final" eType="#//FinalEffect"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Safety_Mechanism" eSuperTypes="#//ComponentSafetyElement">
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyMechanism" eSuperTypes="#//ComponentSafetyElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="handle" eType="#//FailureMode"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanism" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coverage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>

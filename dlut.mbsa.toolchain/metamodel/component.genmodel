@@ -30,11 +30,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/cots"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/fit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/safety_related"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/sil"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Component/function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/inputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/outputs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Component/sub_components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/sub_components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/failure_modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/safety_mechanisms"/>
     </genClasses>
     <genClasses ecoreClass="component.ecore#//ComponentRelationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//ComponentRelationship/label"/>
@@ -64,10 +66,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/higher_level"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/final"/>
     </genClasses>
-    <genClasses ecoreClass="component.ecore#//Safety_Mechanism">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Safety_Mechanism/handle"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Safety_Mechanism/mechanism"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Safety_Mechanism/coverage"/>
+    <genClasses ecoreClass="component.ecore#//SafetyMechanism">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//SafetyMechanism/handle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//SafetyMechanism/mechanism"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//SafetyMechanism/coverage"/>
     </genClasses>
     <genClasses image="false" ecoreClass="component.ecore#//FailureEffect">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureEffect/desc"/>

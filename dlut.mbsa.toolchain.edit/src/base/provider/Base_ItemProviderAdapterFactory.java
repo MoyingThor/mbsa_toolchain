@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -31,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
+public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -214,7 +215,6 @@ public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -225,7 +225,6 @@ public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -274,7 +273,6 @@ public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -285,7 +283,6 @@ public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -296,13 +293,27 @@ public class Base_ItemProviderAdapterFactory extends Base_AdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
+	}
+
+	/**
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void dispose() {
+		if (langStringItemProvider != null) langStringItemProvider.dispose();
+		if (multiLangStringItemProvider != null) multiLangStringItemProvider.dispose();
+		if (descriptionItemProvider != null) descriptionItemProvider.dispose();
+		if (implementationConstraintItemProvider != null) implementationConstraintItemProvider.dispose();
+		if (noteItemProvider != null) noteItemProvider.dispose();
+		if (taggedValueItemProvider != null) taggedValueItemProvider.dispose();
 	}
 
 }

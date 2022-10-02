@@ -35,6 +35,90 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mbsa -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="requirement.presentation.Requirement_ModelWizardID"
+            name="%_UI_Requirement_ModelWizard_label"
+            class="requirement.presentation.Requirement_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Requirement_ModelFile.gif">
+         <description>%_UI_Requirement_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mbsa -->
+      <editor
+            id="requirement.presentation.Requirement_EditorID"
+            name="%_UI_Requirement_Editor_label"
+            icon="icons/full/obj16/Requirement_ModelFile.gif"
+            extensions="requirement"
+            class="requirement.presentation.Requirement_Editor"
+            contributorClass="requirement.presentation.Requirement_ActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated hazard -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hazard.presentation.Hazard_ModelWizardID"
+            name="%_UI_Hazard_ModelWizard_label"
+            class="hazard.presentation.Hazard_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Hazard_ModelFile.gif">
+         <description>%_UI_Hazard_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated hazard -->
+      <editor
+            id="hazard.presentation.Hazard_EditorID"
+            name="%_UI_Hazard_Editor_label"
+            icon="icons/full/obj16/Hazard_ModelFile.gif"
+            extensions="hazard"
+            class="hazard.presentation.Hazard_Editor"
+            contributorClass="hazard.presentation.Hazard_ActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mbsa -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mbsa.presentation.MBSA_ModelWizardID"
+            name="%_UI_MBSA_ModelWizard_label"
+            class="mbsa.presentation.MBSA_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MBSA_ModelFile.gif">
+         <description>%_UI_MBSA_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mbsa -->
+      <editor
+            id="mbsa.presentation.MBSA_EditorID"
+            name="%_UI_MBSA_Editor_label"
+            icon="icons/full/obj16/MBSA_ModelFile.gif"
+            extensions="mbsa"
+            class="mbsa.presentation.MBSA_Editor"
+            contributorClass="mbsa.presentation.MBSA_ActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated component -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"

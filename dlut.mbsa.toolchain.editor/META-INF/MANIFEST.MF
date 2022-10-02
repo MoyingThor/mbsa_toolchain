@@ -5,11 +5,14 @@ Bundle-SymbolicName: dlut.mbsa.toolchain.editor;singleton:=true
 Automatic-Module-Name: dlut.mbsa.toolchain.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: component.presentation.ComponentEditorPlugin$Implementation
+Bundle-Activator: base.presentation.BaseEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: base.presentation,
+ hazard.presentation,
+ mbsa.presentation,
+ requirement.presentation,
  component.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

@@ -109,7 +109,7 @@ public interface Component_Factory extends EFactory {
 	 * @return a new object of class '<em>Safety Mechanism</em>'.
 	 * @generated
 	 */
-	Safety_Mechanism createSafety_Mechanism();
+	SafetyMechanism createSafetyMechanism();
 
 	/**
 	 * Returns a new object of class '<em>Regional Effect</em>'.

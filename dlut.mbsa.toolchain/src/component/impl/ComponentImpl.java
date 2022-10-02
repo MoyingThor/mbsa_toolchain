@@ -3,12 +3,14 @@
 package component.impl;
 
 import component.Component;
+import component.ComponentElement;
 import component.Component_Package;
 import component.FailureMode;
 import component.Function;
 import component.Input;
 import component.Output;
 
+import component.SafetyMechanism;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -39,11 +41,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link component.impl.ComponentImpl#getCots <em>Cots</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFit <em>Fit</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#isSafety_related <em>Safety related</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getSil <em>Sil</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSub_components <em>Sub components</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFailure_modes <em>Failure modes</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getSafety_mechanisms <em>Safety mechanisms</em>}</li>
  * </ul>
  *
  * @generated
@@ -170,6 +174,26 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	protected boolean safety_related = SAFETY_RELATED_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getSil() <em>Sil</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSil()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SIL_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getSil() <em>Sil</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSil()
+	 * @generated
+	 * @ordered
+	 */
+	protected int sil = SIL_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -200,14 +224,14 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	protected EList<Output> outputs;
 
 	/**
-	 * The cached value of the '{@link #getSub_components() <em>Sub components</em>}' reference list.
+	 * The cached value of the '{@link #getSub_components() <em>Sub components</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSub_components()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Component> sub_components;
+	protected EList<ComponentElement> sub_components;
 
 	/**
 	 * The cached value of the '{@link #getFailure_modes() <em>Failure modes</em>}' containment reference list.
@@ -218,6 +242,16 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @ordered
 	 */
 	protected EList<FailureMode> failure_modes;
+
+	/**
+	 * The cached value of the '{@link #getSafety_mechanisms() <em>Safety mechanisms</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSafety_mechanisms()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SafetyMechanism> safety_mechanisms;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -382,6 +416,29 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public int getSil() {
+		return sil;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSil(int newSil) {
+		int oldSil = sil;
+		sil = newSil;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.COMPONENT__SIL, oldSil, sil));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Function getFunction() {
 		if (function != null && function.eIsProxy()) {
 			InternalEObject oldFunction = (InternalEObject)function;
@@ -448,9 +505,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
-	public EList<Component> getSub_components() {
+	public EList<ComponentElement> getSub_components() {
 		if (sub_components == null) {
-			sub_components = new EObjectResolvingEList<Component>(Component.class, this, Component_Package.COMPONENT__SUB_COMPONENTS);
+			sub_components = new EObjectContainmentEList<ComponentElement>(ComponentElement.class, this, Component_Package.COMPONENT__SUB_COMPONENTS);
 		}
 		return sub_components;
 	}
@@ -474,14 +531,31 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public EList<SafetyMechanism> getSafety_mechanisms() {
+		if (safety_mechanisms == null) {
+			safety_mechanisms = new EObjectContainmentEList<SafetyMechanism>(SafetyMechanism.class, this, Component_Package.COMPONENT__SAFETY_MECHANISMS);
+		}
+		return safety_mechanisms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Component_Package.COMPONENT__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 			case Component_Package.COMPONENT__OUTPUTS:
 				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+			case Component_Package.COMPONENT__SUB_COMPONENTS:
+				return ((InternalEList<?>)getSub_components()).basicRemove(otherEnd, msgs);
 			case Component_Package.COMPONENT__FAILURE_MODES:
 				return ((InternalEList<?>)getFailure_modes()).basicRemove(otherEnd, msgs);
+			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
+				return ((InternalEList<?>)getSafety_mechanisms()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -506,6 +580,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return getFit();
 			case Component_Package.COMPONENT__SAFETY_RELATED:
 				return isSafety_related();
+			case Component_Package.COMPONENT__SIL:
+				return getSil();
 			case Component_Package.COMPONENT__FUNCTION:
 				if (resolve) return getFunction();
 				return basicGetFunction();
@@ -517,6 +593,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return getSub_components();
 			case Component_Package.COMPONENT__FAILURE_MODES:
 				return getFailure_modes();
+			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
+				return getSafety_mechanisms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -548,6 +626,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__SAFETY_RELATED:
 				setSafety_related((Boolean)newValue);
 				return;
+			case Component_Package.COMPONENT__SIL:
+				setSil((Integer)newValue);
+				return;
 			case Component_Package.COMPONENT__FUNCTION:
 				setFunction((Function)newValue);
 				return;
@@ -561,11 +642,15 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return;
 			case Component_Package.COMPONENT__SUB_COMPONENTS:
 				getSub_components().clear();
-				getSub_components().addAll((Collection<? extends Component>)newValue);
+				getSub_components().addAll((Collection<? extends ComponentElement>)newValue);
 				return;
 			case Component_Package.COMPONENT__FAILURE_MODES:
 				getFailure_modes().clear();
 				getFailure_modes().addAll((Collection<? extends FailureMode>)newValue);
+				return;
+			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
+				getSafety_mechanisms().clear();
+				getSafety_mechanisms().addAll((Collection<? extends SafetyMechanism>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -597,6 +682,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__SAFETY_RELATED:
 				setSafety_related(SAFETY_RELATED_EDEFAULT);
 				return;
+			case Component_Package.COMPONENT__SIL:
+				setSil(SIL_EDEFAULT);
+				return;
 			case Component_Package.COMPONENT__FUNCTION:
 				setFunction((Function)null);
 				return;
@@ -611,6 +699,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return;
 			case Component_Package.COMPONENT__FAILURE_MODES:
 				getFailure_modes().clear();
+				return;
+			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
+				getSafety_mechanisms().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -636,6 +727,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return fit != FIT_EDEFAULT;
 			case Component_Package.COMPONENT__SAFETY_RELATED:
 				return safety_related != SAFETY_RELATED_EDEFAULT;
+			case Component_Package.COMPONENT__SIL:
+				return sil != SIL_EDEFAULT;
 			case Component_Package.COMPONENT__FUNCTION:
 				return function != null;
 			case Component_Package.COMPONENT__INPUTS:
@@ -646,6 +739,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return sub_components != null && !sub_components.isEmpty();
 			case Component_Package.COMPONENT__FAILURE_MODES:
 				return failure_modes != null && !failure_modes.isEmpty();
+			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
+				return safety_mechanisms != null && !safety_mechanisms.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -672,6 +767,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 		result.append(fit);
 		result.append(", safety_related: ");
 		result.append(safety_related);
+		result.append(", sil: ");
+		result.append(sil);
 		result.append(')');
 		return result.toString();
 	}

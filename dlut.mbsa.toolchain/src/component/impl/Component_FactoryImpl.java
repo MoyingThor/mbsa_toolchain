@@ -66,7 +66,7 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 			case Component_Package.INPUT: return createInput();
 			case Component_Package.OUTPUT: return createOutput();
 			case Component_Package.FAILURE_MODE: return createFailureMode();
-			case Component_Package.SAFETY_MECHANISM: return createSafety_Mechanism();
+			case Component_Package.SAFETY_MECHANISM: return createSafetyMechanism();
 			case Component_Package.REGIONAL_EFFECT: return createRegionalEffect();
 			case Component_Package.HIGHER_LEVEL_EFFECT: return createHigherLevelEffect();
 			case Component_Package.FINAL_EFFECT: return createFinalEffect();
@@ -210,9 +210,9 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	 * @generated
 	 */
 	@Override
-	public Safety_Mechanism createSafety_Mechanism() {
-		Safety_MechanismImpl safety_Mechanism = new Safety_MechanismImpl();
-		return safety_Mechanism;
+	public SafetyMechanism createSafetyMechanism() {
+		SafetyMechanismImpl safetyMechanism = new SafetyMechanismImpl();
+		return safetyMechanism;
 	}
 
 	/**

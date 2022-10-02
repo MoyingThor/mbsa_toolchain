@@ -279,26 +279,26 @@ public class Component_ItemProviderAdapterFactory extends Component_AdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link component.Safety_Mechanism} instances.
+	 * This keeps track of the one adapter used for all {@link component.SafetyMechanism} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Safety_MechanismItemProvider safety_MechanismItemProvider;
+	protected SafetyMechanismItemProvider safetyMechanismItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link component.Safety_Mechanism}.
+	 * This creates an adapter for a {@link component.SafetyMechanism}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSafety_MechanismAdapter() {
-		if (safety_MechanismItemProvider == null) {
-			safety_MechanismItemProvider = new Safety_MechanismItemProvider(this);
+	public Adapter createSafetyMechanismAdapter() {
+		if (safetyMechanismItemProvider == null) {
+			safetyMechanismItemProvider = new SafetyMechanismItemProvider(this);
 		}
 
-		return safety_MechanismItemProvider;
+		return safetyMechanismItemProvider;
 	}
 
 	/**
@@ -484,7 +484,7 @@ public class Component_ItemProviderAdapterFactory extends Component_AdapterFacto
 		if (inputItemProvider != null) inputItemProvider.dispose();
 		if (outputItemProvider != null) outputItemProvider.dispose();
 		if (failureModeItemProvider != null) failureModeItemProvider.dispose();
-		if (safety_MechanismItemProvider != null) safety_MechanismItemProvider.dispose();
+		if (safetyMechanismItemProvider != null) safetyMechanismItemProvider.dispose();
 		if (regionalEffectItemProvider != null) regionalEffectItemProvider.dispose();
 		if (higherLevelEffectItemProvider != null) higherLevelEffectItemProvider.dispose();
 		if (finalEffectItemProvider != null) finalEffectItemProvider.dispose();

@@ -209,15 +209,15 @@ public class Component_Switch<T> extends Switch<T> {
 				return result;
 			}
 			case Component_Package.SAFETY_MECHANISM: {
-				Safety_Mechanism safety_Mechanism = (Safety_Mechanism)theEObject;
-				T result = caseSafety_Mechanism(safety_Mechanism);
-				if (result == null) result = caseComponentSafetyElement(safety_Mechanism);
-				if (result == null) result = caseComponentAsset(safety_Mechanism);
-				if (result == null) result = caseComponentElement(safety_Mechanism);
-				if (result == null) result = caseArtifactElement(safety_Mechanism);
-				if (result == null) result = caseModelElement(safety_Mechanism);
-				if (result == null) result = caseBaseElement(safety_Mechanism);
-				if (result == null) result = caseElement(safety_Mechanism);
+				SafetyMechanism safetyMechanism = (SafetyMechanism)theEObject;
+				T result = caseSafetyMechanism(safetyMechanism);
+				if (result == null) result = caseComponentSafetyElement(safetyMechanism);
+				if (result == null) result = caseComponentAsset(safetyMechanism);
+				if (result == null) result = caseComponentElement(safetyMechanism);
+				if (result == null) result = caseArtifactElement(safetyMechanism);
+				if (result == null) result = caseModelElement(safetyMechanism);
+				if (result == null) result = caseBaseElement(safetyMechanism);
+				if (result == null) result = caseElement(safetyMechanism);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -471,7 +471,7 @@ public class Component_Switch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSafety_Mechanism(Safety_Mechanism object) {
+	public T caseSafetyMechanism(SafetyMechanism object) {
 		return null;
 	}
 

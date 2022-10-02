@@ -62,7 +62,6 @@ public abstract class UtilityElementImpl extends BaseElementImpl implements Util
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public MultiLangString getContent() {
 		return content;
 	}
@@ -87,7 +86,6 @@ public abstract class UtilityElementImpl extends BaseElementImpl implements Util
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setContent(MultiLangString newContent) {
 		if (newContent != content) {
 			NotificationChain msgs = null;

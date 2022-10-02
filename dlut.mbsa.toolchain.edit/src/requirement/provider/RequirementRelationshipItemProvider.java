@@ -1,10 +1,7 @@
 /**
  */
-package component.provider;
+package requirement.provider;
 
-
-import component.Component_Package;
-import component.Safety_Mechanism;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,20 +14,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import requirement.RequirementRelationship;
+import requirement.Requirement_Package;
+
 /**
- * This is the item provider adapter for a {@link component.Safety_Mechanism} object.
+ * This is the item provider adapter for a {@link requirement.RequirementRelationship} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Safety_MechanismItemProvider extends ComponentSafetyElementItemProvider {
+public class RequirementRelationshipItemProvider extends RequirementElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Safety_MechanismItemProvider(AdapterFactory adapterFactory) {
+	public RequirementRelationshipItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,49 +45,27 @@ public class Safety_MechanismItemProvider extends ComponentSafetyElementItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHandlePropertyDescriptor(object);
-			addMechanismPropertyDescriptor(object);
-			addCoveragePropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
+			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Handle feature.
+	 * This adds a property descriptor for the Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHandlePropertyDescriptor(Object object) {
+	protected void addLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Safety_Mechanism_handle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Safety_Mechanism_handle_feature", "_UI_Safety_Mechanism_type"),
-				 Component_Package.Literals.SAFETY_MECHANISM__HANDLE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Mechanism feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMechanismPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Safety_Mechanism_mechanism_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Safety_Mechanism_mechanism_feature", "_UI_Safety_Mechanism_type"),
-				 Component_Package.Literals.SAFETY_MECHANISM__MECHANISM,
+				 getString("_UI_RequirementRelationship_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RequirementRelationship_label_feature", "_UI_RequirementRelationship_type"),
+				 Requirement_Package.Literals.REQUIREMENT_RELATIONSHIP__LABEL,
 				 true,
 				 false,
 				 false,
@@ -97,36 +75,58 @@ public class Safety_MechanismItemProvider extends ComponentSafetyElementItemProv
 	}
 
 	/**
-	 * This adds a property descriptor for the Coverage feature.
+	 * This adds a property descriptor for the Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCoveragePropertyDescriptor(Object object) {
+	protected void addSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Safety_Mechanism_coverage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Safety_Mechanism_coverage_feature", "_UI_Safety_Mechanism_type"),
-				 Component_Package.Literals.SAFETY_MECHANISM__COVERAGE,
+				 getString("_UI_RequirementRelationship_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RequirementRelationship_source_feature", "_UI_RequirementRelationship_type"),
+				 Requirement_Package.Literals.REQUIREMENT_RELATIONSHIP__SOURCE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns Safety_Mechanism.gif.
+	 * This adds a property descriptor for the Target feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RequirementRelationship_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RequirementRelationship_target_feature", "_UI_RequirementRelationship_type"),
+				 Requirement_Package.Literals.REQUIREMENT_RELATIONSHIP__TARGET,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns RequirementRelationship.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Safety_Mechanism"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RequirementRelationship"));
 	}
 
 	/**
@@ -137,10 +137,10 @@ public class Safety_MechanismItemProvider extends ComponentSafetyElementItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Safety_Mechanism)object).getGid();
+		String label = ((RequirementRelationship)object).getGid();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Safety_Mechanism_type") :
-			getString("_UI_Safety_Mechanism_type") + " " + label;
+			getString("_UI_RequirementRelationship_type") :
+			getString("_UI_RequirementRelationship_type") + " " + label;
 	}
 
 
@@ -155,9 +155,8 @@ public class Safety_MechanismItemProvider extends ComponentSafetyElementItemProv
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Safety_Mechanism.class)) {
-			case Component_Package.SAFETY_MECHANISM__MECHANISM:
-			case Component_Package.SAFETY_MECHANISM__COVERAGE:
+		switch (notification.getFeatureID(RequirementRelationship.class)) {
+			case Requirement_Package.REQUIREMENT_RELATIONSHIP__LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

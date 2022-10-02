@@ -25,6 +25,7 @@ import component.HigherLevelEffect;
 import component.Input;
 import component.Output;
 import component.RegionalEffect;
+import component.SafetyMechanism;
 import component.Safety_Mechanism;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -131,7 +132,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass safety_MechanismEClass = null;
+	private EClass safetyMechanismEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -391,8 +392,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Function() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(6);
+	public EAttribute getComponent_Sil() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -401,7 +402,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Inputs() {
+	public EReference getComponent_Function() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -411,7 +412,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Outputs() {
+	public EReference getComponent_Inputs() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -421,7 +422,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Sub_components() {
+	public EReference getComponent_Outputs() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -431,8 +432,28 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Failure_modes() {
+	public EReference getComponent_Sub_components() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_Failure_modes() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_Safety_mechanisms() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -661,8 +682,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EClass getSafety_Mechanism() {
-		return safety_MechanismEClass;
+	public EClass getSafetyMechanism() {
+		return safetyMechanismEClass;
 	}
 
 	/**
@@ -671,8 +692,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getSafety_Mechanism_Handle() {
-		return (EReference)safety_MechanismEClass.getEStructuralFeatures().get(0);
+	public EReference getSafetyMechanism_Handle() {
+		return (EReference)safetyMechanismEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -681,8 +702,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSafety_Mechanism_Mechanism() {
-		return (EAttribute)safety_MechanismEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSafetyMechanism_Mechanism() {
+		return (EAttribute)safetyMechanismEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -691,8 +712,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSafety_Mechanism_Coverage() {
-		return (EAttribute)safety_MechanismEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSafetyMechanism_Coverage() {
+		return (EAttribute)safetyMechanismEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -813,11 +834,13 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEAttribute(componentEClass, COMPONENT__COTS);
 		createEAttribute(componentEClass, COMPONENT__FIT);
 		createEAttribute(componentEClass, COMPONENT__SAFETY_RELATED);
+		createEAttribute(componentEClass, COMPONENT__SIL);
 		createEReference(componentEClass, COMPONENT__FUNCTION);
 		createEReference(componentEClass, COMPONENT__INPUTS);
 		createEReference(componentEClass, COMPONENT__OUTPUTS);
 		createEReference(componentEClass, COMPONENT__SUB_COMPONENTS);
 		createEReference(componentEClass, COMPONENT__FAILURE_MODES);
+		createEReference(componentEClass, COMPONENT__SAFETY_MECHANISMS);
 
 		componentRelationshipEClass = createEClass(COMPONENT_RELATIONSHIP);
 		createEAttribute(componentRelationshipEClass, COMPONENT_RELATIONSHIP__LABEL);
@@ -848,10 +871,10 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEReference(failureModeEClass, FAILURE_MODE__HIGHER_LEVEL);
 		createEReference(failureModeEClass, FAILURE_MODE__FINAL);
 
-		safety_MechanismEClass = createEClass(SAFETY_MECHANISM);
-		createEReference(safety_MechanismEClass, SAFETY_MECHANISM__HANDLE);
-		createEAttribute(safety_MechanismEClass, SAFETY_MECHANISM__MECHANISM);
-		createEAttribute(safety_MechanismEClass, SAFETY_MECHANISM__COVERAGE);
+		safetyMechanismEClass = createEClass(SAFETY_MECHANISM);
+		createEReference(safetyMechanismEClass, SAFETY_MECHANISM__HANDLE);
+		createEAttribute(safetyMechanismEClass, SAFETY_MECHANISM__MECHANISM);
+		createEAttribute(safetyMechanismEClass, SAFETY_MECHANISM__COVERAGE);
 
 		failureEffectEClass = createEClass(FAILURE_EFFECT);
 		createEAttribute(failureEffectEClass, FAILURE_EFFECT__DESC);
@@ -910,7 +933,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		outputEClass.getESuperTypes().add(this.getComponentAsset());
 		componentSafetyElementEClass.getESuperTypes().add(this.getComponentAsset());
 		failureModeEClass.getESuperTypes().add(this.getComponentSafetyElement());
-		safety_MechanismEClass.getESuperTypes().add(this.getComponentSafetyElement());
+		safetyMechanismEClass.getESuperTypes().add(this.getComponentSafetyElement());
 		failureEffectEClass.getESuperTypes().add(this.getComponentSafetyElement());
 		regionalEffectEClass.getESuperTypes().add(this.getFailureEffect());
 		higherLevelEffectEClass.getESuperTypes().add(this.getFailureEffect());
@@ -936,11 +959,13 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEAttribute(getComponent_Cots(), ecorePackage.getEBooleanObject(), "cots", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Fit(), ecorePackage.getEFloat(), "fit", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Safety_related(), ecorePackage.getEBoolean(), "safety_related", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Sil(), ecorePackage.getEInt(), "sil", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Function(), this.getFunction(), null, "function", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Inputs(), this.getInput(), null, "inputs", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Outputs(), this.getOutput(), null, "outputs", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Sub_components(), this.getComponent(), null, "sub_components", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Sub_components(), this.getComponentElement(), null, "sub_components", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Failure_modes(), this.getFailureMode(), null, "failure_modes", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_Safety_mechanisms(), this.getSafetyMechanism(), null, "safety_mechanisms", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentRelationshipEClass, ComponentRelationship.class, "ComponentRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentRelationship_Label(), ecorePackage.getEString(), "label", null, 0, 1, ComponentRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -971,10 +996,10 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEReference(getFailureMode_Higher_level(), this.getHigherLevelEffect(), null, "higher_level", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Final(), this.getFinalEffect(), null, "final", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(safety_MechanismEClass, Safety_Mechanism.class, "Safety_Mechanism", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSafety_Mechanism_Handle(), this.getFailureMode(), null, "handle", null, 0, 1, Safety_Mechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSafety_Mechanism_Mechanism(), ecorePackage.getEString(), "mechanism", null, 0, 1, Safety_Mechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSafety_Mechanism_Coverage(), ecorePackage.getEFloat(), "coverage", null, 0, 1, Safety_Mechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(safetyMechanismEClass, SafetyMechanism.class, "SafetyMechanism", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSafetyMechanism_Handle(), this.getFailureMode(), null, "handle", null, 0, 1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSafetyMechanism_Mechanism(), ecorePackage.getEString(), "mechanism", null, 0, 1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSafetyMechanism_Coverage(), ecorePackage.getEFloat(), "coverage", null, 0, 1, SafetyMechanism.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(failureEffectEClass, FailureEffect.class, "FailureEffect", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFailureEffect_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, FailureEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -54,8 +54,8 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			addCotsPropertyDescriptor(object);
 			addFitPropertyDescriptor(object);
 			addSafety_relatedPropertyDescriptor(object);
+			addSilPropertyDescriptor(object);
 			addFunctionPropertyDescriptor(object);
-			addSub_componentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -193,6 +193,28 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Sil feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSilPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_sil_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_sil_feature", "_UI_Component_type"),
+				 Component_Package.Literals.COMPONENT__SIL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Function feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -215,28 +237,6 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Sub components feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSub_componentsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_sub_components_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_sub_components_feature", "_UI_Component_type"),
-				 Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -250,7 +250,9 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__INPUTS);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__OUTPUTS);
+			childrenFeatures.add(Component_Package.Literals.COMPONENT__SUB_COMPONENTS);
 			childrenFeatures.add(Component_Package.Literals.COMPONENT__FAILURE_MODES);
+			childrenFeatures.add(Component_Package.Literals.COMPONENT__SAFETY_MECHANISMS);
 		}
 		return childrenFeatures;
 	}
@@ -312,11 +314,14 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			case Component_Package.COMPONENT__COTS:
 			case Component_Package.COMPONENT__FIT:
 			case Component_Package.COMPONENT__SAFETY_RELATED:
+			case Component_Package.COMPONENT__SIL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case Component_Package.COMPONENT__INPUTS:
 			case Component_Package.COMPONENT__OUTPUTS:
+			case Component_Package.COMPONENT__SUB_COMPONENTS:
 			case Component_Package.COMPONENT__FAILURE_MODES:
+			case Component_Package.COMPONENT__SAFETY_MECHANISMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -346,8 +351,104 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createComponentPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createComponentPackageInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createComponentPackageBinding()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createComponent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createComponentRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createInput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createOutput()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createFailureMode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createSafetyMechanism()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createRegionalEffect()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createHigherLevelEffect()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SUB_COMPONENTS,
+				 Component_Factory.eINSTANCE.createFinalEffect()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(Component_Package.Literals.COMPONENT__FAILURE_MODES,
 				 Component_Factory.eINSTANCE.createFailureMode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Component_Package.Literals.COMPONENT__SAFETY_MECHANISMS,
+				 Component_Factory.eINSTANCE.createSafetyMechanism()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == Component_Package.Literals.COMPONENT__INPUTS ||
+			childFeature == Component_Package.Literals.COMPONENT__SUB_COMPONENTS ||
+			childFeature == Component_Package.Literals.COMPONENT__OUTPUTS ||
+			childFeature == Component_Package.Literals.COMPONENT__FAILURE_MODES ||
+			childFeature == Component_Package.Literals.COMPONENT__SAFETY_MECHANISMS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

@@ -27,11 +27,13 @@ class Component extends ComponentElement {
 	attr Boolean cots;
 	attr float fit; //failure in time (hour e-1)
 	attr boolean safety_related;
+	attr int sil;
 	ref Function function;
 	val Input[*] inputs;
 	val Output[*] outputs;
-	ref Component[*] sub_components;
+	val ComponentElement[*] sub_components;
 	val FailureMode[*] failure_modes;
+	val SafetyMechanism[*] safety_mechanisms;
 }
 
 class ComponentRelationship extends ComponentElement {
@@ -78,7 +80,7 @@ class FailureMode extends ComponentSafetyElement {
 	val FinalEffect final;
 }
 
-class Safety_Mechanism extends ComponentSafetyElement {
+class SafetyMechanism extends ComponentSafetyElement {
 	ref FailureMode handle;
 	attr String mechanism;
 	attr float coverage;

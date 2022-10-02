@@ -121,8 +121,8 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 				return createFailureModeAdapter();
 			}
 			@Override
-			public Adapter caseSafety_Mechanism(Safety_Mechanism object) {
-				return createSafety_MechanismAdapter();
+			public Adapter caseSafetyMechanism(SafetyMechanism object) {
+				return createSafetyMechanismAdapter();
 			}
 			@Override
 			public Adapter caseFailureEffect(FailureEffect object) {
@@ -345,16 +345,16 @@ public class Component_AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link component.Safety_Mechanism <em>Safety Mechanism</em>}'.
+	 * Creates a new adapter for an object of class '{@link component.SafetyMechanism <em>Safety Mechanism</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see component.Safety_Mechanism
+	 * @see component.SafetyMechanism
 	 * @generated
 	 */
-	public Adapter createSafety_MechanismAdapter() {
+	public Adapter createSafetyMechanismAdapter() {
 		return null;
 	}
 

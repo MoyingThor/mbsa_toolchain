@@ -134,7 +134,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getGid() {
 		return gid;
 	}
@@ -144,7 +143,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setGid(String newGid) {
 		String oldGid = gid;
 		gid = newGid;
@@ -157,7 +155,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean isIsCitation() {
 		return isCitation;
 	}
@@ -167,7 +164,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setIsCitation(boolean newIsCitation) {
 		boolean oldIsCitation = isCitation;
 		isCitation = newIsCitation;
@@ -180,7 +176,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public boolean isIsAbstract() {
 		return isAbstract;
 	}
@@ -190,7 +185,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setIsAbstract(boolean newIsAbstract) {
 		boolean oldIsAbstract = isAbstract;
 		isAbstract = newIsAbstract;
@@ -203,7 +197,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public BaseElement getCitedElement() {
 		if (citedElement != null && citedElement.eIsProxy()) {
 			InternalEObject oldCitedElement = (InternalEObject)citedElement;
@@ -230,7 +223,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCitedElement(BaseElement newCitedElement) {
 		BaseElement oldCitedElement = citedElement;
 		citedElement = newCitedElement;
@@ -243,7 +235,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public BaseElement getAbstractForm() {
 		if (abstractForm != null && abstractForm.eIsProxy()) {
 			InternalEObject oldAbstractForm = (InternalEObject)abstractForm;
@@ -270,7 +261,6 @@ public abstract class BaseElementImpl extends ElementImpl implements BaseElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setAbstractForm(BaseElement newAbstractForm) {
 		BaseElement oldAbstractForm = abstractForm;
 		abstractForm = newAbstractForm;

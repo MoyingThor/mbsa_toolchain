@@ -4,11 +4,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="MBSAPackage" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mbsaPackages" upperBound="-1"
         eType="#//MBSAPackage" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artifactPackage" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentPackage" upperBound="-1"
         eType="ecore:EClass http://dlut.mbsa/component#//ComponentPackage" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentPackage" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirementPackage" upperBound="-1"
         eType="ecore:EClass http://dlut.mbsa/requirement#//RequirementPackage" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyPackage" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazardPackage" upperBound="-1"
         eType="ecore:EClass http://dlut.mbsa/hazard#//HazardPackage" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

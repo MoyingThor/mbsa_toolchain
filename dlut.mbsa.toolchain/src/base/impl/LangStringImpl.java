@@ -90,7 +90,6 @@ public class LangStringImpl extends ElementImpl implements LangString {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getLang() {
 		return lang;
 	}
@@ -100,7 +99,6 @@ public class LangStringImpl extends ElementImpl implements LangString {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
@@ -113,7 +111,6 @@ public class LangStringImpl extends ElementImpl implements LangString {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getContent() {
 		return content;
 	}
@@ -123,7 +120,6 @@ public class LangStringImpl extends ElementImpl implements LangString {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setContent(String newContent) {
 		String oldContent = content;
 		content = newContent;

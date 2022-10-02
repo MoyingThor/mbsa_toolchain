@@ -66,7 +66,6 @@ public class MultiLangStringImpl extends ElementImpl implements MultiLangString 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<LangString> getValue() {
 		if (value == null) {
 			value = new EObjectContainmentEList<LangString>(LangString.class, this, Base_Package.MULTI_LANG_STRING__VALUE);

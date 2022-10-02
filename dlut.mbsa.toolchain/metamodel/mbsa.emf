@@ -8,7 +8,7 @@ import "http://dlut.mbsa/hazard";
   
   class MBSAPackage extends base.ArtifactElement {
     val MBSAPackage[*] mbsaPackages;
-    val component.ComponentPackage[*] artifactPackage;
-    val requirement.RequirementPackage[*] argumentPackage;
-    val hazard.HazardPackage[*] terminologyPackage;
+    val component.ComponentPackage[*] componentPackage;
+    val requirement.RequirementPackage[*] requirementPackage;
+    val hazard.HazardPackage[*] hazardPackage;
   }

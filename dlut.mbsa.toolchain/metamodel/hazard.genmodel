@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/dlut.mbsa.toolchain/src" modelPluginID="dlut.mbsa.toolchain"
+    modelName="Hazard" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>hazard.ecore</foreignModel>
+  <genPackages prefix="Hazard_" disposableProviderFactory="true" fileExtensions="hazard"
+      ecorePackage="hazard.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Severity">
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/catastrophic"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/critical"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/serious"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/minor"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity/negligible"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Probability">
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/frequent"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/probable"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/occasional"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/remote"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/improbable"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="hazard.ecore#//HazardElement"/>
+    <genClasses ecoreClass="hazard.ecore#//HazardPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackage/hazards"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackage/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//HazardPackageBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackageBinding/participantPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//HazardPackageInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackageInterface/implements"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//HazardousSituation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardousSituation/severity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardousSituation/probability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardousSituation/causes"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//Cause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//Cause/controlMeasure"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//ControlMeasure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ControlMeasure/safetyDecisionRationale"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ControlMeasure/verificationofEffectiveness"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ControlMeasure/validation"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//VerificationofEffectiveness">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//VerificationofEffectiveness/text"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//Validation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//Validation/text"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//SafetyDecisionRationale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//SafetyDecisionRationale/text"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Base_" fileExtensions="base" ecorePackage="http://dlut.mbsa/base#/">
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//Element"/>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//BaseElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//BaseElement/gid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//BaseElement/isCitation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//BaseElement/isAbstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//BaseElement/citedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//BaseElement/abstractForm"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//ModelElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/implementationConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//ModelElement/taggedValue"/>
+    </genClasses>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//LangString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//LangString/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute http://dlut.mbsa/base#//LangString/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//MultiLangString">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//MultiLangString/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//UtilityElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//UtilityElement/content"/>
+    </genClasses>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//Description"/>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//ImplementationConstraint"/>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//Note"/>
+    <genClasses ecoreClass="http://dlut.mbsa/base#//TaggedValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference http://dlut.mbsa/base#//TaggedValue/key"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="http://dlut.mbsa/base#//ArtifactElement"/>
+  </genPackages>
+</genmodel:GenModel>

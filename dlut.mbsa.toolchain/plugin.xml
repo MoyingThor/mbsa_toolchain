@@ -8,6 +8,30 @@
 
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated requirement -->
+      <package
+            uri="http://dlut.mbsa/requirement"
+            class="requirement.Requirement_Package"
+            genModel="metamodel/requirement.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mbsa -->
+      <package
+            uri="http://dlut.mbsa/mbsa"
+            class="mbsa.MBSA_Package"
+            genModel="metamodel/mbsa.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated standard -->
+      <package
+            uri="http://dlut.mbsa/hazard"
+            class="hazard.Hazard_Package"
+            genModel="metamodel/standard.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated component -->
       <package
             uri="http://dlut.mbsa/component"

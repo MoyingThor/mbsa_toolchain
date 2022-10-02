@@ -19,11 +19,13 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link component.Component#getCots <em>Cots</em>}</li>
  *   <li>{@link component.Component#getFit <em>Fit</em>}</li>
  *   <li>{@link component.Component#isSafety_related <em>Safety related</em>}</li>
+ *   <li>{@link component.Component#getSil <em>Sil</em>}</li>
  *   <li>{@link component.Component#getFunction <em>Function</em>}</li>
  *   <li>{@link component.Component#getInputs <em>Inputs</em>}</li>
  *   <li>{@link component.Component#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link component.Component#getSub_components <em>Sub components</em>}</li>
  *   <li>{@link component.Component#getFailure_modes <em>Failure modes</em>}</li>
+ *   <li>{@link component.Component#getSafety_mechanisms <em>Safety mechanisms</em>}</li>
  * </ul>
  *
  * @see component.Component_Package#getComponent()
@@ -164,6 +166,28 @@ public interface Component extends ComponentElement {
 	void setSafety_related(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Sil</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sil</em>' attribute.
+	 * @see #setSil(int)
+	 * @see component.Component_Package#getComponent_Sil()
+	 * @model
+	 * @generated
+	 */
+	int getSil();
+
+	/**
+	 * Sets the value of the '{@link component.Component#getSil <em>Sil</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sil</em>' attribute.
+	 * @see #getSil()
+	 * @generated
+	 */
+	void setSil(int value);
+
+	/**
 	 * Returns the value of the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,16 +234,16 @@ public interface Component extends ComponentElement {
 	EList<Output> getOutputs();
 
 	/**
-	 * Returns the value of the '<em><b>Sub components</b></em>' reference list.
-	 * The list contents are of type {@link component.Component}.
+	 * Returns the value of the '<em><b>Sub components</b></em>' containment reference list.
+	 * The list contents are of type {@link component.ComponentElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sub components</em>' reference list.
+	 * @return the value of the '<em>Sub components</em>' containment reference list.
 	 * @see component.Component_Package#getComponent_Sub_components()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Component> getSub_components();
+	EList<ComponentElement> getSub_components();
 
 	/**
 	 * Returns the value of the '<em><b>Failure modes</b></em>' containment reference list.
@@ -232,5 +256,17 @@ public interface Component extends ComponentElement {
 	 * @generated
 	 */
 	EList<FailureMode> getFailure_modes();
+
+	/**
+	 * Returns the value of the '<em><b>Safety mechanisms</b></em>' containment reference list.
+	 * The list contents are of type {@link component.SafetyMechanism}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safety mechanisms</em>' containment reference list.
+	 * @see component.Component_Package#getComponent_Safety_mechanisms()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SafetyMechanism> getSafety_mechanisms();
 
 } // Component
