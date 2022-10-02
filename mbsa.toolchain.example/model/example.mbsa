@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbsa_:MBSAPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmlns:mbsa_="http://dlut.mbsa/mbsa">
+  <componentPackage>
+    <name content="新组件包"/>
+    <components xsi:type="component_:Component" identity="10" component_name="天线"/>
+    <components xsi:type="component_:Component" identity="20" component_name="RF放大器"/>
+    <components xsi:type="component_:ComponentRelationship" label="传递信号" source="//@componentPackage.0/@components.0" target="//@componentPackage.0/@components.1"/>
+    <components xsi:type="component_:Component" identity="40" component_name="新组件"/>
+    <components xsi:type="component_:ComponentRelationship" label="放大信号" source="//@componentPackage.0/@components.1" target="//@componentPackage.0/@components.3"/>
+    <components xsi:type="component_:Component" identity="50" component_name="IF放大器" fit="1.0E-5"/>
+    <components xsi:type="component_:ComponentRelationship" label="中频信号" source="//@componentPackage.0/@components.3" target="//@componentPackage.0/@components.5"/>
+    <components xsi:type="component_:Component" identity="60" component_name="检波器" fit="1.0E-6">
+      <failure_modes mode="开路"/>
+      <failure_modes mode="无输出"/>
+      <failure_modes mode="输出过大"/>
+      <safety_mechanisms handle="//@componentPackage.0/@components.7/@failure_modes.0" mechanism="新安全措施"/>
+    </components>
+    <components xsi:type="component_:ComponentRelationship" label="放大中频信号" source="//@componentPackage.0/@components.5" target="//@componentPackage.0/@components.7"/>
+    <components xsi:type="component_:Component" identity="70" component_name="音频放大器" fit="1.0E-6"/>
+    <components xsi:type="component_:ComponentRelationship" label="有效信号" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.9"/>
+    <components xsi:type="component_:Component" identity="80" component_name="喇叭"/>
+    <components xsi:type="component_:ComponentRelationship" label="驱动信号" source="//@componentPackage.0/@components.9" target="//@componentPackage.0/@components.11"/>
+    <components xsi:type="component_:Component" identity="30" component_name="本振"/>
+    <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.13" target="//@componentPackage.0/@components.1"/>
+    <components xsi:type="component_:ComponentRelationship" label="稳定频率信号" source="//@componentPackage.0/@components.13" target="//@componentPackage.0/@components.3"/>
+    <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.1"/>
+    <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.3"/>
+    <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.5"/>
+  </componentPackage>
+  <requirementPackage>
+    <name content="新需求包"/>
+  </requirementPackage>
+  <hazardPackage>
+    <name content="新危险分析包"/>
+  </hazardPackage>
+</mbsa_:MBSAPackage>
