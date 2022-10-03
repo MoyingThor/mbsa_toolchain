@@ -13,6 +13,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 import component.FailureMode;
+import hazard.HazardElement;
 import hazard.HazardPackage;
 import hazard.HazardousSituation;
 import mbsa.MBSAPackage;
@@ -63,9 +64,12 @@ public class BrowseHazardAction implements IExternalJavaAction {
 		MBSAPackage mbsapkg = getMBSAPackage(cp);
 		ArrayList<String> ret = new ArrayList<>();
 		for(HazardPackage rp :mbsapkg.getHazardPackage()) {
-			for(HazardousSituation re : rp.getHazards()) {
-				map.put(re.getName().getContent(), re);
-				ret.add(re.getName().getContent());
+			for(HazardElement re : rp.getHazardElement()) {
+				if(re instanceof HazardousSituation) {
+					HazardousSituation hs = (HazardousSituation) re;
+					map.put(hs.getName().getContent(), hs);
+					ret.add(hs.getName().getContent());
+				}
 			}
 		}
 		return ret;
