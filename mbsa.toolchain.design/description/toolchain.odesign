@@ -687,6 +687,22 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </nodeMappings>
+        <edgeMappings name="CauseEdge" sourceMapping="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@nodeMappings[name='HazardNode']" targetMapping="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@nodeMappings[name='CauseNode']" targetFinderExpression="feature:causes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ControlMeasureEdge" sourceMapping="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@nodeMappings[name='CauseNode']" targetMapping="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@nodeMappings[name='ControlMeasureNode']" targetFinderExpression="feature:controlMeasure">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <toolSections>
           <ownedTools xsi:type="tool:NodeCreationDescription" name="创建危险" nodeMappings="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@nodeMappings[name='HazardNode']">
             <variable name="container"/>
@@ -737,6 +753,28 @@
             <view name="views"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='controlmeasure_diagram']"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="选择危险原因" edgeMappings="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@edgeMappings[name='CauseEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="causes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="选择控制措施" edgeMappings="//@ownedViewpoints[name='MBSAViewPoint']/@ownedRepresentations[name='hazard_diagram']/@defaultLayer/@edgeMappings[name='ControlMeasureEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="controlMeasure" valueExpression="var:target"/>
+              </firstModelOperations>
             </initialOperation>
           </ownedTools>
         </toolSections>
