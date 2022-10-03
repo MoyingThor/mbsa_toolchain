@@ -74,13 +74,13 @@ public interface HazardousSituation extends HazardElement {
 	void setProbability(Probability value);
 
 	/**
-	 * Returns the value of the '<em><b>Causes</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Causes</b></em>' reference list.
 	 * The list contents are of type {@link hazard.Cause}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Causes</em>' containment reference list.
+	 * @return the value of the '<em>Causes</em>' reference list.
 	 * @see hazard.Hazard_Package#getHazardousSituation_Causes()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Cause> getCauses();

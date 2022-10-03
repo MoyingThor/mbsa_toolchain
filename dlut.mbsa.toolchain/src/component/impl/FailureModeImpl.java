@@ -2,19 +2,23 @@
  */
 package component.impl;
 
+import base.ArtifactElement;
 import component.Component_Package;
 import component.FailureMode;
 import component.FinalEffect;
 import component.HigherLevelEffect;
 import component.RegionalEffect;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link component.impl.FailureModeImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getCause <em>Cause</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getProbability <em>Probability</em>}</li>
+ *   <li>{@link component.impl.FailureModeImpl#getHazards <em>Hazards</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getRegional <em>Regional</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getHigher_level <em>Higher level</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getFinal <em>Final</em>}</li>
@@ -94,6 +99,16 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 	 * @ordered
 	 */
 	protected float probability = PROBABILITY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHazards() <em>Hazards</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHazards()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ArtifactElement> hazards;
 
 	/**
 	 * The cached value of the '{@link #getRegional() <em>Regional</em>}' containment reference.
@@ -211,6 +226,19 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 		probability = newProbability;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.FAILURE_MODE__PROBABILITY, oldProbability, probability));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ArtifactElement> getHazards() {
+		if (hazards == null) {
+			hazards = new EObjectResolvingEList<ArtifactElement>(ArtifactElement.class, this, Component_Package.FAILURE_MODE__HAZARDS);
+		}
+		return hazards;
 	}
 
 	/**
@@ -380,6 +408,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return getCause();
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				return getProbability();
+			case Component_Package.FAILURE_MODE__HAZARDS:
+				return getHazards();
 			case Component_Package.FAILURE_MODE__REGIONAL:
 				return getRegional();
 			case Component_Package.FAILURE_MODE__HIGHER_LEVEL:
@@ -395,6 +425,7 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -406,6 +437,10 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return;
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				setProbability((Float)newValue);
+				return;
+			case Component_Package.FAILURE_MODE__HAZARDS:
+				getHazards().clear();
+				getHazards().addAll((Collection<? extends ArtifactElement>)newValue);
 				return;
 			case Component_Package.FAILURE_MODE__REGIONAL:
 				setRegional((RegionalEffect)newValue);
@@ -437,6 +472,9 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				setProbability(PROBABILITY_EDEFAULT);
 				return;
+			case Component_Package.FAILURE_MODE__HAZARDS:
+				getHazards().clear();
+				return;
 			case Component_Package.FAILURE_MODE__REGIONAL:
 				setRegional((RegionalEffect)null);
 				return;
@@ -464,6 +502,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return CAUSE_EDEFAULT == null ? cause != null : !CAUSE_EDEFAULT.equals(cause);
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				return probability != PROBABILITY_EDEFAULT;
+			case Component_Package.FAILURE_MODE__HAZARDS:
+				return hazards != null && !hazards.isEmpty();
 			case Component_Package.FAILURE_MODE__REGIONAL:
 				return regional != null;
 			case Component_Package.FAILURE_MODE__HIGHER_LEVEL:

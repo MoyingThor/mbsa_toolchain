@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hazard" nsURI="http://dlut.mbsa/hazard" nsPrefix="hazard_">
-  <eClassifiers xsi:type="ecore:EClass" name="HazardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardElement" abstract="true" eSuperTypes="http://dlut.mbsa/base#//ArtifactElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HazardPackage" eSuperTypes="#//HazardElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
-        eType="#//HazardousSituation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazardElement" upperBound="-1"
+        eType="#//HazardElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
         eType="#//HazardPackageInterface"/>
   </eClassifiers>
@@ -20,11 +22,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="#//Probability"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="causes" upperBound="-1"
-        eType="#//Cause" containment="true"/>
+        eType="#//Cause"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cause" eSuperTypes="#//HazardElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlMeasure" upperBound="-1"
-        eType="#//ControlMeasure" containment="true"/>
+        eType="#//ControlMeasure"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlMeasure" eSuperTypes="#//HazardElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="safetyDecisionRationale"

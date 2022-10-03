@@ -3,11 +3,11 @@ package hazard;
 import "http://dlut.mbsa/base";
 
 abstract class HazardElement extends base.ArtifactElement {
-	
+	attr int identity;
 }
 
 class HazardPackage extends HazardElement {
-	val HazardousSituation[*] hazards;
+	val HazardElement[*] hazardElement;
 	ref HazardPackageInterface[*] ~interface;
 }
 
@@ -22,12 +22,12 @@ class HazardPackageInterface extends HazardPackage {
 class HazardousSituation extends HazardElement{
 	attr Severity[?] severity;
 	attr Probability[?] probability;
-	val Cause[*] causes;
+	ref Cause[*] causes;
 }
 
 //there should be a reference to a design
 class Cause extends HazardElement{
-	val ControlMeasure[*] controlMeasure;
+	ref ControlMeasure[*] controlMeasure;
 }
 
 

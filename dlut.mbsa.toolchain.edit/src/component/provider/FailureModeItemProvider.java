@@ -51,6 +51,7 @@ public class FailureModeItemProvider extends ComponentSafetyElementItemProvider 
 			addModePropertyDescriptor(object);
 			addCausePropertyDescriptor(object);
 			addProbabilityPropertyDescriptor(object);
+			addHazardsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -117,6 +118,28 @@ public class FailureModeItemProvider extends ComponentSafetyElementItemProvider 
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hazards feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHazardsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FailureMode_hazards_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FailureMode_hazards_feature", "_UI_FailureMode_type"),
+				 Component_Package.Literals.FAILURE_MODE__HAZARDS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

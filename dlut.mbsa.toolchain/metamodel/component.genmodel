@@ -63,6 +63,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/mode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/cause"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/probability"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/hazards"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/regional"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/higher_level"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/final"/>

@@ -50,6 +50,7 @@ public class HazardousSituationItemProvider extends HazardElementItemProvider {
 
 			addSeverityPropertyDescriptor(object);
 			addProbabilityPropertyDescriptor(object);
+			addCausesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,33 +100,25 @@ public class HazardousSituationItemProvider extends HazardElementItemProvider {
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Causes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(Hazard_Package.Literals.HAZARDOUS_SITUATION__CAUSES);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addCausesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HazardousSituation_causes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HazardousSituation_causes_feature", "_UI_HazardousSituation_type"),
+				 Hazard_Package.Literals.HAZARDOUS_SITUATION__CAUSES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -170,9 +163,6 @@ public class HazardousSituationItemProvider extends HazardElementItemProvider {
 			case Hazard_Package.HAZARDOUS_SITUATION__PROBABILITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Hazard_Package.HAZARDOUS_SITUATION__CAUSES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -187,11 +177,6 @@ public class HazardousSituationItemProvider extends HazardElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Hazard_Package.Literals.HAZARDOUS_SITUATION__CAUSES,
-				 Hazard_Factory.eINSTANCE.createCause()));
 	}
 
 }

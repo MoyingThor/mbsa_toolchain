@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CauseImpl extends HazardElementImpl implements Cause {
 	/**
-	 * The cached value of the '{@link #getControlMeasure() <em>Control Measure</em>}' containment reference list.
+	 * The cached value of the '{@link #getControlMeasure() <em>Control Measure</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getControlMeasure()
@@ -69,23 +70,9 @@ public class CauseImpl extends HazardElementImpl implements Cause {
 	@Override
 	public EList<ControlMeasure> getControlMeasure() {
 		if (controlMeasure == null) {
-			controlMeasure = new EObjectContainmentEList<ControlMeasure>(ControlMeasure.class, this, Hazard_Package.CAUSE__CONTROL_MEASURE);
+			controlMeasure = new EObjectResolvingEList<ControlMeasure>(ControlMeasure.class, this, Hazard_Package.CAUSE__CONTROL_MEASURE);
 		}
 		return controlMeasure;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Hazard_Package.CAUSE__CONTROL_MEASURE:
-				return ((InternalEList<?>)getControlMeasure()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

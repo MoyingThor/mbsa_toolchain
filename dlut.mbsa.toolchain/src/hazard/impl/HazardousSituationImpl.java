@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -80,7 +81,7 @@ public class HazardousSituationImpl extends HazardElementImpl implements Hazardo
 	protected Probability probability = PROBABILITY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCauses() <em>Causes</em>}' containment reference list.
+	 * The cached value of the '{@link #getCauses() <em>Causes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCauses()
@@ -162,23 +163,9 @@ public class HazardousSituationImpl extends HazardElementImpl implements Hazardo
 	@Override
 	public EList<Cause> getCauses() {
 		if (causes == null) {
-			causes = new EObjectContainmentEList<Cause>(Cause.class, this, Hazard_Package.HAZARDOUS_SITUATION__CAUSES);
+			causes = new EObjectResolvingEList<Cause>(Cause.class, this, Hazard_Package.HAZARDOUS_SITUATION__CAUSES);
 		}
 		return causes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Hazard_Package.HAZARDOUS_SITUATION__CAUSES:
-				return ((InternalEList<?>)getCauses()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

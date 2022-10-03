@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hazard.HazardPackage#getHazards <em>Hazards</em>}</li>
+ *   <li>{@link hazard.HazardPackage#getHazardElement <em>Hazard Element</em>}</li>
  *   <li>{@link hazard.HazardPackage#getInterface <em>Interface</em>}</li>
  * </ul>
  *
@@ -23,16 +23,16 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface HazardPackage extends HazardElement {
 	/**
-	 * Returns the value of the '<em><b>Hazards</b></em>' containment reference list.
-	 * The list contents are of type {@link hazard.HazardousSituation}.
+	 * Returns the value of the '<em><b>Hazard Element</b></em>' containment reference list.
+	 * The list contents are of type {@link hazard.HazardElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hazards</em>' containment reference list.
-	 * @see hazard.Hazard_Package#getHazardPackage_Hazards()
+	 * @return the value of the '<em>Hazard Element</em>' containment reference list.
+	 * @see hazard.Hazard_Package#getHazardPackage_HazardElement()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<HazardousSituation> getHazards();
+	EList<HazardElement> getHazardElement();
 
 	/**
 	 * Returns the value of the '<em><b>Interface</b></em>' reference list.

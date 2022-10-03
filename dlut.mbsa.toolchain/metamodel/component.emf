@@ -76,6 +76,7 @@ class FailureMode extends ComponentSafetyElement {
 	attr String mode;
 	attr String cause;
 	attr float probability;
+	ref base.ArtifactElement[*] hazards;
 	val RegionalEffect regional;
 	val HigherLevelEffect higher_level;
 	val FinalEffect final;

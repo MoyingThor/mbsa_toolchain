@@ -159,13 +159,22 @@ public interface Hazard_Package extends EPackage {
 	int HAZARD_ELEMENT__TAGGED_VALUE = Base_Package.ARTIFACT_ELEMENT__TAGGED_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAZARD_ELEMENT__IDENTITY = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Hazard Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD_ELEMENT_FEATURE_COUNT = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 0;
+	int HAZARD_ELEMENT_FEATURE_COUNT = Base_Package.ARTIFACT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link hazard.impl.HazardPackageImpl <em>Hazard Package</em>}' class.
@@ -268,13 +277,22 @@ public interface Hazard_Package extends EPackage {
 	int HAZARD_PACKAGE__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Hazards</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD_PACKAGE__HAZARDS = HAZARD_ELEMENT_FEATURE_COUNT + 0;
+	int HAZARD_PACKAGE__IDENTITY = HAZARD_ELEMENT__IDENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Hazard Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAZARD_PACKAGE__HAZARD_ELEMENT = HAZARD_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' reference list.
@@ -395,13 +413,22 @@ public interface Hazard_Package extends EPackage {
 	int HAZARD_PACKAGE_BINDING__TAGGED_VALUE = HAZARD_PACKAGE__TAGGED_VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Hazards</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD_PACKAGE_BINDING__HAZARDS = HAZARD_PACKAGE__HAZARDS;
+	int HAZARD_PACKAGE_BINDING__IDENTITY = HAZARD_PACKAGE__IDENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Hazard Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAZARD_PACKAGE_BINDING__HAZARD_ELEMENT = HAZARD_PACKAGE__HAZARD_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' reference list.
@@ -531,13 +558,22 @@ public interface Hazard_Package extends EPackage {
 	int HAZARD_PACKAGE_INTERFACE__TAGGED_VALUE = HAZARD_PACKAGE__TAGGED_VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Hazards</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAZARD_PACKAGE_INTERFACE__HAZARDS = HAZARD_PACKAGE__HAZARDS;
+	int HAZARD_PACKAGE_INTERFACE__IDENTITY = HAZARD_PACKAGE__IDENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Hazard Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAZARD_PACKAGE_INTERFACE__HAZARD_ELEMENT = HAZARD_PACKAGE__HAZARD_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' reference list.
@@ -667,6 +703,15 @@ public interface Hazard_Package extends EPackage {
 	int HAZARDOUS_SITUATION__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAZARDOUS_SITUATION__IDENTITY = HAZARD_ELEMENT__IDENTITY;
+
+	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -685,7 +730,7 @@ public interface Hazard_Package extends EPackage {
 	int HAZARDOUS_SITUATION__PROBABILITY = HAZARD_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Causes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Causes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -803,7 +848,16 @@ public interface Hazard_Package extends EPackage {
 	int CAUSE__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Control Measure</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAUSE__IDENTITY = HAZARD_ELEMENT__IDENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Control Measure</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -919,6 +973,15 @@ public interface Hazard_Package extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_MEASURE__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_MEASURE__IDENTITY = HAZARD_ELEMENT__IDENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Safety Decision Rationale</b></em>' containment reference.
@@ -1057,6 +1120,15 @@ public interface Hazard_Package extends EPackage {
 	int VERIFICATIONOF_EFFECTIVENESS__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFICATIONOF_EFFECTIVENESS__IDENTITY = HAZARD_ELEMENT__IDENTITY;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1173,6 +1245,15 @@ public interface Hazard_Package extends EPackage {
 	 * @ordered
 	 */
 	int VALIDATION__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION__IDENTITY = HAZARD_ELEMENT__IDENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -1293,6 +1374,15 @@ public interface Hazard_Package extends EPackage {
 	int SAFETY_DECISION_RATIONALE__TAGGED_VALUE = HAZARD_ELEMENT__TAGGED_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Identity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY_DECISION_RATIONALE__IDENTITY = HAZARD_ELEMENT__IDENTITY;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1342,6 +1432,17 @@ public interface Hazard_Package extends EPackage {
 	EClass getHazardElement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hazard.HazardElement#getIdentity <em>Identity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Identity</em>'.
+	 * @see hazard.HazardElement#getIdentity()
+	 * @see #getHazardElement()
+	 * @generated
+	 */
+	EAttribute getHazardElement_Identity();
+
+	/**
 	 * Returns the meta object for class '{@link hazard.HazardPackage <em>Hazard Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1352,15 +1453,15 @@ public interface Hazard_Package extends EPackage {
 	EClass getHazardPackage();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hazard.HazardPackage#getHazards <em>Hazards</em>}'.
+	 * Returns the meta object for the containment reference list '{@link hazard.HazardPackage#getHazardElement <em>Hazard Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Hazards</em>'.
-	 * @see hazard.HazardPackage#getHazards()
+	 * @return the meta object for the containment reference list '<em>Hazard Element</em>'.
+	 * @see hazard.HazardPackage#getHazardElement()
 	 * @see #getHazardPackage()
 	 * @generated
 	 */
-	EReference getHazardPackage_Hazards();
+	EReference getHazardPackage_HazardElement();
 
 	/**
 	 * Returns the meta object for the reference list '{@link hazard.HazardPackage#getInterface <em>Interface</em>}'.
@@ -1448,10 +1549,10 @@ public interface Hazard_Package extends EPackage {
 	EAttribute getHazardousSituation_Probability();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hazard.HazardousSituation#getCauses <em>Causes</em>}'.
+	 * Returns the meta object for the reference list '{@link hazard.HazardousSituation#getCauses <em>Causes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Causes</em>'.
+	 * @return the meta object for the reference list '<em>Causes</em>'.
 	 * @see hazard.HazardousSituation#getCauses()
 	 * @see #getHazardousSituation()
 	 * @generated
@@ -1469,10 +1570,10 @@ public interface Hazard_Package extends EPackage {
 	EClass getCause();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link hazard.Cause#getControlMeasure <em>Control Measure</em>}'.
+	 * Returns the meta object for the reference list '{@link hazard.Cause#getControlMeasure <em>Control Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Control Measure</em>'.
+	 * @return the meta object for the reference list '<em>Control Measure</em>'.
 	 * @see hazard.Cause#getControlMeasure()
 	 * @see #getCause()
 	 * @generated
@@ -1638,6 +1739,14 @@ public interface Hazard_Package extends EPackage {
 		EClass HAZARD_ELEMENT = eINSTANCE.getHazardElement();
 
 		/**
+		 * The meta object literal for the '<em><b>Identity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HAZARD_ELEMENT__IDENTITY = eINSTANCE.getHazardElement_Identity();
+
+		/**
 		 * The meta object literal for the '{@link hazard.impl.HazardPackageImpl <em>Hazard Package</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1648,12 +1757,12 @@ public interface Hazard_Package extends EPackage {
 		EClass HAZARD_PACKAGE = eINSTANCE.getHazardPackage();
 
 		/**
-		 * The meta object literal for the '<em><b>Hazards</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Hazard Element</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HAZARD_PACKAGE__HAZARDS = eINSTANCE.getHazardPackage_Hazards();
+		EReference HAZARD_PACKAGE__HAZARD_ELEMENT = eINSTANCE.getHazardPackage_HazardElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Interface</b></em>' reference list feature.
@@ -1726,7 +1835,7 @@ public interface Hazard_Package extends EPackage {
 		EAttribute HAZARDOUS_SITUATION__PROBABILITY = eINSTANCE.getHazardousSituation_Probability();
 
 		/**
-		 * The meta object literal for the '<em><b>Causes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Causes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1744,7 +1853,7 @@ public interface Hazard_Package extends EPackage {
 		EClass CAUSE = eINSTANCE.getCause();
 
 		/**
-		 * The meta object literal for the '<em><b>Control Measure</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Control Measure</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

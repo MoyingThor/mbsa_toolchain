@@ -5,7 +5,7 @@ Bundle-SymbolicName: dlut.mbsa.toolchain.editor;singleton:=true
 Automatic-Module-Name: dlut.mbsa.toolchain.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: component.presentation.ComponentEditorPlugin$Implementation
+Bundle-Activator: hazard.presentation.HazardEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

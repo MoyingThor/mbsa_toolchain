@@ -69,6 +69,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cause" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
+        eType="ecore:EClass http://dlut.mbsa/base#//ArtifactElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="regional" eType="#//RegionalEffect"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="higher_level" eType="#//HigherLevelEffect"

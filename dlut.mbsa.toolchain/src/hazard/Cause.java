@@ -22,13 +22,13 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Cause extends HazardElement {
 	/**
-	 * Returns the value of the '<em><b>Control Measure</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Control Measure</b></em>' reference list.
 	 * The list contents are of type {@link hazard.ControlMeasure}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Control Measure</em>' containment reference list.
+	 * @return the value of the '<em>Control Measure</em>' reference list.
 	 * @see hazard.Hazard_Package#getCause_ControlMeasure()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<ControlMeasure> getControlMeasure();

@@ -1637,13 +1637,22 @@ public interface Component_Package extends EPackage {
 	int FAILURE_MODE__PROBABILITY = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Hazards</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAILURE_MODE__HAZARDS = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Regional</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__REGIONAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
+	int FAILURE_MODE__REGIONAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Higher level</b></em>' containment reference.
@@ -1652,7 +1661,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__HIGHER_LEVEL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
+	int FAILURE_MODE__HIGHER_LEVEL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Final</b></em>' containment reference.
@@ -1661,7 +1670,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__FINAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 5;
+	int FAILURE_MODE__FINAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Failure Mode</em>' class.
@@ -1670,7 +1679,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
+	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link component.impl.SafetyMechanismImpl <em>Safety Mechanism</em>}' class.
@@ -2823,6 +2832,17 @@ public interface Component_Package extends EPackage {
 	EAttribute getFailureMode_Probability();
 
 	/**
+	 * Returns the meta object for the reference list '{@link component.FailureMode#getHazards <em>Hazards</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Hazards</em>'.
+	 * @see component.FailureMode#getHazards()
+	 * @see #getFailureMode()
+	 * @generated
+	 */
+	EReference getFailureMode_Hazards();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link component.FailureMode#getRegional <em>Regional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3351,6 +3371,14 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute FAILURE_MODE__PROBABILITY = eINSTANCE.getFailureMode_Probability();
+
+		/**
+		 * The meta object literal for the '<em><b>Hazards</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FAILURE_MODE__HAZARDS = eINSTANCE.getFailureMode_Hazards();
 
 		/**
 		 * The meta object literal for the '<em><b>Regional</b></em>' containment reference feature.

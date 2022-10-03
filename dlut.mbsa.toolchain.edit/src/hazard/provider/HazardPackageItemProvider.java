@@ -86,7 +86,7 @@ public class HazardPackageItemProvider extends HazardElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARDS);
+			childrenFeatures.add(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -142,7 +142,7 @@ public class HazardPackageItemProvider extends HazardElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HazardPackage.class)) {
-			case Hazard_Package.HAZARD_PACKAGE__HAZARDS:
+			case Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,8 +162,48 @@ public class HazardPackageItemProvider extends HazardElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARDS,
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createHazardPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createHazardPackageBinding()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createHazardPackageInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
 				 Hazard_Factory.eINSTANCE.createHazardousSituation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createCause()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createControlMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createVerificationofEffectiveness()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createValidation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Hazard_Package.Literals.HAZARD_PACKAGE__HAZARD_ELEMENT,
+				 Hazard_Factory.eINSTANCE.createSafetyDecisionRationale()));
 	}
 
 }

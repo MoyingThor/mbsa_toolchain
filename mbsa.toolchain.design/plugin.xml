@@ -21,5 +21,9 @@
            actionClass="mbsa.toolchain.design.EGoToRequirementAction"
            id="mbsa.toolchain.design.goto.requirement">
      </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.BrowseHazardAction"
+           id="mbsa.toolchain.design.browse.hazard">
+     </javaActions>
   </extension>
 </plugin>

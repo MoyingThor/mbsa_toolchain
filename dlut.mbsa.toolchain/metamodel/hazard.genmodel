@@ -20,9 +20,11 @@
       <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/remote"/>
       <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Probability/improbable"/>
     </genEnums>
-    <genClasses image="false" ecoreClass="hazard.ecore#//HazardElement"/>
+    <genClasses image="false" ecoreClass="hazard.ecore#//HazardElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardElement/identity"/>
+    </genClasses>
     <genClasses ecoreClass="hazard.ecore#//HazardPackage">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackage/hazards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackage/hazardElement"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardPackage/interface"/>
     </genClasses>
     <genClasses ecoreClass="hazard.ecore#//HazardPackageBinding">
@@ -34,10 +36,10 @@
     <genClasses ecoreClass="hazard.ecore#//HazardousSituation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardousSituation/severity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardousSituation/probability"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardousSituation/causes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardousSituation/causes"/>
     </genClasses>
     <genClasses ecoreClass="hazard.ecore#//Cause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//Cause/controlMeasure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//Cause/controlMeasure"/>
     </genClasses>
     <genClasses ecoreClass="hazard.ecore#//ControlMeasure">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ControlMeasure/safetyDecisionRationale"/>

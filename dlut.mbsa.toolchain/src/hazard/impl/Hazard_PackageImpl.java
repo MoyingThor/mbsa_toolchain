@@ -203,6 +203,16 @@ public class Hazard_PackageImpl extends EPackageImpl implements Hazard_Package {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getHazardElement_Identity() {
+		return (EAttribute)hazardElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getHazardPackage() {
 		return hazardPackageEClass;
 	}
@@ -213,7 +223,7 @@ public class Hazard_PackageImpl extends EPackageImpl implements Hazard_Package {
 	 * @generated
 	 */
 	@Override
-	public EReference getHazardPackage_Hazards() {
+	public EReference getHazardPackage_HazardElement() {
 		return (EReference)hazardPackageEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -477,9 +487,10 @@ public class Hazard_PackageImpl extends EPackageImpl implements Hazard_Package {
 
 		// Create classes and their features
 		hazardElementEClass = createEClass(HAZARD_ELEMENT);
+		createEAttribute(hazardElementEClass, HAZARD_ELEMENT__IDENTITY);
 
 		hazardPackageEClass = createEClass(HAZARD_PACKAGE);
-		createEReference(hazardPackageEClass, HAZARD_PACKAGE__HAZARDS);
+		createEReference(hazardPackageEClass, HAZARD_PACKAGE__HAZARD_ELEMENT);
 		createEReference(hazardPackageEClass, HAZARD_PACKAGE__INTERFACE);
 
 		hazardPackageBindingEClass = createEClass(HAZARD_PACKAGE_BINDING);
@@ -559,9 +570,10 @@ public class Hazard_PackageImpl extends EPackageImpl implements Hazard_Package {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(hazardElementEClass, HazardElement.class, "HazardElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHazardElement_Identity(), ecorePackage.getEInt(), "identity", null, 0, 1, HazardElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hazardPackageEClass, HazardPackage.class, "HazardPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHazardPackage_Hazards(), this.getHazardousSituation(), null, "hazards", null, 0, -1, HazardPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHazardPackage_HazardElement(), this.getHazardElement(), null, "hazardElement", null, 0, -1, HazardPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHazardPackage_Interface(), this.getHazardPackageInterface(), null, "interface", null, 0, -1, HazardPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hazardPackageBindingEClass, HazardPackageBinding.class, "HazardPackageBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -573,10 +585,10 @@ public class Hazard_PackageImpl extends EPackageImpl implements Hazard_Package {
 		initEClass(hazardousSituationEClass, HazardousSituation.class, "HazardousSituation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHazardousSituation_Severity(), this.getSeverity(), "severity", null, 0, 1, HazardousSituation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHazardousSituation_Probability(), this.getProbability(), "probability", null, 0, 1, HazardousSituation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHazardousSituation_Causes(), this.getCause(), null, "causes", null, 0, -1, HazardousSituation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHazardousSituation_Causes(), this.getCause(), null, "causes", null, 0, -1, HazardousSituation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(causeEClass, Cause.class, "Cause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCause_ControlMeasure(), this.getControlMeasure(), null, "controlMeasure", null, 0, -1, Cause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCause_ControlMeasure(), this.getControlMeasure(), null, "controlMeasure", null, 0, -1, Cause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlMeasureEClass, ControlMeasure.class, "ControlMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControlMeasure_SafetyDecisionRationale(), this.getSafetyDecisionRationale(), null, "safetyDecisionRationale", null, 0, 1, ControlMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

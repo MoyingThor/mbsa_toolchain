@@ -2,6 +2,9 @@
  */
 package component;
 
+import base.ArtifactElement;
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +18,7 @@ package component;
  *   <li>{@link component.FailureMode#getMode <em>Mode</em>}</li>
  *   <li>{@link component.FailureMode#getCause <em>Cause</em>}</li>
  *   <li>{@link component.FailureMode#getProbability <em>Probability</em>}</li>
+ *   <li>{@link component.FailureMode#getHazards <em>Hazards</em>}</li>
  *   <li>{@link component.FailureMode#getRegional <em>Regional</em>}</li>
  *   <li>{@link component.FailureMode#getHigher_level <em>Higher level</em>}</li>
  *   <li>{@link component.FailureMode#getFinal <em>Final</em>}</li>
@@ -90,6 +94,18 @@ public interface FailureMode extends ComponentSafetyElement {
 	 * @generated
 	 */
 	void setProbability(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Hazards</b></em>' reference list.
+	 * The list contents are of type {@link base.ArtifactElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hazards</em>' reference list.
+	 * @see component.Component_Package#getFailureMode_Hazards()
+	 * @model
+	 * @generated
+	 */
+	EList<ArtifactElement> getHazards();
 
 	/**
 	 * Returns the value of the '<em><b>Regional</b></em>' containment reference.

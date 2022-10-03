@@ -662,7 +662,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Regional() {
+	public EReference getFailureMode_Hazards() {
 		return (EReference)failureModeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -672,7 +672,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Higher_level() {
+	public EReference getFailureMode_Regional() {
 		return (EReference)failureModeEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -682,8 +682,18 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Final() {
+	public EReference getFailureMode_Higher_level() {
 		return (EReference)failureModeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFailureMode_Final() {
+		return (EReference)failureModeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -878,6 +888,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEAttribute(failureModeEClass, FAILURE_MODE__MODE);
 		createEAttribute(failureModeEClass, FAILURE_MODE__CAUSE);
 		createEAttribute(failureModeEClass, FAILURE_MODE__PROBABILITY);
+		createEReference(failureModeEClass, FAILURE_MODE__HAZARDS);
 		createEReference(failureModeEClass, FAILURE_MODE__REGIONAL);
 		createEReference(failureModeEClass, FAILURE_MODE__HIGHER_LEVEL);
 		createEReference(failureModeEClass, FAILURE_MODE__FINAL);
@@ -1004,6 +1015,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEAttribute(getFailureMode_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFailureMode_Cause(), ecorePackage.getEString(), "cause", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFailureMode_Probability(), ecorePackage.getEFloat(), "probability", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFailureMode_Hazards(), theBase_Package.getArtifactElement(), null, "hazards", null, 0, -1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Regional(), this.getRegionalEffect(), null, "regional", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Higher_level(), this.getHigherLevelEffect(), null, "higher_level", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Final(), this.getFinalEffect(), null, "final", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

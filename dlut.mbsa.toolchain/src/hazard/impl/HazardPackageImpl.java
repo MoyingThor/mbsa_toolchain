@@ -2,6 +2,7 @@
  */
 package hazard.impl;
 
+import hazard.HazardElement;
 import hazard.HazardPackage;
 import hazard.HazardPackageInterface;
 import hazard.Hazard_Package;
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hazard.impl.HazardPackageImpl#getHazards <em>Hazards</em>}</li>
+ *   <li>{@link hazard.impl.HazardPackageImpl#getHazardElement <em>Hazard Element</em>}</li>
  *   <li>{@link hazard.impl.HazardPackageImpl#getInterface <em>Interface</em>}</li>
  * </ul>
  *
@@ -36,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class HazardPackageImpl extends HazardElementImpl implements HazardPackage {
 	/**
-	 * The cached value of the '{@link #getHazards() <em>Hazards</em>}' containment reference list.
+	 * The cached value of the '{@link #getHazardElement() <em>Hazard Element</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHazards()
+	 * @see #getHazardElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HazardousSituation> hazards;
+	protected EList<HazardElement> hazardElement;
 
 	/**
 	 * The cached value of the '{@link #getInterface() <em>Interface</em>}' reference list.
@@ -80,11 +81,11 @@ public class HazardPackageImpl extends HazardElementImpl implements HazardPackag
 	 * @generated
 	 */
 	@Override
-	public EList<HazardousSituation> getHazards() {
-		if (hazards == null) {
-			hazards = new EObjectContainmentEList<HazardousSituation>(HazardousSituation.class, this, Hazard_Package.HAZARD_PACKAGE__HAZARDS);
+	public EList<HazardElement> getHazardElement() {
+		if (hazardElement == null) {
+			hazardElement = new EObjectContainmentEList<HazardElement>(HazardElement.class, this, Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT);
 		}
-		return hazards;
+		return hazardElement;
 	}
 
 	/**
@@ -108,8 +109,8 @@ public class HazardPackageImpl extends HazardElementImpl implements HazardPackag
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Hazard_Package.HAZARD_PACKAGE__HAZARDS:
-				return ((InternalEList<?>)getHazards()).basicRemove(otherEnd, msgs);
+			case Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT:
+				return ((InternalEList<?>)getHazardElement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -122,8 +123,8 @@ public class HazardPackageImpl extends HazardElementImpl implements HazardPackag
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Hazard_Package.HAZARD_PACKAGE__HAZARDS:
-				return getHazards();
+			case Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT:
+				return getHazardElement();
 			case Hazard_Package.HAZARD_PACKAGE__INTERFACE:
 				return getInterface();
 		}
@@ -139,9 +140,9 @@ public class HazardPackageImpl extends HazardElementImpl implements HazardPackag
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Hazard_Package.HAZARD_PACKAGE__HAZARDS:
-				getHazards().clear();
-				getHazards().addAll((Collection<? extends HazardousSituation>)newValue);
+			case Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT:
+				getHazardElement().clear();
+				getHazardElement().addAll((Collection<? extends HazardElement>)newValue);
 				return;
 			case Hazard_Package.HAZARD_PACKAGE__INTERFACE:
 				getInterface().clear();
@@ -159,8 +160,8 @@ public class HazardPackageImpl extends HazardElementImpl implements HazardPackag
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Hazard_Package.HAZARD_PACKAGE__HAZARDS:
-				getHazards().clear();
+			case Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT:
+				getHazardElement().clear();
 				return;
 			case Hazard_Package.HAZARD_PACKAGE__INTERFACE:
 				getInterface().clear();
@@ -177,8 +178,8 @@ public class HazardPackageImpl extends HazardElementImpl implements HazardPackag
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Hazard_Package.HAZARD_PACKAGE__HAZARDS:
-				return hazards != null && !hazards.isEmpty();
+			case Hazard_Package.HAZARD_PACKAGE__HAZARD_ELEMENT:
+				return hazardElement != null && !hazardElement.isEmpty();
 			case Hazard_Package.HAZARD_PACKAGE__INTERFACE:
 				return interface_ != null && !interface_.isEmpty();
 		}
