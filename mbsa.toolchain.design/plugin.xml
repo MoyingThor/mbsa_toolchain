@@ -33,5 +33,13 @@
            actionClass="mbsa.toolchain.design.BrowseMetadataAction"
            id="mbsa.toolchain.design.browse.metadata.action">
      </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.PerformQueryAction"
+           id="mbsa.toolchain.design.perform.query.action">
+     </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.ClearQueryResultAction"
+           id="mbsa.toolchain.design.clear.result.action">
+     </javaActions>
   </extension>
 </plugin>
