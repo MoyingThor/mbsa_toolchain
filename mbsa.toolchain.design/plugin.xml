@@ -14,16 +14,24 @@
            id="mbsa.toolchain.design.simulateAction">
      </javaActions>
      <javaActions
-           actionClass="mbsa.toolchain.design.BrowseAction"
-           id="mbsa.toolchain.design.browseAction">
+           actionClass="mbsa.toolchain.design.BrowseRequirementAction"
+           id="mbsa.toolchain.design.browse.requirement.action">
      </javaActions>
      <javaActions
-           actionClass="mbsa.toolchain.design.EGoToRequirementAction"
+           actionClass="mbsa.toolchain.design.GoToRequirementAction"
            id="mbsa.toolchain.design.goto.requirement">
      </javaActions>
      <javaActions
            actionClass="mbsa.toolchain.design.BrowseHazardAction"
            id="mbsa.toolchain.design.browse.hazard">
+     </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.BrowseFileAction"
+           id="mbsa.toolchain.design.browse.file.action">
+     </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.BrowseMetadataAction"
+           id="mbsa.toolchain.design.browse.metadata.action">
      </javaActions>
   </extension>
 </plugin>

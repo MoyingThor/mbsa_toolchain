@@ -19,11 +19,11 @@ import requirement.Requirement;
 import requirement.RequirementElement;
 import requirement.RequirementPackage;
 
-public class BrowseAction implements IExternalJavaAction {
+public class BrowseRequirementAction implements IExternalJavaAction {
 
 	private Component focus = null;
 	private HashMap<String, Requirement> map = new HashMap();
-	public BrowseAction() {
+	public BrowseRequirementAction() {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -29,9 +29,9 @@ import requirement.Requirement;
 import requirement.RequirementElement;
 import requirement.RequirementPackage;
 
-public class EGoToRequirementAction implements IExternalJavaAction {
+public class GoToRequirementAction implements IExternalJavaAction {
 
-	public EGoToRequirementAction() {
+	public GoToRequirementAction() {
 		// TODO Auto-generated constructor stub
 	}
 
