@@ -5,6 +5,7 @@ package component.impl;
 import base.ArtifactElement;
 import component.Component;
 import component.ComponentElement;
+import component.ComponentType;
 import component.Component_Package;
 import component.FailureMode;
 import component.Function;
@@ -44,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link component.impl.ComponentImpl#isSafety_related <em>Safety related</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSil <em>Sil</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link component.impl.ComponentImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link component.impl.ComponentImpl#getSub_components <em>Sub components</em>}</li>
@@ -204,6 +206,26 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @ordered
 	 */
 	protected Function function;
+
+	/**
+	 * The default value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ComponentType COMPONENT_TYPE_EDEFAULT = ComponentType.FUNCTION;
+
+	/**
+	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentType componentType = COMPONENT_TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
@@ -491,6 +513,29 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 	 * @generated
 	 */
 	@Override
+	public ComponentType getComponentType() {
+		return componentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setComponentType(ComponentType newComponentType) {
+		ComponentType oldComponentType = componentType;
+		componentType = newComponentType == null ? COMPONENT_TYPE_EDEFAULT : newComponentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.COMPONENT__COMPONENT_TYPE, oldComponentType, componentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Input> getInputs() {
 		if (inputs == null) {
 			inputs = new EObjectContainmentEList<Input>(Input.class, this, Component_Package.COMPONENT__INPUTS);
@@ -610,6 +655,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__FUNCTION:
 				if (resolve) return getFunction();
 				return basicGetFunction();
+			case Component_Package.COMPONENT__COMPONENT_TYPE:
+				return getComponentType();
 			case Component_Package.COMPONENT__INPUTS:
 				return getInputs();
 			case Component_Package.COMPONENT__OUTPUTS:
@@ -658,6 +705,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return;
 			case Component_Package.COMPONENT__FUNCTION:
 				setFunction((Function)newValue);
+				return;
+			case Component_Package.COMPONENT__COMPONENT_TYPE:
+				setComponentType((ComponentType)newValue);
 				return;
 			case Component_Package.COMPONENT__INPUTS:
 				getInputs().clear();
@@ -719,6 +769,9 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 			case Component_Package.COMPONENT__FUNCTION:
 				setFunction((Function)null);
 				return;
+			case Component_Package.COMPONENT__COMPONENT_TYPE:
+				setComponentType(COMPONENT_TYPE_EDEFAULT);
+				return;
 			case Component_Package.COMPONENT__INPUTS:
 				getInputs().clear();
 				return;
@@ -765,6 +818,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 				return sil != SIL_EDEFAULT;
 			case Component_Package.COMPONENT__FUNCTION:
 				return function != null;
+			case Component_Package.COMPONENT__COMPONENT_TYPE:
+				return componentType != COMPONENT_TYPE_EDEFAULT;
 			case Component_Package.COMPONENT__INPUTS:
 				return inputs != null && !inputs.isEmpty();
 			case Component_Package.COMPONENT__OUTPUTS:
@@ -805,6 +860,8 @@ public class ComponentImpl extends ComponentElementImpl implements Component {
 		result.append(safety_related);
 		result.append(", sil: ");
 		result.append(sil);
+		result.append(", componentType: ");
+		result.append(componentType);
 		result.append(')');
 		return result.toString();
 	}

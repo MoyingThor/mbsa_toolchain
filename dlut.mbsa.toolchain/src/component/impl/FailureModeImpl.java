@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link component.impl.FailureModeImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getCause <em>Cause</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getProbability <em>Probability</em>}</li>
+ *   <li>{@link component.impl.FailureModeImpl#isSafety_related <em>Safety related</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getHazards <em>Hazards</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getRegional <em>Regional</em>}</li>
  *   <li>{@link component.impl.FailureModeImpl#getHigher_level <em>Higher level</em>}</li>
@@ -99,6 +100,26 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 	 * @ordered
 	 */
 	protected float probability = PROBABILITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSafety_related() <em>Safety related</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSafety_related()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SAFETY_RELATED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSafety_related() <em>Safety related</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSafety_related()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean safety_related = SAFETY_RELATED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getHazards() <em>Hazards</em>}' reference list.
@@ -226,6 +247,29 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 		probability = newProbability;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.FAILURE_MODE__PROBABILITY, oldProbability, probability));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSafety_related() {
+		return safety_related;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSafety_related(boolean newSafety_related) {
+		boolean oldSafety_related = safety_related;
+		safety_related = newSafety_related;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Component_Package.FAILURE_MODE__SAFETY_RELATED, oldSafety_related, safety_related));
 	}
 
 	/**
@@ -408,6 +452,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return getCause();
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				return getProbability();
+			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
+				return isSafety_related();
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				return getHazards();
 			case Component_Package.FAILURE_MODE__REGIONAL:
@@ -437,6 +483,9 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return;
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				setProbability((Float)newValue);
+				return;
+			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
+				setSafety_related((Boolean)newValue);
 				return;
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				getHazards().clear();
@@ -472,6 +521,9 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				setProbability(PROBABILITY_EDEFAULT);
 				return;
+			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
+				setSafety_related(SAFETY_RELATED_EDEFAULT);
+				return;
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				getHazards().clear();
 				return;
@@ -502,6 +554,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 				return CAUSE_EDEFAULT == null ? cause != null : !CAUSE_EDEFAULT.equals(cause);
 			case Component_Package.FAILURE_MODE__PROBABILITY:
 				return probability != PROBABILITY_EDEFAULT;
+			case Component_Package.FAILURE_MODE__SAFETY_RELATED:
+				return safety_related != SAFETY_RELATED_EDEFAULT;
 			case Component_Package.FAILURE_MODE__HAZARDS:
 				return hazards != null && !hazards.isEmpty();
 			case Component_Package.FAILURE_MODE__REGIONAL:
@@ -530,6 +584,8 @@ public class FailureModeImpl extends ComponentSafetyElementImpl implements Failu
 		result.append(cause);
 		result.append(", probability: ");
 		result.append(probability);
+		result.append(", safety_related: ");
+		result.append(safety_related);
 		result.append(')');
 		return result.toString();
 	}

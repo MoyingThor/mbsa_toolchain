@@ -237,6 +237,14 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="计算安全完整性等级">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="calculate_component_sil" id="mbsa.toolchain.design.calculate.component.sil"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
@@ -616,18 +624,22 @@
                       <controls xsi:type="properties:TextDescription" name="mode_text" labelExpression="失效模式" valueExpression="feature:mode">
                         <initialOperation>
                           <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                            <subModelOperations xsi:type="tool_1:SetValue" featureName="fit" valueExpression="var:newValue"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="mode" valueExpression="var:newValue"/>
                           </firstModelOperations>
                         </initialOperation>
                       </controls>
                       <controls xsi:type="properties:TextDescription" name="cause_text" labelExpression="失效原因" valueExpression="feature:cause">
                         <initialOperation>
-                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="cause" valueExpression="var:newValue"/>
+                          </firstModelOperations>
                         </initialOperation>
                       </controls>
                       <controls xsi:type="properties:TextDescription" name="probability_text" labelExpression="发生概率" valueExpression="feature:probability">
                         <initialOperation>
-                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="probability" valueExpression="var:newValue"/>
+                          </firstModelOperations>
                         </initialOperation>
                       </controls>
                       <layout xsi:type="properties:GridLayoutDescription"/>

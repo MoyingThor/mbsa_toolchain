@@ -12,6 +12,17 @@
       <genEnumLiterals ecoreEnumLiteral="component.ecore#//FailureSeverity/moderate"/>
       <genEnumLiterals ecoreEnumLiteral="component.ecore#//FailureSeverity/minor"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="component.ecore#//ComponentType">
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ComponentType/function"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ComponentType/hardware"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ComponentType/software"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="component.ecore#//ToleranceType">
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ToleranceType/oneoo1"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ToleranceType/oneoo2"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ToleranceType/oneoo3"/>
+      <genEnumLiterals ecoreEnumLiteral="component.ecore#//ToleranceType/twooo3"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="component.ecore#//ComponentElement"/>
     <genClasses ecoreClass="component.ecore#//ComponentPackage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//ComponentPackage/components"/>
@@ -32,6 +43,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/safety_related"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/sil"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//Component/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//Component/componentType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/inputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/outputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//Component/sub_components"/>
@@ -63,6 +75,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/mode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/cause"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/probability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute component.ecore#//FailureMode/safety_related"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/hazards"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/regional"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference component.ecore#//FailureMode/higher_level"/>

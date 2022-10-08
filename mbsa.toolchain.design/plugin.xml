@@ -41,5 +41,9 @@
            actionClass="mbsa.toolchain.design.ClearQueryResultAction"
            id="mbsa.toolchain.design.clear.result.action">
      </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.CalculateComponentSILAction"
+           id="mbsa.toolchain.design.calculate.component.sil">
+     </javaActions>
   </extension>
 </plugin>

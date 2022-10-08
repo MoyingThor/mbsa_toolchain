@@ -85,6 +85,10 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 		switch (eDataType.getClassifierID()) {
 			case Component_Package.FAILURE_SEVERITY:
 				return createFailureSeverityFromString(eDataType, initialValue);
+			case Component_Package.COMPONENT_TYPE:
+				return createComponentTypeFromString(eDataType, initialValue);
+			case Component_Package.TOLERANCE_TYPE:
+				return createToleranceTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -100,6 +104,10 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 		switch (eDataType.getClassifierID()) {
 			case Component_Package.FAILURE_SEVERITY:
 				return convertFailureSeverityToString(eDataType, instanceValue);
+			case Component_Package.COMPONENT_TYPE:
+				return convertComponentTypeToString(eDataType, instanceValue);
+			case Component_Package.TOLERANCE_TYPE:
+				return convertToleranceTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -265,6 +273,46 @@ public class Component_FactoryImpl extends EFactoryImpl implements Component_Fac
 	 * @generated
 	 */
 	public String convertFailureSeverityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentType createComponentTypeFromString(EDataType eDataType, String initialValue) {
+		ComponentType result = ComponentType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertComponentTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ToleranceType createToleranceTypeFromString(EDataType eDataType, String initialValue) {
+		ToleranceType result = ToleranceType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertToleranceTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

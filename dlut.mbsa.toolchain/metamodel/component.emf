@@ -29,6 +29,7 @@ class Component extends ComponentElement {
 	attr boolean safety_related;
 	attr int sil;
 	ref Function function;
+	attr ComponentType[1] componentType;
 	val Input[*] inputs;
 	val Output[*] outputs;
 	val ComponentElement[*] sub_components;
@@ -72,10 +73,24 @@ enum FailureSeverity {
 	minor = 4;
 }
 
+enum ComponentType {
+	function = 1;
+	hardware = 2;
+	software = 3;
+}
+
+enum ToleranceType {
+	oneoo1 = 1;
+	oneoo2 = 2;
+	oneoo3 = 3;
+	twooo3 = 4;
+}
+
 class FailureMode extends ComponentSafetyElement {
 	attr String mode;
 	attr String cause;
 	attr float probability;
+	attr boolean safety_related;
 	ref base.ArtifactElement[*] hazards;
 	val RegionalEffect regional;
 	val HigherLevelEffect higher_level;

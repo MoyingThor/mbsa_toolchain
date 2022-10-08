@@ -703,13 +703,22 @@ public interface Component_Package extends EPackage {
 	int COMPONENT__FUNCTION = COMPONENT_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__COMPONENT_TYPE = COMPONENT_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__INPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT__INPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -718,7 +727,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__OUTPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 9;
+	int COMPONENT__OUTPUTS = COMPONENT_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Sub components</b></em>' containment reference list.
@@ -727,7 +736,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SUB_COMPONENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 10;
+	int COMPONENT__SUB_COMPONENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Failure modes</b></em>' containment reference list.
@@ -736,7 +745,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FAILURE_MODES = COMPONENT_ELEMENT_FEATURE_COUNT + 11;
+	int COMPONENT__FAILURE_MODES = COMPONENT_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Safety mechanisms</b></em>' containment reference list.
@@ -745,7 +754,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SAFETY_MECHANISMS = COMPONENT_ELEMENT_FEATURE_COUNT + 12;
+	int COMPONENT__SAFETY_MECHANISMS = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Requirements</b></em>' reference list.
@@ -754,7 +763,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__REQUIREMENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 13;
+	int COMPONENT__REQUIREMENTS = COMPONENT_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -763,7 +772,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 14;
+	int COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The meta object id for the '{@link component.impl.ComponentRelationshipImpl <em>Component Relationship</em>}' class.
@@ -1637,13 +1646,22 @@ public interface Component_Package extends EPackage {
 	int FAILURE_MODE__PROBABILITY = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Safety related</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FAILURE_MODE__SAFETY_RELATED = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Hazards</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__HAZARDS = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 3;
+	int FAILURE_MODE__HAZARDS = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Regional</b></em>' containment reference.
@@ -1652,7 +1670,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__REGIONAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 4;
+	int FAILURE_MODE__REGIONAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Higher level</b></em>' containment reference.
@@ -1661,7 +1679,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__HIGHER_LEVEL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 5;
+	int FAILURE_MODE__HIGHER_LEVEL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Final</b></em>' containment reference.
@@ -1670,7 +1688,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE__FINAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 6;
+	int FAILURE_MODE__FINAL = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Failure Mode</em>' class.
@@ -1679,7 +1697,7 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 7;
+	int FAILURE_MODE_FEATURE_COUNT = COMPONENT_SAFETY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link component.impl.SafetyMechanismImpl <em>Safety Mechanism</em>}' class.
@@ -2382,6 +2400,28 @@ public interface Component_Package extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link component.ComponentType <em>Component Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.ComponentType
+	 * @see component.impl.Component_PackageImpl#getComponentType()
+	 * @generated
+	 */
+	int COMPONENT_TYPE = 18;
+
+
+	/**
+	 * The meta object id for the '{@link component.ToleranceType <em>Tolerance Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see component.ToleranceType
+	 * @see component.impl.Component_PackageImpl#getToleranceType()
+	 * @generated
+	 */
+	int TOLERANCE_TYPE = 19;
+
+
+	/**
 	 * Returns the meta object for class '{@link component.ComponentElement <em>Component Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2562,6 +2602,17 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_Function();
+
+	/**
+	 * Returns the meta object for the attribute '{@link component.Component#getComponentType <em>Component Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Component Type</em>'.
+	 * @see component.Component#getComponentType()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EAttribute getComponent_ComponentType();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link component.Component#getInputs <em>Inputs</em>}'.
@@ -2832,6 +2883,17 @@ public interface Component_Package extends EPackage {
 	EAttribute getFailureMode_Probability();
 
 	/**
+	 * Returns the meta object for the attribute '{@link component.FailureMode#isSafety_related <em>Safety related</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Safety related</em>'.
+	 * @see component.FailureMode#isSafety_related()
+	 * @see #getFailureMode()
+	 * @generated
+	 */
+	EAttribute getFailureMode_Safety_related();
+
+	/**
 	 * Returns the meta object for the reference list '{@link component.FailureMode#getHazards <em>Hazards</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2989,6 +3051,26 @@ public interface Component_Package extends EPackage {
 	 * @generated
 	 */
 	EEnum getFailureSeverity();
+
+	/**
+	 * Returns the meta object for enum '{@link component.ComponentType <em>Component Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Component Type</em>'.
+	 * @see component.ComponentType
+	 * @generated
+	 */
+	EEnum getComponentType();
+
+	/**
+	 * Returns the meta object for enum '{@link component.ToleranceType <em>Tolerance Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Tolerance Type</em>'.
+	 * @see component.ToleranceType
+	 * @generated
+	 */
+	EEnum getToleranceType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3157,6 +3239,14 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__FUNCTION = eINSTANCE.getComponent_Function();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT__COMPONENT_TYPE = eINSTANCE.getComponent_ComponentType();
 
 		/**
 		 * The meta object literal for the '<em><b>Inputs</b></em>' containment reference list feature.
@@ -3373,6 +3463,14 @@ public interface Component_Package extends EPackage {
 		EAttribute FAILURE_MODE__PROBABILITY = eINSTANCE.getFailureMode_Probability();
 
 		/**
+		 * The meta object literal for the '<em><b>Safety related</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FAILURE_MODE__SAFETY_RELATED = eINSTANCE.getFailureMode_Safety_related();
+
+		/**
 		 * The meta object literal for the '<em><b>Hazards</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3503,6 +3601,26 @@ public interface Component_Package extends EPackage {
 		 * @generated
 		 */
 		EEnum FAILURE_SEVERITY = eINSTANCE.getFailureSeverity();
+
+		/**
+		 * The meta object literal for the '{@link component.ComponentType <em>Component Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.ComponentType
+		 * @see component.impl.Component_PackageImpl#getComponentType()
+		 * @generated
+		 */
+		EEnum COMPONENT_TYPE = eINSTANCE.getComponentType();
+
+		/**
+		 * The meta object literal for the '{@link component.ToleranceType <em>Tolerance Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see component.ToleranceType
+		 * @see component.impl.Component_PackageImpl#getToleranceType()
+		 * @generated
+		 */
+		EEnum TOLERANCE_TYPE = eINSTANCE.getToleranceType();
 
 	}
 

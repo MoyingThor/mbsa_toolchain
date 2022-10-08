@@ -25,6 +25,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="safety_related" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sil" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//Function"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentType" lowerBound="1"
+        eType="#//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Input" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
@@ -65,10 +67,22 @@
     <eLiterals name="moderate" value="3"/>
     <eLiterals name="minor" value="4"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComponentType">
+    <eLiterals name="function" value="1"/>
+    <eLiterals name="hardware" value="2"/>
+    <eLiterals name="software" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ToleranceType">
+    <eLiterals name="oneoo1" value="1"/>
+    <eLiterals name="oneoo2" value="2"/>
+    <eLiterals name="oneoo3" value="3"/>
+    <eLiterals name="twooo3" value="4"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FailureMode" eSuperTypes="#//ComponentSafetyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cause" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="safety_related" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" upperBound="-1"
         eType="ecore:EClass http://dlut.mbsa/base#//ArtifactElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="regional" eType="#//RegionalEffect"

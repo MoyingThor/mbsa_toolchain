@@ -1,43 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mbsa_:MBSAPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmlns:mbsa_="http://dlut.mbsa/mbsa" xmlns:requirement_="http://dlut.mbsa/requirement">
+<mbsa_:MBSAPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component_="http://dlut.mbsa/component" xmlns:hazard_="http://dlut.mbsa/hazard" xmlns:mbsa_="http://dlut.mbsa/mbsa" xmlns:requirement_="http://dlut.mbsa/requirement">
   <componentPackage>
     <name content="通讯系统组件"/>
-    <components xsi:type="component_:Component" identity="10" component_name="天线"/>
-    <components xsi:type="component_:Component" identity="20" component_name="RF放大器"/>
-    <components xsi:type="component_:ComponentRelationship" label="传递信号" source="//@componentPackage.0/@components.0" target="//@componentPackage.0/@components.1"/>
-    <components xsi:type="component_:Component" identity="40" component_name="新组件"/>
-    <components xsi:type="component_:ComponentRelationship" label="放大信号" source="//@componentPackage.0/@components.1" target="//@componentPackage.0/@components.3"/>
-    <components xsi:type="component_:Component" identity="50" component_name="IF放大器" fit="1.0E-5"/>
-    <components xsi:type="component_:ComponentRelationship" label="中频信号" source="//@componentPackage.0/@components.3" target="//@componentPackage.0/@components.5"/>
-    <components xsi:type="component_:Component" identity="60" component_name="检波器" fit="1.0E-6">
-      <failure_modes mode="开路"/>
-      <failure_modes mode="无输出"/>
-      <failure_modes mode="输出过大"/>
-      <safety_mechanisms handle="//@componentPackage.0/@components.7/@failure_modes.0" mechanism="新安全措施"/>
+    <components xsi:type="component_:ComponentRelationship" label="传递信号"/>
+    <components xsi:type="component_:ComponentRelationship" label="放大信号"/>
+    <components xsi:type="component_:ComponentRelationship" label="中频信号"/>
+    <components xsi:type="component_:ComponentRelationship" label="放大中频信号"/>
+    <components xsi:type="component_:ComponentRelationship" label="有效信号"/>
+    <components xsi:type="component_:ComponentRelationship" label="驱动信号"/>
+    <components xsi:type="component_:ComponentRelationship" label=""/>
+    <components xsi:type="component_:ComponentRelationship" label="稳定频率信号"/>
+    <components xsi:type="component_:ComponentRelationship" label="反馈信号"/>
+    <components xsi:type="component_:ComponentRelationship" label=""/>
+    <components xsi:type="component_:ComponentRelationship" label=""/>
+    <components xsi:type="component_:Component" identity="10" component_name="天线" fit="1.0" sil="1" requirements="//@requirementPackage.0/@requirementElement.0">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+      <failure_modes identity="101" mode="不能接收信号" cause="接受频率不够，信号太弱" probability="0.4" safety_related="true"/>
+      <failure_modes mode="信号泄露" cause="波导泄露" probability="0.2"/>
+      <failure_modes mode="乱真接受" cause="阻抗不匹配" probability="0.2"/>
+      <safety_mechanisms identity="1011" handle="//@componentPackage.0/@components.11/@failure_modes.0" mechanism="BITE声音报警" coverage="0.1"/>
+      <safety_mechanisms handle="//@componentPackage.0/@components.11/@failure_modes.1" mechanism="检测仪检测"/>
+      <safety_mechanisms handle="//@componentPackage.0/@components.11/@failure_modes.2" mechanism="听觉检测" coverage="0.5"/>
     </components>
-    <components xsi:type="component_:ComponentRelationship" label="放大中频信号" source="//@componentPackage.0/@components.5" target="//@componentPackage.0/@components.7"/>
-    <components xsi:type="component_:Component" identity="70" component_name="音频放大器" fit="1.0E-6"/>
-    <components xsi:type="component_:ComponentRelationship" label="有效信号" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.9"/>
-    <components xsi:type="component_:Component" identity="80" component_name="喇叭"/>
-    <components xsi:type="component_:ComponentRelationship" label="驱动信号" source="//@componentPackage.0/@components.9" target="//@componentPackage.0/@components.11"/>
-    <components xsi:type="component_:Component" identity="30" component_name="本振"/>
-    <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.13" target="//@componentPackage.0/@components.1"/>
-    <components xsi:type="component_:ComponentRelationship" label="稳定频率信号" source="//@componentPackage.0/@components.13" target="//@componentPackage.0/@components.3"/>
-    <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.1"/>
-    <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.3"/>
-    <components xsi:type="component_:ComponentRelationship" label="" source="//@componentPackage.0/@components.7" target="//@componentPackage.0/@components.5"/>
+    <components xsi:type="component_:Component" identity="20" component_name="RF放大器">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+      <failure_modes identity="201" mode="无输出" cause="断路" probability="0.4" safety_related="true"/>
+      <failure_modes identity="202" mode="电压增益不够" probability="0.3"/>
+      <failure_modes identity="203" mode="丧失RF协调能力" cause="调谐回路故障"/>
+      <safety_mechanisms identity="2021" handle="//@componentPackage.0/@components.12/@failure_modes.0" mechanism="高质量元器件" coverage="0.99"/>
+      <safety_mechanisms identity="2022" handle="//@componentPackage.0/@components.12/@failure_modes.1" mechanism="高质量元器件" coverage="0.9"/>
+      <safety_mechanisms identity="202" handle="//@componentPackage.0/@components.12/@failure_modes.2" mechanism="高质量元器件" coverage="0.99"/>
+    </components>
+    <components xsi:type="component_:Component" identity="30" component_name="本振">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+      <failure_modes mode="无输出" probability="0.6" safety_related="true"/>
+      <failure_modes mode="输出错误" probability="0.2" safety_related="true"/>
+      <failure_modes mode="简写输出" probability="0.2"/>
+      <safety_mechanisms handle="//@componentPackage.0/@components.13/@failure_modes.0" mechanism="高质量元器件" coverage="0.9"/>
+      <safety_mechanisms handle="//@componentPackage.0/@components.13/@failure_modes.1" mechanism="高质量元器件" coverage="0.9"/>
+      <safety_mechanisms handle="//@componentPackage.0/@components.13/@failure_modes.2" mechanism="高质量元器件"/>
+    </components>
+    <components xsi:type="component_:Component" identity="40" component_name="混频器">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+    </components>
+    <components xsi:type="component_:Component" identity="50" component_name="IF放大器">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+    </components>
+    <components xsi:type="component_:Component" identity="60" component_name="检波器">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+    </components>
+    <components xsi:type="component_:Component" identity="70" component_name="音频放大器">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+    </components>
+    <components xsi:type="component_:Component" identity="80" component_name="喇叭">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+    </components>
+    <components xsi:type="component_:ComponentRelationship" label="传递信号" source="//@componentPackage.0/@components.11" target="//@componentPackage.0/@components.12"/>
+    <components xsi:type="component_:ComponentRelationship" label="放大信号" source="//@componentPackage.0/@components.12" target="//@componentPackage.0/@components.14"/>
+    <components xsi:type="component_:ComponentRelationship" label="中频信号" source="//@componentPackage.0/@components.14" target="//@componentPackage.0/@components.15"/>
+    <components xsi:type="component_:ComponentRelationship" label="稳定频率信号" source="//@componentPackage.0/@components.13" target="//@componentPackage.0/@components.12"/>
+    <components xsi:type="component_:ComponentRelationship" label="稳定频率信号" source="//@componentPackage.0/@components.13" target="//@componentPackage.0/@components.14"/>
+    <components xsi:type="component_:ComponentRelationship" label="放大中频信号" source="//@componentPackage.0/@components.15" target="//@componentPackage.0/@components.16"/>
+    <components xsi:type="component_:ComponentRelationship" label="有效信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.17"/>
+    <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.12"/>
+    <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.14"/>
+    <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.15"/>
+    <components xsi:type="component_:ComponentRelationship" label="驱动信号" source="//@componentPackage.0/@components.17" target="//@componentPackage.0/@components.18"/>
   </componentPackage>
   <requirementPackage>
     <name content="通讯系统需求包"/>
-    <requirementElement xsi:type="requirement_:Requirement" desc="通讯系统中天线的安全完整性等级至少为2" script="self.sil >= 2;">
-      <name content="新安全需求"/>
+    <requirementElement xsi:type="requirement_:Requirement" identity="1" desc="通讯系统中天线的安全完整性等级至少为2" script="self.sil >= 2;">
+      <name content="天线组件的需求"/>
     </requirementElement>
-    <requirementElement xsi:type="requirement_:Requirement" desc="通讯系统中RF放大器的安全完整性等级至少为2" script="self.sil >= 2;">
-      <name content="新安全需求"/>
+    <requirementElement xsi:type="requirement_:Requirement" identity="2" desc="通讯系统中RF放大器的安全完整性等级至少为2" script="self.sil >= 2;">
+      <name content="RF放大器需求"/>
     </requirementElement>
-    <requirementElement xsi:type="requirement_:RequirementRelationship" label="支持" source="//@requirementPackage.0/@requirementElement.0" target="//@requirementPackage.0/@requirementElement.1"/>
   </requirementPackage>
   <hazardPackage>
     <name content="通讯系统危险分析包"/>
+    <hazardElement xsi:type="hazard_:HazardousSituation" identity="1" causes="//@hazardPackage.0/@hazardElement.1">
+      <name content="作战人员在战场情报不完善情况下遭到敌方攻击。"/>
+    </hazardElement>
+    <hazardElement xsi:type="hazard_:Cause" identity="11" controlMeasure="//@hazardPackage.0/@hazardElement.2">
+      <name content="通信系统功能丧失"/>
+    </hazardElement>
+    <hazardElement xsi:type="hazard_:ControlMeasure" identity="111">
+      <name content="使用安全功能检测通讯系统可靠性"/>
+    </hazardElement>
   </hazardPackage>
 </mbsa_:MBSAPackage>

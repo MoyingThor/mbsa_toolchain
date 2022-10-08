@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link component.FailureMode#getMode <em>Mode</em>}</li>
  *   <li>{@link component.FailureMode#getCause <em>Cause</em>}</li>
  *   <li>{@link component.FailureMode#getProbability <em>Probability</em>}</li>
+ *   <li>{@link component.FailureMode#isSafety_related <em>Safety related</em>}</li>
  *   <li>{@link component.FailureMode#getHazards <em>Hazards</em>}</li>
  *   <li>{@link component.FailureMode#getRegional <em>Regional</em>}</li>
  *   <li>{@link component.FailureMode#getHigher_level <em>Higher level</em>}</li>
@@ -94,6 +95,28 @@ public interface FailureMode extends ComponentSafetyElement {
 	 * @generated
 	 */
 	void setProbability(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Safety related</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safety related</em>' attribute.
+	 * @see #setSafety_related(boolean)
+	 * @see component.Component_Package#getFailureMode_Safety_related()
+	 * @model
+	 * @generated
+	 */
+	boolean isSafety_related();
+
+	/**
+	 * Sets the value of the '{@link component.FailureMode#isSafety_related <em>Safety related</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Safety related</em>' attribute.
+	 * @see #isSafety_related()
+	 * @generated
+	 */
+	void setSafety_related(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Hazards</b></em>' reference list.

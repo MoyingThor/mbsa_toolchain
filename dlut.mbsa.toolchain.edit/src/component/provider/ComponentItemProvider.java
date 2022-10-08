@@ -56,6 +56,7 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			addSafety_relatedPropertyDescriptor(object);
 			addSilPropertyDescriptor(object);
 			addFunctionPropertyDescriptor(object);
+			addComponentTypePropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -238,6 +239,28 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Component Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_componentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_componentType_feature", "_UI_Component_type"),
+				 Component_Package.Literals.COMPONENT__COMPONENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Requirements feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,6 +361,7 @@ public class ComponentItemProvider extends ComponentElementItemProvider {
 			case Component_Package.COMPONENT__FIT:
 			case Component_Package.COMPONENT__SAFETY_RELATED:
 			case Component_Package.COMPONENT__SIL:
+			case Component_Package.COMPONENT__COMPONENT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case Component_Package.COMPONENT__INPUTS:

@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link component.Component#isSafety_related <em>Safety related</em>}</li>
  *   <li>{@link component.Component#getSil <em>Sil</em>}</li>
  *   <li>{@link component.Component#getFunction <em>Function</em>}</li>
+ *   <li>{@link component.Component#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link component.Component#getInputs <em>Inputs</em>}</li>
  *   <li>{@link component.Component#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link component.Component#getSub_components <em>Sub components</em>}</li>
@@ -210,6 +211,31 @@ public interface Component extends ComponentElement {
 	 * @generated
 	 */
 	void setFunction(Function value);
+
+	/**
+	 * Returns the value of the '<em><b>Component Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link component.ComponentType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Type</em>' attribute.
+	 * @see component.ComponentType
+	 * @see #setComponentType(ComponentType)
+	 * @see component.Component_Package#getComponent_ComponentType()
+	 * @model required="true"
+	 * @generated
+	 */
+	ComponentType getComponentType();
+
+	/**
+	 * Sets the value of the '{@link component.Component#getComponentType <em>Component Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Type</em>' attribute.
+	 * @see component.ComponentType
+	 * @see #getComponentType()
+	 * @generated
+	 */
+	void setComponentType(ComponentType value);
 
 	/**
 	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.

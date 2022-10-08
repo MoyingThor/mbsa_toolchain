@@ -14,6 +14,7 @@ import component.ComponentPackageBinding;
 import component.ComponentPackageInterface;
 import component.ComponentRelationship;
 import component.ComponentSafetyElement;
+import component.ComponentType;
 import component.Component_Factory;
 import component.Component_Package;
 import component.FailureEffect;
@@ -28,6 +29,7 @@ import component.RegionalEffect;
 import component.SafetyMechanism;
 import component.Safety_Mechanism;
 
+import component.ToleranceType;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -168,6 +170,20 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	private EEnum failureSeverityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum componentTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum toleranceTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -412,8 +428,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Inputs() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(8);
+	public EAttribute getComponent_ComponentType() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -422,7 +438,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Outputs() {
+	public EReference getComponent_Inputs() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -432,7 +448,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Sub_components() {
+	public EReference getComponent_Outputs() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -442,7 +458,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Failure_modes() {
+	public EReference getComponent_Sub_components() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -452,7 +468,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Safety_mechanisms() {
+	public EReference getComponent_Failure_modes() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -462,8 +478,18 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getComponent_Requirements() {
+	public EReference getComponent_Safety_mechanisms() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_Requirements() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -662,8 +688,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Hazards() {
-		return (EReference)failureModeEClass.getEStructuralFeatures().get(3);
+	public EAttribute getFailureMode_Safety_related() {
+		return (EAttribute)failureModeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -672,7 +698,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Regional() {
+	public EReference getFailureMode_Hazards() {
 		return (EReference)failureModeEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -682,7 +708,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Higher_level() {
+	public EReference getFailureMode_Regional() {
 		return (EReference)failureModeEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -692,8 +718,18 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
-	public EReference getFailureMode_Final() {
+	public EReference getFailureMode_Higher_level() {
 		return (EReference)failureModeEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFailureMode_Final() {
+		return (EReference)failureModeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -812,6 +848,26 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 	 * @generated
 	 */
 	@Override
+	public EEnum getComponentType() {
+		return componentTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getToleranceType() {
+		return toleranceTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Component_Factory getComponent_Factory() {
 		return (Component_Factory)getEFactoryInstance();
 	}
@@ -856,6 +912,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEAttribute(componentEClass, COMPONENT__SAFETY_RELATED);
 		createEAttribute(componentEClass, COMPONENT__SIL);
 		createEReference(componentEClass, COMPONENT__FUNCTION);
+		createEAttribute(componentEClass, COMPONENT__COMPONENT_TYPE);
 		createEReference(componentEClass, COMPONENT__INPUTS);
 		createEReference(componentEClass, COMPONENT__OUTPUTS);
 		createEReference(componentEClass, COMPONENT__SUB_COMPONENTS);
@@ -888,6 +945,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		createEAttribute(failureModeEClass, FAILURE_MODE__MODE);
 		createEAttribute(failureModeEClass, FAILURE_MODE__CAUSE);
 		createEAttribute(failureModeEClass, FAILURE_MODE__PROBABILITY);
+		createEAttribute(failureModeEClass, FAILURE_MODE__SAFETY_RELATED);
 		createEReference(failureModeEClass, FAILURE_MODE__HAZARDS);
 		createEReference(failureModeEClass, FAILURE_MODE__REGIONAL);
 		createEReference(failureModeEClass, FAILURE_MODE__HIGHER_LEVEL);
@@ -910,6 +968,8 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 
 		// Create enums
 		failureSeverityEEnum = createEEnum(FAILURE_SEVERITY);
+		componentTypeEEnum = createEEnum(COMPONENT_TYPE);
+		toleranceTypeEEnum = createEEnum(TOLERANCE_TYPE);
 	}
 
 	/**
@@ -983,6 +1043,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEAttribute(getComponent_Safety_related(), ecorePackage.getEBoolean(), "safety_related", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Sil(), ecorePackage.getEInt(), "sil", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Function(), this.getFunction(), null, "function", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_ComponentType(), this.getComponentType(), "componentType", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Inputs(), this.getInput(), null, "inputs", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Outputs(), this.getOutput(), null, "outputs", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Sub_components(), this.getComponentElement(), null, "sub_components", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1015,6 +1076,7 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		initEAttribute(getFailureMode_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFailureMode_Cause(), ecorePackage.getEString(), "cause", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFailureMode_Probability(), ecorePackage.getEFloat(), "probability", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFailureMode_Safety_related(), ecorePackage.getEBoolean(), "safety_related", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Hazards(), theBase_Package.getArtifactElement(), null, "hazards", null, 0, -1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Regional(), this.getRegionalEffect(), null, "regional", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFailureMode_Higher_level(), this.getHigherLevelEffect(), null, "higher_level", null, 0, 1, FailureMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1041,6 +1103,17 @@ public class Component_PackageImpl extends EPackageImpl implements Component_Pac
 		addEEnumLiteral(failureSeverityEEnum, FailureSeverity.FATAL);
 		addEEnumLiteral(failureSeverityEEnum, FailureSeverity.MODERATE);
 		addEEnumLiteral(failureSeverityEEnum, FailureSeverity.MINOR);
+
+		initEEnum(componentTypeEEnum, ComponentType.class, "ComponentType");
+		addEEnumLiteral(componentTypeEEnum, ComponentType.FUNCTION);
+		addEEnumLiteral(componentTypeEEnum, ComponentType.HARDWARE);
+		addEEnumLiteral(componentTypeEEnum, ComponentType.SOFTWARE);
+
+		initEEnum(toleranceTypeEEnum, ToleranceType.class, "ToleranceType");
+		addEEnumLiteral(toleranceTypeEEnum, ToleranceType.ONEOO1);
+		addEEnumLiteral(toleranceTypeEEnum, ToleranceType.ONEOO2);
+		addEEnumLiteral(toleranceTypeEEnum, ToleranceType.ONEOO3);
+		addEEnumLiteral(toleranceTypeEEnum, ToleranceType.TWOOO3);
 
 		// Create resource
 		createResource(eNS_URI);

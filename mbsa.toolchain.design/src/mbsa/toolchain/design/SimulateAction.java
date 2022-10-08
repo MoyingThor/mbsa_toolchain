@@ -75,5 +75,15 @@ public class SimulateAction implements IExternalJavaAction {
 	public boolean canExecute(Collection<? extends EObject> selections) {
 		return true;
 	}
+	
+	protected double getRand() {
+		Random r = new Random();
+		return r.nextDouble();
+	}
+	
+	protected double getFIT(Component component) {
+		double fit = component.getFit() * 1e-7;
+		return fit;
+	}
 
 }
