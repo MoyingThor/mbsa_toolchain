@@ -74,8 +74,8 @@ public class GoToRequirementAction implements IExternalJavaAction {
 						.getTarget();
 			}
 
-			Resource eResource = rootObject.eResource();
-			URI eUri = eResource.getURI();
+			//Resource eResource = rootObject.eResource();
+			//URI eUri = eResource.getURI();
 
 			for(EObject eobj: selections) {
 				focus = eobj;

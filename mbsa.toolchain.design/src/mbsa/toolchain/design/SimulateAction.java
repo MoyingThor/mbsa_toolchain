@@ -14,13 +14,18 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 
 import component.Component;
-import component.ComponentPackage;
 
 public class SimulateAction implements IExternalJavaAction {
 
 	protected static int counter = 0;
+	protected static double failure = 0.0;
+	protected Random r = new Random();
 	public SimulateAction() {
 		// TODO Auto-generated constructor stub
 	}
@@ -28,36 +33,91 @@ public class SimulateAction implements IExternalJavaAction {
 	@Override
 	public void execute(Collection<? extends EObject> selections, Map<String, Object> parameters) {
 		// TODO Auto-generated method stub
-		
-		for(EObject s : selections) {
-			if(s instanceof ComponentPackage) {
-				ComponentPackage cp = (ComponentPackage) s;
-				simulate(cp);
-			}
+		EObject focus = null;
+		for(EObject eobj: selections) {
+			focus = eobj;
 		}
+		Component cp = (Component) focus;
+		simulate(cp);
+//		for(EObject s : selections) {
+//			if(s instanceof ComponentPackage) {
+//				ComponentPackage cp = (ComponentPackage) s;
+//				simulate(cp);
+//			}
+//		}
 	}
 	
-	protected void simulate(ComponentPackage cp) {
-		for(int i = 0; i < 10000; i ++) {
-			for(EObject e: cp.getComponents()) {
-				ArrayList<EObject> references = new ArrayList<EObject>(new EObjectQuery(e).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET));
-
-				DSemanticDecorator dsds = (DSemanticDecorator) references.get(0);
-				DNodeSpec spec = (DNodeSpec) dsds;
-				NodeStyle style = spec.getOwnedStyle();
-				Random rand = new Random();
-				int num = (((Component) e).getIdentity()+rand.nextInt(10000))%2;
-				System.out.println("Step : " + i);
-
-				if(num %2 == 0) {
-					changeRed(spec);
-				}
-				else {
-					changeGreen(spec);
-				}
-			}
+	protected void simulate(Component cp) {
+		for(int i = 0; i < 1000000; i ++) {
+			counter++;
+			failure += getRand(cp);
 		}
+		double f = failure/counter;
+		if(f > getFIT(cp)) {
+			ArrayList<EObject> references = new ArrayList<EObject>(new EObjectQuery(cp).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET));
+			DSemanticDecorator dsds = (DSemanticDecorator) references.get(0);
+			DNodeSpec spec = (DNodeSpec) dsds;
+			NodeStyle style = spec.getOwnedStyle();
+			changeGreen(spec);
+			Shell shell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
+			MessageBox mb = new MessageBox(shell, SWT.ICON_SEARCH);
+			mb.setText("报告");
+			mb.setMessage("经过" + counter +"小时仿真，" + cp.getComponent_name() +"的失效率为：" + f);
+			mb.open();
+		}
+		else {
+			ArrayList<EObject> references = new ArrayList<EObject>(new EObjectQuery(cp).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET));
+			DSemanticDecorator dsds = (DSemanticDecorator) references.get(0);
+			DNodeSpec spec = (DNodeSpec) dsds;
+			NodeStyle style = spec.getOwnedStyle();
+			changeGreen(spec);
+			Shell shell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
+
+			MessageBox mb = new MessageBox(shell, SWT.ICON_SEARCH);
+			mb.setText("报告");
+			mb.setMessage("经过" + counter +"小时仿真，" + cp.getComponent_name() +"的失效率为：" + f);
+			mb.open();
+		}
+		
+		
+//		ArrayList<EObject> references = new ArrayList<EObject>(new EObjectQuery(e).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET));
+//
+//		DSemanticDecorator dsds = (DSemanticDecorator) references.get(0);
+//		DNodeSpec spec = (DNodeSpec) dsds;
+//		NodeStyle style = spec.getOwnedStyle();
+//		Random rand = new Random();
+//		int num = (((Component) e).getIdentity()+rand.nextInt(10000))%2;
+//		System.out.println("Step : " + i);
+//
+//		if(num %2 == 0) {
+//			changeRed(spec);
+//		}
+//		else {
+//			changeGreen(spec);
+//		}
 	}
+	
+//	protected void simulate(ComponentPackage cp) {
+//		for(int i = 0; i < 10000; i ++) {
+//			for(EObject e: cp.getComponents()) {
+//				ArrayList<EObject> references = new ArrayList<EObject>(new EObjectQuery(e).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET));
+//
+//				DSemanticDecorator dsds = (DSemanticDecorator) references.get(0);
+//				DNodeSpec spec = (DNodeSpec) dsds;
+//				NodeStyle style = spec.getOwnedStyle();
+//				Random rand = new Random();
+//				int num = (((Component) e).getIdentity()+rand.nextInt(10000))%2;
+//				System.out.println("Step : " + i);
+//
+//				if(num %2 == 0) {
+//					changeRed(spec);
+//				}
+//				else {
+//					changeGreen(spec);
+//				}
+//			}
+//		}
+//	}
 	
 	protected void changeRed(DNodeSpec spec) {
 		NodeStyle style = spec.getOwnedStyle();
@@ -76,9 +136,9 @@ public class SimulateAction implements IExternalJavaAction {
 		return true;
 	}
 	
-	protected double getRand() {
+	protected double getRand(Component component) {
 		Random r = new Random();
-		return r.nextDouble();
+		return r.nextDouble() * getFIT(component);
 	}
 	
 	protected double getFIT(Component component) {

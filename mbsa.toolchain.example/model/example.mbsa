@@ -17,27 +17,27 @@
       <name content="Name"/>
       <implementationConstraint>
         <content>
-          <value content="外部文件"/>
+          <value content="\model\my.example"/>
         </content>
       </implementationConstraint>
       <implementationConstraint>
         <content>
-          <value content="超数据"/>
+          <value content="\model\example_model.ecore"/>
         </content>
       </implementationConstraint>
       <implementationConstraint>
         <content>
-          <value content="验证规则"/>
+          <value content="var comps = Component.all();&#xD;&#xA;var comp_a = comps.select(c|c.name = &quot;A&quot;).first();&#xD;&#xA;return comp_a;"/>
         </content>
       </implementationConstraint>
       <implementationConstraint>
         <content>
-          <value content="验证结果"/>
+          <value content="org.eclipse.emf.ecore.impl.DynamicEObjectImpl@2f4507b5 (eProxyURI: file:/C:/Users/willr/git/mbsa-toolchain/mbsa.toolchain.example/model/my.example#_-dXnQEdZEe2F07kDLgaf1g eClass: org.eclipse.emf.ecore.impl.EClassImpl@27728991 (name: Component) (instanceClassName: null) (abstract: false, interface: false))"/>
         </content>
       </implementationConstraint>
-      <failure_modes identity="101" mode="不能接收信号" cause="接受频率不够，信号太弱" probability="0.4" safety_related="true"/>
+      <failure_modes identity="101" mode="不能接收信号" cause="接受频率不够，信号太弱" probability="0.4" safety_related="true" hazards="//@hazardPackage.0/@hazardElement.0"/>
       <failure_modes mode="信号泄露" cause="波导泄露" probability="0.2"/>
-      <failure_modes mode="乱真接受" cause="阻抗不匹配" probability="0.2"/>
+      <failure_modes mode="乱真接收" cause="阻抗不匹配" probability="0.2"/>
       <safety_mechanisms identity="1011" handle="//@componentPackage.0/@components.11/@failure_modes.0" mechanism="BITE声音报警" coverage="0.1"/>
       <safety_mechanisms handle="//@componentPackage.0/@components.11/@failure_modes.1" mechanism="检测仪检测"/>
       <safety_mechanisms handle="//@componentPackage.0/@components.11/@failure_modes.2" mechanism="听觉检测" coverage="0.5"/>
@@ -226,6 +226,32 @@
     <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.14"/>
     <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.15"/>
     <components xsi:type="component_:ComponentRelationship" label="驱动信号" source="//@componentPackage.0/@components.17" target="//@componentPackage.0/@components.18"/>
+    <components xsi:type="component_:Component" component_name="新组件">
+      <name content="Name"/>
+      <implementationConstraint>
+        <content>
+          <value content="外部文件"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="超数据"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证规则"/>
+        </content>
+      </implementationConstraint>
+      <implementationConstraint>
+        <content>
+          <value content="验证结果"/>
+        </content>
+      </implementationConstraint>
+    </components>
+  </componentPackage>
+  <componentPackage>
+    <name content="新组件包"/>
   </componentPackage>
   <requirementPackage>
     <name content="通讯系统需求包"/>
@@ -235,6 +261,16 @@
     <requirementElement xsi:type="requirement_:Requirement" identity="2" desc="通讯系统中RF放大器的安全完整性等级至少为2" script="self.sil >= 2;">
       <name content="RF放大器需求"/>
     </requirementElement>
+    <requirementElement xsi:type="requirement_:Requirement">
+      <name content="新安全需求"/>
+    </requirementElement>
+    <requirementElement xsi:type="requirement_:Requirement">
+      <name content="新安全需求"/>
+    </requirementElement>
+    <requirementElement xsi:type="requirement_:RequirementRelationship" label="支持" source="//@requirementPackage.0/@requirementElement.2" target="//@requirementPackage.0/@requirementElement.3"/>
+  </requirementPackage>
+  <requirementPackage>
+    <name content="新需求包"/>
   </requirementPackage>
   <hazardPackage>
     <name content="通讯系统危险分析包"/>
@@ -246,6 +282,18 @@
     </hazardElement>
     <hazardElement xsi:type="hazard_:ControlMeasure" identity="111">
       <name content="使用安全功能检测通讯系统可靠性"/>
+      <safetyDecisionRationale>
+        <name content="安全性决策说明"/>
+      </safetyDecisionRationale>
+      <verificationofEffectiveness>
+        <name content="校验有效性说明"/>
+      </verificationofEffectiveness>
+      <validation>
+        <name content="验证措施"/>
+      </validation>
     </hazardElement>
+  </hazardPackage>
+  <hazardPackage>
+    <name content="新危险分析包"/>
   </hazardPackage>
 </mbsa_:MBSAPackage>

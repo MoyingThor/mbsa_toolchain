@@ -45,5 +45,9 @@
            actionClass="mbsa.toolchain.design.CalculateComponentSILAction"
            id="mbsa.toolchain.design.calculate.component.sil">
      </javaActions>
+     <javaActions
+           actionClass="mbsa.toolchain.design.GoToHazardAction"
+           id="mbsa.toolchain.design.goto.hazard">
+     </javaActions>
   </extension>
 </plugin>

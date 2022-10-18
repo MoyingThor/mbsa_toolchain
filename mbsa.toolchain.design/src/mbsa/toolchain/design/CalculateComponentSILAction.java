@@ -9,6 +9,10 @@ import javax.swing.JOptionPane;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 
 import component.Component;
 import component.FailureMode;
@@ -44,9 +48,13 @@ public class CalculateComponentSILAction implements IExternalJavaAction {
 		int sil = determineSIL(0, sff);
 		cp.setSil(sil);
 		
-		JFrame jframe = new JFrame();
-		JOptionPane.showMessageDialog(jframe, cp.getComponent_name() + "的安全完整性等级为：SIL" + sil);
-
+//		JFrame jframe = new JFrame();
+//		JOptionPane.showMessageDialog(jframe, cp.getComponent_name() + "的安全完整性等级为：SIL" + sil);
+		Shell shell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
+		MessageBox mb = new MessageBox(shell, SWT.ICON_SEARCH);
+		mb.setText("报告");
+		mb.setMessage(cp.getComponent_name() + "的安全完整性等级为：SIL" + sil);
+		mb.open();
 	}
 
 	@Override

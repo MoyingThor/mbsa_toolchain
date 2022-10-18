@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<example:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:example="http://mbsa.dlut/example" xmi:id="_9k_NwEdZEe2F07kDLgaf1g" remark="This is component A">
+  <elements xsi:type="example:Component" xmi:id="_-dXnQEdZEe2F07kDLgaf1g" name="A"/>
+  <elements xsi:type="example:Component" xmi:id="_Bc7IoEdaEe2F07kDLgaf1g" name="B"/>
+  <elements xsi:type="example:ComponentRelationship" xmi:id="_CPBT8EdaEe2F07kDLgaf1g" source="_-dXnQEdZEe2F07kDLgaf1g" target="_Bc7IoEdaEe2F07kDLgaf1g"/>
+</example:Package>
