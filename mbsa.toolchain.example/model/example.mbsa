@@ -226,29 +226,6 @@
     <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.14"/>
     <components xsi:type="component_:ComponentRelationship" label="反馈信号" source="//@componentPackage.0/@components.16" target="//@componentPackage.0/@components.15"/>
     <components xsi:type="component_:ComponentRelationship" label="驱动信号" source="//@componentPackage.0/@components.17" target="//@componentPackage.0/@components.18"/>
-    <components xsi:type="component_:Component" component_name="新组件">
-      <name content="Name"/>
-      <implementationConstraint>
-        <content>
-          <value content="外部文件"/>
-        </content>
-      </implementationConstraint>
-      <implementationConstraint>
-        <content>
-          <value content="超数据"/>
-        </content>
-      </implementationConstraint>
-      <implementationConstraint>
-        <content>
-          <value content="验证规则"/>
-        </content>
-      </implementationConstraint>
-      <implementationConstraint>
-        <content>
-          <value content="验证结果"/>
-        </content>
-      </implementationConstraint>
-    </components>
   </componentPackage>
   <componentPackage>
     <name content="新组件包"/>
