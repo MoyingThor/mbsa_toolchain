@@ -13,14 +13,14 @@
   <key attr.name="description" attr.type="string" for="edge" id="d9"/>
   <key for="edge" id="d10" yfiles.type="edgegraphics"/>
   <graph edgedefault="directed" id="G">
-    <data key="d0"/>
+    <data key="d0" xml:space="preserve"/>
     <node id="n0">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="30.0" x="1002.6599999999995" y="523.84"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#FFFFFF" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="22.01171875" x="3.994140625" xml:space="preserve" y="5.649414062499943">0..*<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="22.01171875" x="3.994140625" xml:space="preserve" y="5.6494140625">0..*<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -200,8 +200,7 @@ improbable = 5</y:AttributeLabel>
           <y:BorderStyle color="#000000" type="line" width="2.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="102.9599609375" x="26.02001953125" xml:space="preserve" y="3.0">ControlMeasure<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="false">
-            <y:AttributeLabel xml:space="preserve">severity: Severity
-probability: Probability</y:AttributeLabel>
+            <y:AttributeLabel xml:space="preserve"/>
             <y:MethodLabel xml:space="preserve"/>
           </y:UML>
         </y:UMLClassNode>
@@ -291,7 +290,18 @@ probability: Probability</y:AttributeLabel>
           <y:Geometry height="22.32000000000005" width="30.0" x="991.9199999999586" y="728.2000000000003"/>
           <y:Fill color="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#FFFFFF" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="22.01171875" x="3.994140625" xml:space="preserve" y="1.8094140624999682">0..*<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="22.01171875" x="3.994140625" xml:space="preserve" y="1.8094140625000819">0..*<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n20">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="30.0" x="1228.639999999996" y="504.15999999999997"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#FFFFFF" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="22.01171875" x="3.994140625" xml:space="preserve" y="5.6494140625">0..*<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -335,7 +345,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e3" source="n5" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:BezierEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -345,7 +354,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e4" source="n3" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:BezierEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -355,7 +363,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e5" source="n3" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="34.12558139534875" sy="-14.655201288530066" tx="2.4162499999997635" ty="-14.655201288530066"/>
@@ -367,7 +374,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e6" source="n6" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -378,7 +384,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e7" source="n6" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="58.7362499999997" sy="-2.15783800728002" tx="58.7362499999997" ty="12.864798711469916"/>
@@ -390,7 +395,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e8" source="n9" target="n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -401,7 +405,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e9" source="n11" target="n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -413,7 +416,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e10" source="n11" target="n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -424,7 +426,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e11" source="n15" target="n9">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -435,7 +436,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e12" source="n13" target="n9">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -446,7 +446,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e13" source="n14" target="n9">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -457,7 +456,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e14" source="n12" target="n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -472,7 +470,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e15" source="n12" target="n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -487,7 +484,6 @@ probability: Probability</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e16" source="n12" target="n14">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="2.8200000000103955" sy="20.480000000000018" tx="0.0" ty="0.0"/>
@@ -495,6 +491,18 @@ probability: Probability</y:AttributeLabel>
           <y:Arrows source="none" target="standard"/>
           <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="54.701171875" x="-61.85287109375395" xml:space="preserve" y="-54.710615489346196">validation<y:LabelModel><y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/></y:LabelModel><y:ModelParameter><y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="45.360000000000014" distanceToCenter="true" position="right" ratio="0.6273584905662226" segment="-1"/></y:ModelParameter><y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="true"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e17" source="n9" target="n11">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.021484375" x="23.456388361350946" xml:space="preserve" y="-29.845982923171164">cause<y:LabelModel><y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/></y:LabelModel><y:ModelParameter><y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="center" ratio="0.27193308776196856" segment="-1"/></y:ModelParameter><y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
